@@ -1,0 +1,28 @@
+# Unity YAML: merge bằng UnityYAMLMerge, giữ LF
+*.unity      merge=unityyamlmerge eol=lf
+*.prefab     merge=unityyamlmerge eol=lf
+*.asset      merge=unityyamlmerge eol=lf
+*.mat        merge=unityyamlmerge eol=lf
+*.anim       merge=unityyamlmerge eol=lf
+*.controller merge=unityyamlmerge eol=lf
+*.meta       merge=unityyamlmerge eol=lf
+*.cs         text diff=csharp
+
+# Git LFS: ảnh, âm thanh, model, font, video (lockable để tránh sửa trùng)
+*.png  filter=lfs diff=lfs merge=lfs -text lockable
+*.jpg  filter=lfs diff=lfs merge=lfs -text lockable
+*.jpeg filter=lfs diff=lfs merge=lfs -text lockable
+*.psd  filter=lfs diff=lfs merge=lfs -text lockable
+*.psb  filter=lfs diff=lfs merge=lfs -text lockable
+*.aseprite filter=lfs diff=lfs merge=lfs -text lockable
+*.ase  filter=lfs diff=lfs merge=lfs -text lockable
+*.tga  filter=lfs diff=lfs merge=lfs -text lockable
+*.gif  filter=lfs diff=lfs merge=lfs -text lockable
+*.wav  filter=lfs diff=lfs merge=lfs -text lockable
+*.mp3  filter=lfs diff=lfs merge=lfs -text lockable
+*.ogg  filter=lfs diff=lfs merge=lfs -text lockable
+*.fbx  filter=lfs diff=lfs merge=lfs -text lockable
+*.blend filter=lfs diff=lfs merge=lfs -text lockable
+*.ttf  filter=lfs diff=lfs merge=lfs -text lockable
+*.otf  filter=lfs diff=lfs merge=lfs -text lockable
+*.mp4  filter=lfs diff=lfs merge=lfs -text lockable
