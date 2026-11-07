@@ -5,6 +5,7 @@ namespace Woodcutter.Player.States
 {
     /// <summary>
     /// Trạng thái đứng yên (Idle).
+    /// Áp dụng giảm tốc về 0 theo decelerationTime 0.06s (SRS 5.1).
     /// </summary>
     public class IdleState : CharacterBaseState
     {
@@ -13,13 +14,11 @@ namespace Woodcutter.Player.States
         public override void Enter()
         {
             context.SetVisualState("Idle", Color.white);
-            // Phanh đứng yên theo chiều ngang
-            context.Rigidbody.linearVelocity = new Vector2(0f, context.Rigidbody.linearVelocityY);
         }
 
         public override void LogicUpdate()
         {
-            // Nếu không còn chạm đất (bước hụt hoặc bệ di chuyển) -> rơi xuống
+            // Nếu không còn chạm đất (bước hụt hoặc bệ di chuyển) -> rơi xuống kèm Coyote time
             if (!context.CheckGrounded())
             {
                 context.FallState.SetCoyoteTime(true);
@@ -32,6 +31,13 @@ namespace Woodcutter.Player.States
             {
                 stateMachine.ChangeState(context.MoveState);
             }
+        }
+
+        public override void PhysicsUpdate()
+        {
+            // Giảm tốc mượt mà về 0 theo decelerationTime (SRS 5.1)
+            float newX = context.ComputeHorizontalVelocity(0f);
+            context.Rigidbody.linearVelocity = new Vector2(newX, context.Rigidbody.linearVelocityY);
         }
 
         public override void HandleJumpPressed()

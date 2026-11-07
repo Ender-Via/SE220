@@ -29,6 +29,12 @@ namespace Woodcutter.Player
         public Vector2 CurrentInputVector { get; private set; }
         public bool IsFacingRight { get; private set; } = true;
 
+        // Quản lý tấn công trên không: Trong không trung chỉ được tấn công 1 lần duy nhất
+        public bool CanAirAttack { get; set; } = true;
+
+        // Quản lý Jump Buffer (SRS FR-MOV-03: Bộ đệm lệnh nhảy 0.1s)
+        public float JumpBufferTimer { get; private set; }
+
         // Cỗ máy FSM
         public StateMachine StateMachine { get; private set; }
 
@@ -100,6 +106,18 @@ namespace Woodcutter.Player
 
         private void Update()
         {
+            // Đếm ngược Jump Buffer (SRS FR-MOV-03)
+            if (JumpBufferTimer > 0f)
+            {
+                JumpBufferTimer -= Time.deltaTime;
+            }
+
+            // Hồi lại lượt tấn công trên không khi chạm đất
+            if (CheckGrounded())
+            {
+                CanAirAttack = true;
+            }
+
             // Ủy thác toàn bộ logic cho State hiện tại
             StateMachine.LogicUpdate();
         }
@@ -108,6 +126,43 @@ namespace Woodcutter.Player
         {
             // Ủy thác toàn bộ tương tác vật lý cho State hiện tại
             StateMachine.PhysicsUpdate();
+        }
+
+        // ================================================================
+        // QUẢN LÝ JUMP BUFFER
+        // ================================================================
+        public void RegisterJumpBuffer()
+        {
+            JumpBufferTimer = stats.jumpBufferTime;
+        }
+
+        public bool HasBufferedJump()
+        {
+            return JumpBufferTimer > 0f;
+        }
+
+        public void ConsumeJumpBuffer()
+        {
+            JumpBufferTimer = 0f;
+        }
+
+        // ================================================================
+        // TÍNH TOÁN VẬN TỐC THEO GIA TỐC & GIẢM TỐC (SRS 5.1)
+        // ================================================================
+        public float ComputeHorizontalVelocity(float inputX)
+        {
+            float targetSpeed = inputX * stats.maxRunSpeed;
+            float currentSpeed = Rigidbody.linearVelocityX;
+
+            // Xác định xem đang tăng tốc theo hướng muốn đi hay đang giảm tốc / quay đầu
+            bool isAccelerating = Mathf.Abs(targetSpeed) > 0.01f && 
+                (Mathf.Abs(currentSpeed) < 0.01f || Mathf.Sign(targetSpeed) == Mathf.Sign(currentSpeed));
+
+            float rate = isAccelerating 
+                ? (stats.maxRunSpeed / Mathf.Max(0.001f, stats.accelerationTime))
+                : (stats.maxRunSpeed / Mathf.Max(0.001f, stats.decelerationTime));
+
+            return Mathf.MoveTowards(currentSpeed, targetSpeed, rate * Time.fixedDeltaTime);
         }
 
         // ================================================================

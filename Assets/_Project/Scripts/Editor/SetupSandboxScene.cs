@@ -157,13 +157,15 @@ namespace Woodcutter.EditorTools
             contextSo.FindProperty("inputBroker").objectReferenceValue = inputBroker;
             contextSo.ApplyModifiedProperties();
 
-            // 6. Lưu Prefab
+            // 6. Lưu Prefab (Đảm bảo thư mục tồn tại)
             string prefabPath = "Assets/_Project/Prefabs/Player/PF_PlayerPrototype.prefab";
+            EnsureDirectoryExists(prefabPath);
             PrefabUtility.SaveAsPrefabAsset(playerGo, prefabPath);
             Debug.Log($"Đã tạo và lưu Prefab tại: {prefabPath}");
 
-            // 7. Lưu Scene
+            // 7. Lưu Scene (Đảm bảo thư mục tồn tại)
             string scenePath = "Assets/_Project/Scenes/Sandbox/Sandbox_InputFSM.unity";
+            EnsureDirectoryExists(scenePath);
             EditorSceneManager.SaveScene(newScene, scenePath);
             Debug.Log($"Đã tạo và lưu Scene thành công tại: {scenePath}");
 
@@ -177,6 +179,8 @@ namespace Woodcutter.EditorTools
             Sprite existing = AssetDatabase.LoadAssetAtPath<Sprite>(path);
             if (existing != null)
                 return existing;
+
+            EnsureDirectoryExists(path);
 
             Texture2D tex = new Texture2D(32, 32, TextureFormat.RGBA32, false);
             Color[] pixels = new Color[32 * 32];
@@ -207,6 +211,8 @@ namespace Woodcutter.EditorTools
             if (existing != null)
                 return existing;
 
+            EnsureDirectoryExists(path);
+
             PlayerStatsSO stats = ScriptableObject.CreateInstance<PlayerStatsSO>();
             stats.maxRunSpeed = 8f;
             stats.accelerationTime = 0.08f;
@@ -235,6 +241,8 @@ namespace Woodcutter.EditorTools
             if (existing != null)
                 return existing;
 
+            EnsureDirectoryExists(path);
+
             PhysicsMaterial2D mat = new PhysicsMaterial2D("PM_Player");
             mat.friction = 0f; // Zero friction để không bị dính vách tường khi nhảy ép vào tường
             mat.bounciness = 0f;
@@ -242,6 +250,16 @@ namespace Woodcutter.EditorTools
             AssetDatabase.CreateAsset(mat, path);
             AssetDatabase.SaveAssets();
             return mat;
+        }
+
+        private static void EnsureDirectoryExists(string assetPath)
+        {
+            string fullPath = Path.Combine(Directory.GetCurrentDirectory(), assetPath);
+            string dir = Path.GetDirectoryName(fullPath);
+            if (!string.IsNullOrEmpty(dir) && !Directory.Exists(dir))
+            {
+                Directory.CreateDirectory(dir);
+            }
         }
     }
 }

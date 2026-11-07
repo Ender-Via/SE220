@@ -9,6 +9,7 @@ namespace Woodcutter.Player.States
     /// 1. Nhảy đạt đỉnh vận tốc Y <= 0 (từ JumpState).
     /// 2. Nhả nút nhảy sớm (Variable Jump Height).
     /// 3. Bước hụt ra khỏi mép bệ (từ MoveState hoặc IdleState).
+    /// 4. Kết thúc đòn tấn công trên không.
     /// </summary>
     public class FallState : CharacterBaseState
     {
@@ -40,20 +41,29 @@ namespace Woodcutter.Player.States
                 if (coyoteTimer <= 0f) canCoyoteJump = false;
             }
 
-            // Khi chạm đất an toàn -> trở về đất
+            // Khi chạm đất: Kiểm tra Jump Buffer (SRS FR-MOV-03)
             if (context.CheckGrounded())
             {
-                if (Mathf.Abs(context.CurrentInputVector.x) > 0.05f)
+                if (context.HasBufferedJump())
+                {
+                    context.ConsumeJumpBuffer();
+                    stateMachine.ChangeState(context.JumpState);
+                }
+                else if (Mathf.Abs(context.CurrentInputVector.x) > 0.05f)
+                {
                     stateMachine.ChangeState(context.MoveState);
+                }
                 else
+                {
                     stateMachine.ChangeState(context.IdleState);
+                }
             }
         }
 
         public override void PhysicsUpdate()
         {
-            // Cho phép điều hướng trên không
-            float targetSpeed = context.CurrentInputVector.x * context.Stats.maxRunSpeed;
+            // Điều hướng trên không theo gia tốc / giảm tốc (SRS 5.1)
+            float newX = context.ComputeHorizontalVelocity(context.CurrentInputVector.x);
 
             // Giới hạn tốc độ rơi tối đa (SRS FR-MOV-05: maxFallSpeed = 18 ô/s)
             float velY = context.Rigidbody.linearVelocityY;
@@ -62,23 +72,32 @@ namespace Woodcutter.Player.States
                 velY = -context.Stats.maxFallSpeed;
             }
 
-            context.Rigidbody.linearVelocity = new Vector2(targetSpeed, velY);
+            context.Rigidbody.linearVelocity = new Vector2(newX, velY);
         }
 
         public override void HandleJumpPressed()
         {
-            // Chỉ cho phép nhảy nếu bước hụt mép và còn trong cửa sổ Coyote time (0.1s)
+            // 1. Nhảy cứu vớt nếu còn trong Coyote time (SRS FR-MOV-03)
             if (canCoyoteJump && coyoteTimer > 0f)
             {
                 canCoyoteJump = false;
                 stateMachine.ChangeState(context.JumpState);
+                return;
             }
-            // Hết Coyote time -> Khóa hoàn toàn, KHÔNG CHO NHẢY LẦN 2 TRÊN KHÔNG
+
+            // 2. Nếu đã hết Coyote time, ghi nhận vào Jump Buffer (SRS FR-MOV-03: 0.1s)
+            // Nhấn Space trước khi chạm đất 0.1s sẽ tự động nhảy ngay khi tiếp đất
+            context.RegisterJumpBuffer();
         }
 
         public override void HandleAttackPressed()
         {
-            stateMachine.ChangeState(context.AttackState);
+            // Chỉ được tấn công 1 lần duy nhất trong không trung
+            if (context.CanAirAttack)
+            {
+                context.CanAirAttack = false;
+                stateMachine.ChangeState(context.AttackState);
+            }
         }
 
         public override void Exit()

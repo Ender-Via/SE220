@@ -32,9 +32,9 @@ namespace Woodcutter.Player.States
 
         public override void PhysicsUpdate()
         {
-            // Điều hướng trên không
-            float targetSpeed = context.CurrentInputVector.x * context.Stats.maxRunSpeed;
-            context.Rigidbody.linearVelocity = new Vector2(targetSpeed, context.Rigidbody.linearVelocityY);
+            // Điều hướng trên không theo gia tốc / giảm tốc (SRS 5.1)
+            float newX = context.ComputeHorizontalVelocity(context.CurrentInputVector.x);
+            context.Rigidbody.linearVelocity = new Vector2(newX, context.Rigidbody.linearVelocityY);
         }
 
         // BẮT SỰ KIỆN NHẢ NÚT (SRS FR-MOV-02: Variable Jump Height):
@@ -50,15 +50,20 @@ namespace Woodcutter.Player.States
             }
         }
 
-        // KHÓA NHẢY LẦN 2: Khi đang trên không, tuyệt đối không cho phép nhảy nữa
         public override void HandleJumpPressed()
         {
-            // Không làm gì cả - Chống infinite jump
+            // Ghi nhận vào Jump Buffer nếu người chơi bấm Space sớm
+            context.RegisterJumpBuffer();
         }
 
         public override void HandleAttackPressed()
         {
-            stateMachine.ChangeState(context.AttackState);
+            // Chỉ được tấn công 1 lần duy nhất trong không trung
+            if (context.CanAirAttack)
+            {
+                context.CanAirAttack = false;
+                stateMachine.ChangeState(context.AttackState);
+            }
         }
     }
 }

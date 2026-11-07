@@ -5,6 +5,7 @@ namespace Woodcutter.Player.States
 {
     /// <summary>
     /// Trạng thái di chuyển trên mặt đất (Move).
+    /// Áp dụng thời gian tăng tốc 0.08s và giảm tốc 0.06s theo SRS Mục 5.1.
     /// </summary>
     public class MoveState : CharacterBaseState
     {
@@ -34,8 +35,9 @@ namespace Woodcutter.Player.States
 
         public override void PhysicsUpdate()
         {
-            float targetSpeed = context.CurrentInputVector.x * context.Stats.maxRunSpeed;
-            context.Rigidbody.linearVelocity = new Vector2(targetSpeed, context.Rigidbody.linearVelocityY);
+            // Tăng tốc mượt mà theo accelerationTime (SRS 5.1)
+            float newX = context.ComputeHorizontalVelocity(context.CurrentInputVector.x);
+            context.Rigidbody.linearVelocity = new Vector2(newX, context.Rigidbody.linearVelocityY);
         }
 
         public override void HandleJumpPressed()
