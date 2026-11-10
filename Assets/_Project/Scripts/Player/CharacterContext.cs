@@ -18,6 +18,8 @@ namespace Woodcutter.Player
         public Animator Animator;
         [SerializeField] private PlayerInputBroker inputBroker;
         [SerializeField] private PlayerStatsSO stats;
+        [SerializeField] private PlayerCombatStatsSO combatStats;
+        [SerializeField] private AbilitiesStatsSO abilitiesStats;
 
         [Header("Ground Detection")]
         public Transform GroundCheckPoint;
@@ -26,6 +28,8 @@ namespace Woodcutter.Player
 
         // Dữ liệu thời gian thực
         public PlayerStatsSO Stats => stats;
+        public PlayerCombatStatsSO CombatStats => combatStats;
+        public AbilitiesStatsSO AbilitiesStats => abilitiesStats;
         public Vector2 CurrentInputVector { get; private set; }
         public bool IsFacingRight { get; private set; } = true;
 

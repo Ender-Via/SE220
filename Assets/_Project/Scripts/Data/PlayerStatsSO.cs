@@ -53,5 +53,15 @@ namespace Woodcutter.Data
 
         [Tooltip("Thời gian hồi lăn né (SRS: 0.5 s)")]
         public float rollCooldown = 0.5f;
+
+        [Header("Health & Defense (SRS 5.1)")]
+        [Tooltip("Máu khởi đầu (SRS: 5 vạch)")]
+        public int initialHealth = 5;
+
+        [Tooltip("Máu tối đa giới hạn (SRS: 8 vạch)")]
+        public int maxHealthLimit = 8;
+
+        [Tooltip("Thời gian I-frame khi bị dính đòn (nhân vật nhấp nháy) (SRS: 1.0 giây)")]
+        public float hurtIframeDuration = 1.0f;
     }
 }

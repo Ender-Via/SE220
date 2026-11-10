@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed2254d18991d9f4e9abad093c9ccc12, type: 3}
+  m_Name: PlayerCombatStats
+  m_EditorClassIdentifier: Assembly-CSharp::Woodcutter.Data.PlayerCombatStatsSO
+  combo1Damage: 1
+  combo2Damage: 1
+  comboWindow: 0.4
+  hitboxSize: {x: 1.5, y: 1.5}
+  heavyChargeTime: 0.6
+  heavyDamage: 3
+  normalHitStop: 0.05
+  heavyHitStop: 0.1
