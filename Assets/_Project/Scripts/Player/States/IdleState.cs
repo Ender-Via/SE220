@@ -14,12 +14,6 @@ namespace Woodcutter.Player.States
         public override void Enter()
         {
             context.SetVisualState("Idle", Color.white);
-
-            if (context.HasBufferedJump())
-            {
-                context.ConsumeJumpBuffer();
-                stateMachine.ChangeState(context.JumpState);
-            }
         }
 
         public override void LogicUpdate()

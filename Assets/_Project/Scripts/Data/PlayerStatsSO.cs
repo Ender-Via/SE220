@@ -39,9 +39,6 @@ namespace Woodcutter.Data
         public float jumpBufferTime = 0.1f;
 
         [Header("Combat & Roll (SRS 5.1 & 5.2)")]
-        [Tooltip("Thời gian khóa hành động của đòn chém thường (s)")]
-        public float attackDuration = 0.35f;
-
         [Tooltip("Quãng đường lăn né (SRS: 4 ô)")]
         public float rollDistance = 4f;
 
@@ -63,5 +60,8 @@ namespace Woodcutter.Data
 
         [Tooltip("Thời gian I-frame khi bị dính đòn (nhân vật nhấp nháy) (SRS: 1.0 giây)")]
         public float hurtIframeDuration = 1.0f;
+
+        [Tooltip("Lượng máu tăng thêm khi nhặt mỗi viên đá")]
+        public int healthPerStone = 1;
     }
 }

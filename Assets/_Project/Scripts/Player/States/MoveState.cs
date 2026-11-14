@@ -14,12 +14,6 @@ namespace Woodcutter.Player.States
         public override void Enter()
         {
             context.SetVisualState("Move", new Color(0.35f, 0.75f, 1f)); // Xanh dương nhạt
-
-            if (context.HasBufferedJump())
-            {
-                context.ConsumeJumpBuffer();
-                stateMachine.ChangeState(context.JumpState);
-            }
         }
 
         public override void LogicUpdate()

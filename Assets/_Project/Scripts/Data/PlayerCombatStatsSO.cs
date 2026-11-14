@@ -15,6 +15,9 @@ namespace Woodcutter.Data
         [Tooltip("Cửa sổ thời gian bấm chuỗi combo (giây)")]
         public float comboWindow = 0.4f;
 
+        [Tooltip("Thời gian khóa hành động của đòn chém thường (s)")]
+        public float attackDuration = 0.35f;
+
         [Tooltip("Kích thước Hitbox chém (ngang x dọc)")]
         public Vector2 hitboxSize = new Vector2(1.5f, 1.5f);
 
