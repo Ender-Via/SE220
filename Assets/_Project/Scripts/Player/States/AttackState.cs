@@ -47,19 +47,7 @@ namespace Woodcutter.Player.States
                 if (context.CheckGrounded())
                 {
                     // Chạm đất: Nếu có Jump Buffer trước đó thì thực thi nhảy ngay lập tức
-                    if (context.HasBufferedJump())
-                    {
-                        context.ConsumeJumpBuffer();
-                        stateMachine.ChangeState(context.JumpState);
-                    }
-                    else if (Mathf.Abs(context.CurrentInputVector.x) > 0.05f)
-                    {
-                        stateMachine.ChangeState(context.MoveState);
-                    }
-                    else
-                    {
-                        stateMachine.ChangeState(context.IdleState);
-                    }
+                    context.HandleLandingTransition();
                 }
                 else
                 {

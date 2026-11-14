@@ -229,7 +229,9 @@ MonoBehaviour:
   SpriteRenderer: {fileID: 2901814295903274715}
   Animator: {fileID: 0}
   inputBroker: {fileID: 4994982080136297231}
-  stats: {fileID: 0}
+  stats: {fileID: 11400000, guid: 0c6708b9cb4debc4b84647361088e261, type: 2}
+  combatStats: {fileID: 11400000, guid: 8d361191bb2e76a49853a7983d775fb5, type: 2}
+  abilitiesStats: {fileID: 11400000, guid: 049aaf5a4138ab647bcfd8d1086050cc, type: 2}
   GroundCheckPoint: {fileID: 5703669540901390428}
   GroundCheckDimensions: {x: 0.8, y: 0.15}
   GroundLayerMask:

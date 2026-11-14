@@ -44,19 +44,7 @@ namespace Woodcutter.Player.States
             // Khi chạm đất: Kiểm tra Jump Buffer (SRS FR-MOV-03)
             if (context.CheckGrounded())
             {
-                if (context.HasBufferedJump())
-                {
-                    context.ConsumeJumpBuffer();
-                    stateMachine.ChangeState(context.JumpState);
-                }
-                else if (Mathf.Abs(context.CurrentInputVector.x) > 0.05f)
-                {
-                    stateMachine.ChangeState(context.MoveState);
-                }
-                else
-                {
-                    stateMachine.ChangeState(context.IdleState);
-                }
+                context.HandleLandingTransition();
             }
         }
 
