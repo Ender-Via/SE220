@@ -10,12 +10,23 @@ namespace Woodcutter.Data
     public class CameraRoomSettingsSO : ScriptableObject
     {
         [Header("Camera - khung hình")]
-        [Tooltip("Nửa chiều cao khung nhìn tính bằng ô (1 ô = 1 unit = 16 px). " +
-                 "11.25 = 22.5 ô chiều cao, pixel-perfect ở 720p (x2) và 1080p (x3).")]
-        public float orthographicSize = 11.25f;
+        [Tooltip("Nửa chiều cao khung nhìn tính bằng ô (1 ô = 1 unit = 32 px). " +
+                 "5.625 = 11.25 ô chiều cao, pixel-perfect ở 720p (x2) và 1080p (x3).")]
+        public float orthographicSize = 5.625f;
 
         [Tooltip("Vị trí nhân vật trên màn hình, (0,0) là chính giữa, đơn vị nửa màn hình.")]
         public Vector2 screenPosition = new Vector2(0f, -0.1f);
+
+        [Header("Pixel Perfect (SRS mục 5, 10)")]
+        [Tooltip("Số pixel trên mỗi unit/ô (SRS mục 5: mọi hình dùng PPU 32).")]
+        public int assetsPPU = 32;
+
+        [Tooltip("Độ phân giải tham chiếu gốc (SRS mục 5: 640×360 phóng x2 lên 720p, x3 lên 1080p).")]
+        public Vector2Int referenceResolution = new Vector2Int(640, 360);
+
+        [Header("Scene nền")]
+        [Tooltip("Tên scene nền mặc định chứa Player + camera + RoomManager.")]
+        public string persistentSceneName = "Sandbox_RoomTransition";
 
         [Header("Camera - bám theo")]
         [Tooltip("Độ trễ bám theo trục X/Y (giây). 0 = bám cứng.")]

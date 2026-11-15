@@ -20,6 +20,9 @@ namespace Woodcutter.World
     {
         public static RoomManager Instance { get; private set; }
 
+        /// <summary>Tên scene nền mặc định chứa Player + camera + RoomManager.</summary>
+        public const string DefaultPersistentSceneName = "Sandbox_RoomTransition";
+
         [Header("Thông số")]
         [SerializeField] private CameraRoomSettingsSO settings;
 
@@ -46,6 +49,13 @@ namespace Woodcutter.World
 
         /// <summary>Bắn ra mỗi khi nhân vật vào một phòng (dùng cho lưu game, nhạc, hồi màu...).</summary>
         public event Action<Room> OnRoomEntered;
+
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+        private static void ResetStatics()
+        {
+            isBootstrapping = false;
+            Instance = null;
+        }
 
         private void Awake()
         {
@@ -78,6 +88,19 @@ namespace Woodcutter.World
             if (Room.LoadedRooms.Count > 0)
             {
                 Room existing = Room.LoadedRooms[0];
+                if (Room.LoadedRooms.Count > 1)
+                {
+                    Debug.LogWarning($"[RoomManager] Phát hiện {Room.LoadedRooms.Count} phòng đang mở cùng lúc. Chỉ giữ phòng đầu '{existing.RoomId}' và tự động gỡ các phòng thừa để tránh chồng chéo.", this);
+                    for (int i = Room.LoadedRooms.Count - 1; i >= 1; i--)
+                    {
+                        Room extra = Room.LoadedRooms[i];
+                        if (extra != null && extra.Scene.IsValid() && extra.Scene.isLoaded)
+                        {
+                            SceneManager.UnloadSceneAsync(extra.Scene);
+                        }
+                    }
+                }
+
                 SceneManager.SetActiveScene(existing.Scene);
                 EnterRoom(existing, null);
                 CompleteArrival();
@@ -143,7 +166,22 @@ namespace Woodcutter.World
             }
 
             isBootstrapping = true;
-            SceneManager.LoadScene(room.PersistentSceneName, LoadSceneMode.Additive);
+            AsyncOperation op = SceneManager.LoadSceneAsync(room.PersistentSceneName, LoadSceneMode.Additive);
+            if (op != null)
+            {
+                op.completed += _ =>
+                {
+                    if (Instance == null)
+                    {
+                        Debug.LogWarning($"[RoomManager] Scene nền '{room.PersistentSceneName}' đã nạp nhưng không tìm thấy RoomManager.", room);
+                        isBootstrapping = false;
+                    }
+                };
+            }
+            else
+            {
+                isBootstrapping = false;
+            }
         }
 
         // ================================================================
@@ -164,17 +202,7 @@ namespace Woodcutter.World
             if (fader != null)
                 yield return fader.FadeTo(1f, settings.fadeOutDuration);
 
-            // 2. Gỡ phòng cũ (gỡ trước khi nạp để hai phòng không chồng lên nhau)
-            Room oldRoom = CurrentRoom;
-            CurrentRoom = null;
-            if (oldRoom != null)
-            {
-                AsyncOperation unload = SceneManager.UnloadSceneAsync(oldRoom.Scene);
-                if (unload != null)
-                    yield return unload;
-            }
-
-            // 3. Nạp phòng mới
+            // 2. Nạp phòng mới TRƯỚC khi gỡ phòng cũ để kiểm tra an toàn (tránh softlock nếu thiếu component Room)
             AsyncOperation load = SceneManager.LoadSceneAsync(roomId, LoadSceneMode.Additive);
             yield return load;
 
@@ -182,13 +210,34 @@ namespace Woodcutter.World
             Room newRoom = scene.IsValid() ? Room.FindInScene(scene) : null;
             Application.backgroundLoadingPriority = previousPriority;
 
+            // Kiểm tra an toàn: nếu scene mới không có component Room
             if (newRoom == null)
             {
-                Debug.LogError($"[RoomManager] Scene '{roomId}' không có component Room.", this);
-                if (fader != null) fader.SetAlpha(0f);
+                Debug.LogError($"[RoomManager] Scene '{roomId}' không có component Room. Hủy chuyển phòng để tránh softlock.", this);
+                if (scene.IsValid() && scene.isLoaded)
+                {
+                    AsyncOperation unloadBad = SceneManager.UnloadSceneAsync(scene);
+                    if (unloadBad != null) yield return unloadBad;
+                }
+
+                // Giữ nguyên phòng cũ, đặt lại cooldown cửa để tránh lặp trigger ngay lập tức
+                doorCooldownUntil = Time.unscaledTime + settings.doorCooldownAfterArrival;
+                if (fader != null)
+                    yield return fader.FadeTo(0f, settings.fadeInDuration);
+
                 SetPlayerFrozen(false);
                 IsTransitioning = false;
                 yield break;
+            }
+
+            // 3. Scene mới hợp lệ -> Gỡ phòng cũ
+            Room oldRoom = CurrentRoom;
+            CurrentRoom = null;
+            if (oldRoom != null && oldRoom.Scene.IsValid() && oldRoom.Scene.isLoaded)
+            {
+                AsyncOperation unload = SceneManager.UnloadSceneAsync(oldRoom.Scene);
+                if (unload != null)
+                    yield return unload;
             }
 
             SceneManager.SetActiveScene(scene); // Object sinh ra lúc chạy (quái, hiệu ứng) thuộc phòng, gỡ theo phòng
@@ -252,7 +301,18 @@ namespace Woodcutter.World
         {
             SetPlayerFrozen(false);
             if (playerBody != null)
+            {
                 playerBody.linearVelocity = pendingArrivalVelocity;
+                if (Mathf.Abs(pendingArrivalVelocity.x) > 0.01f)
+                {
+                    var context = playerBody.GetComponent<Woodcutter.Player.CharacterContext>();
+                    if (context != null)
+                    {
+                        // Giữ vận tốc ngang trong 0.2s để FSM không giảm tốc về 0 trong 0.06s
+                        context.OverrideHorizontalVelocity(pendingArrivalVelocity, 0.2f);
+                    }
+                }
+            }
 
             doorCooldownUntil = Time.unscaledTime + settings.doorCooldownAfterArrival;
         }

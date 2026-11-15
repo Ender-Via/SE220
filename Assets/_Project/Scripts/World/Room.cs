@@ -10,9 +10,6 @@ namespace Woodcutter.World
     /// </summary>
     public class Room : MonoBehaviour
     {
-        [Tooltip("Mã phòng, phải trùng tên scene (ví dụ R1-01). Để trống = lấy tên scene.")]
-        [SerializeField] private string roomId;
-
         [Tooltip("Collider giới hạn camera (BoxCollider2D hoặc PolygonCollider2D, đặt Is Trigger). " +
                  "Nên rộng/cao ít nhất bằng một màn hình.")]
         [SerializeField] private Collider2D cameraBounds;
@@ -20,19 +17,26 @@ namespace Woodcutter.World
         [Tooltip("Điểm xuất hiện khi vào phòng không qua cửa (bắt đầu game, mở thẳng scene để thử).")]
         [SerializeField] private Transform defaultSpawn;
 
-        [Tooltip("Scene nền chứa Player + camera + RoomManager. Tự nạp thêm khi mở thẳng scene phòng này để thử.")]
-        [SerializeField] private string persistentSceneName = "Sandbox_RoomTransition";
+        [Tooltip("Ghi đè scene nền nếu cần (để trống = dùng hằng số mặc định RoomManager.DefaultPersistentSceneName).")]
+        [SerializeField] private string persistentSceneOverride;
 
         private static readonly List<Room> loadedRooms = new List<Room>();
         private readonly Dictionary<string, RoomDoor> doorLookup = new Dictionary<string, RoomDoor>();
+        private bool doorsCached;
 
         /// <summary>Các phòng đang được nạp (thường chỉ có 1).</summary>
         public static IReadOnlyList<Room> LoadedRooms => loadedRooms;
 
-        public string RoomId => string.IsNullOrEmpty(roomId) ? gameObject.scene.name : roomId;
+        /// <summary>Mã phòng luôn lấy theo tên scene để tránh lệch tên và lỗi khi tải game/checkpoint.</summary>
+        public string RoomId => gameObject.scene.IsValid() && !string.IsNullOrEmpty(gameObject.scene.name)
+            ? gameObject.scene.name
+            : name;
+
         public Collider2D CameraBounds => cameraBounds;
         public Scene Scene => gameObject.scene;
-        public string PersistentSceneName => persistentSceneName;
+        public string PersistentSceneName => !string.IsNullOrEmpty(persistentSceneOverride)
+            ? persistentSceneOverride
+            : RoomManager.DefaultPersistentSceneName;
 
         public Vector2 DefaultSpawnPosition => defaultSpawn != null ? (Vector2)defaultSpawn.position : (Vector2)transform.position;
 
@@ -78,11 +82,12 @@ namespace Woodcutter.World
 
                 doorLookup.Add(door.DoorId, door);
             }
+            doorsCached = true;
         }
 
         public bool TryGetDoor(string doorId, out RoomDoor door)
         {
-            if (doorLookup.Count == 0) CacheDoors();
+            if (!doorsCached) CacheDoors();
             return doorLookup.TryGetValue(doorId ?? string.Empty, out door);
         }
 

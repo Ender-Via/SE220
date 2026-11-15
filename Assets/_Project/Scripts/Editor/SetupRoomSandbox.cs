@@ -86,7 +86,7 @@ namespace Woodcutter.EditorTools
         {
             Scene scene = EditorSceneManager.NewScene(NewSceneSetup.EmptyScene, NewSceneMode.Single);
 
-            // Main Camera + Brain
+            // Main Camera + Brain + Pixel Perfect Camera (SRS mục 5, 10)
             var camGo = new GameObject("Main Camera") { tag = "MainCamera" };
             var cam = camGo.AddComponent<Camera>();
             cam.orthographic = true;
@@ -96,6 +96,12 @@ namespace Woodcutter.EditorTools
             camGo.transform.position = new Vector3(0f, 0f, -10f);
             camGo.AddComponent<UniversalAdditionalCameraData>();
             camGo.AddComponent<CinemachineBrain>();
+
+            var ppc = camGo.AddComponent<PixelPerfectCamera>();
+            ppc.assetsPPU = settings.assetsPPU;
+            ppc.refResolutionX = settings.referenceResolution.x;
+            ppc.refResolutionY = settings.referenceResolution.y;
+            ppc.gridSnapping = PixelPerfectCamera.GridSnapping.UpscaleRenderTexture;
 
             // Global Light 2D
             var lightGo = new GameObject("Global Light 2D");
@@ -117,7 +123,7 @@ namespace Woodcutter.EditorTools
             var playerBody = player.GetComponent<Rigidbody2D>();
             playerBody.interpolation = RigidbodyInterpolation2D.Interpolate; // Camera bám mượt, không rung
 
-            // Cinemachine Camera
+            // Cinemachine Camera + Pixel Perfect extension
             var vcamGo = new GameObject("CM_RoomCamera");
             vcamGo.transform.position = new Vector3(0f, 0f, -10f);
             var vcam = vcamGo.AddComponent<CinemachineCamera>();
@@ -126,6 +132,7 @@ namespace Woodcutter.EditorTools
             composer.CameraDistance = 10f;
             var confiner = vcamGo.AddComponent<CinemachineConfiner2D>();
             vcamGo.AddComponent<CinemachineImpulseListener>(); // Cho T013 (rung màn hình)
+            vcamGo.AddComponent<CinemachinePixelPerfect>(); // Khóa ortho size & pixel snapping cho Cinemachine
             var roomCamera = vcamGo.AddComponent<RoomCamera>();
             SetRefs(roomCamera, ("settings", settings), ("virtualCamera", vcam),
                 ("positionComposer", composer), ("confiner", confiner));
@@ -286,7 +293,6 @@ namespace Woodcutter.EditorTools
                 new DoorSpec { Id = "Right", Trigger = new Rect(47.5f, 2f, 1f, 4f), Spawn = new Vector2(45f, 3f) },
             });
             GameObject root = geometry.parent.gameObject;
-            SetString(root.GetComponent<Room>(), "roomId", ""); // Để trống = lấy tên scene
             EnsureDirectoryExists(RoomTemplatePath);
             PrefabUtility.SaveAsPrefabAsset(root, RoomTemplatePath);
             Object.DestroyImmediate(root);
@@ -323,8 +329,6 @@ namespace Woodcutter.EditorTools
             geometry.transform.SetParent(root.transform, false);
 
             SetRefs(room, ("cameraBounds", bounds), ("defaultSpawn", spawnGo.transform));
-            SetString(room, "roomId", roomId);
-            SetString(room, "persistentSceneName", PersistentSceneName);
             return geometry.transform;
         }
 
@@ -398,11 +402,38 @@ namespace Woodcutter.EditorTools
         private static void AddScenesToBuildList(params string[] paths)
         {
             var scenes = new List<EditorBuildSettingsScene>(EditorBuildSettings.scenes);
+
+            // Tạm tắt SampleScene nếu có trong danh sách (build sẽ chạy thẳng vào scene khởi động)
+            for (int i = 0; i < scenes.Count; i++)
+            {
+                if (scenes[i].path.Contains("SampleScene.unity"))
+                {
+                    scenes[i] = new EditorBuildSettingsScene(scenes[i].path, false);
+                }
+            }
+
             foreach (string path in paths)
             {
-                if (scenes.Exists(s => s.path == path)) continue;
-                scenes.Add(new EditorBuildSettingsScene(path, true));
+                int index = scenes.FindIndex(s => s.path == path);
+                if (index >= 0)
+                {
+                    scenes[index] = new EditorBuildSettingsScene(path, true);
+                }
+                else
+                {
+                    scenes.Add(new EditorBuildSettingsScene(path, true));
+                }
             }
+
+            // Đưa scene nền lên đầu danh sách build
+            int transitionIdx = scenes.FindIndex(s => s.path.Contains(PersistentSceneName));
+            if (transitionIdx > 0)
+            {
+                var transScene = scenes[transitionIdx];
+                scenes.RemoveAt(transitionIdx);
+                scenes.Insert(0, transScene);
+            }
+
             EditorBuildSettings.scenes = scenes.ToArray();
         }
 

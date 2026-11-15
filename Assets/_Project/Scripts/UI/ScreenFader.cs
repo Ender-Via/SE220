@@ -38,7 +38,7 @@ namespace Woodcutter.UI
             float elapsed = 0f;
             while (elapsed < duration)
             {
-                elapsed += Time.unscaledDeltaTime;
+                elapsed += Mathf.Min(Time.unscaledDeltaTime, 1f / 30f);
                 SetAlpha(Mathf.Lerp(start, targetAlpha, elapsed / duration));
                 yield return null;
             }

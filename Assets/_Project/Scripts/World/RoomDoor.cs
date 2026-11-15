@@ -22,7 +22,7 @@ namespace Woodcutter.World
         [SerializeField] private Transform spawnPoint;
 
         [Tooltip("Vận tốc đặt cho nhân vật khi xuất hiện ở cửa này (ô/giây). " +
-                 "Dùng cho cửa ở sàn khi đi lên: đẩy nhân vật lên gờ bên cạnh để không rơi ngược lại.")]
+                 "Lưu ý: Cửa đi lên luôn phải đặt Spawn Point trên gờ đất vững cạnh lỗ, không đặt lơ lửng trên lỗ.")]
         [SerializeField] private Vector2 arrivalVelocity = Vector2.zero;
 
         public string DoorId => doorId;

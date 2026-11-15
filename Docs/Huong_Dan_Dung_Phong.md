@@ -42,11 +42,11 @@ Trong phòng có lối tắt một chiều (R2-07 → R1-01) vẫn khai báo c�
 
 ## 4. Quy tắc bắt buộc
 
-- **Phòng tối thiểu bằng 1 màn hình: 40 × 22,5 ô** (ortho size 11,25). Phòng nhỏ hơn thì camera không bám được theo biên. Phòng hẹp chiều ngang nhưng cao (giếng) vẫn phải rộng ≥ 40 ô cho phần CameraBounds.
+- **Phòng tối thiểu bằng 1 màn hình: 20 × 11,25 ô** (ortho size 5,625 với PPU 32, màn hình tham chiếu 640×360). Phòng nhỏ hơn thì camera không bám được theo biên. Phòng hẹp chiều ngang nhưng cao (giếng) vẫn phải rộng ≥ 20 ô cho phần CameraBounds.
 - **Spawn Point đặt ngoài vùng trigger của cửa**, cách mép 1–2 ô, có đất để đứng, nếu không nhân vật sẽ bị chuyển ngược lại.
 - **Cửa ngang:** trigger dày 1 ô đặt sát mép phòng, cao bằng khe đi qua (thường 4 ô).
 - **Cửa dọc, đi xuống (rơi vào lỗ):** trigger nằm dưới lỗ sàn. Spawn phía phòng dưới đặt ngay dưới miệng lỗ, nhân vật rơi tiếp xuống.
-- **Cửa dọc, đi lên:** spawn phía phòng trên đặt **trên gờ cạnh lỗ**, không đặt ngay trên lỗ (sẽ rơi ngược lại → kẹt vòng lặp, vi phạm NFR-06). Phía phòng dưới phải có bậc để nhảy tới miệng lỗ (khoảng cách bậc theo quy tắc nhảy ở SRS mục 5).
+- **Cửa dọc, đi lên:** spawn phía phòng trên đặt **trên gờ cạnh lỗ**, có nền đất vững để đứng, không dựa vào lực đẩy ngang và không đặt ngay trên lỗ (sẽ rơi ngược lại → kẹt vòng lặp, vi phạm NFR-06). Phía phòng dưới phải có bậc để nhảy tới miệng lỗ (khoảng cách bậc theo quy tắc nhảy ở SRS mục 5).
 - Tên scene và Door Id phân biệt hoa thường.
 
 ## 5. Kiểm tra trước khi tạo PR
@@ -62,7 +62,8 @@ Chạy menu **Woodcutter > Build Room Transition Sandbox** để dựng lại 3 
 - `Sandbox_RoomA` ↔ `Sandbox_RoomB`: cửa ngang.
 - `Sandbox_RoomB` ↔ `Sandbox_RoomC`: lỗ sàn rơi xuống giếng, nhảy bậc lên lại.
 
-## 7. Còn chờ nhóm chốt
+## 7. Ghi chú cấu hình và kế hoạch tiếp theo
 
-- Cỡ khung hình (ortho 11,25 = 22,5 ô chiều cao) chờ ARTE/LVL xác nhận theo style guide (T005).
-- Scene nền chính thức (Boot/Game) sẽ thay `Sandbox_RoomTransition` khi làm menu + lưu/tải (tuần 3). Khi đó đổi trường `Persistent Scene Name` trên prefab phòng mẫu.
+- **Quy ước hiển thị:** 1 ô = 1 unit = 32 px (2×2 tile 16 px). Ortho size 5,625 = 11,25 ô chiều cao, ngang 20 ô. Pixel Perfect Camera (URP 2D) thiết lập Assets PPU 32, Reference Resolution 640×360, Grid Snapping = Upscale Render Texture kết hợp CinemachinePixelPerfect trên CinemachineCamera.
+- **Scene nền tập trung:** Scene nền chính thức (Boot/Game) sẽ thay `Sandbox_RoomTransition` khi làm menu + lưu/tải (tuần 3). Khi đó chỉ cần cập nhật tại một nơi duy nhất (`RoomManager.DefaultPersistentSceneName` hoặc trong `CameraRoomSettingsSO`), toàn bộ các phòng tự động kế thừa.
+- **Build List:** Scene `SampleScene` được tắt trong EditorBuildSettings. Trước khi tạo bản build phát hành tuần 8, cần rà soát và bỏ các scene sandbox khỏi danh sách build.
