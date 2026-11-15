@@ -44,7 +44,8 @@ Nếu năng lực xanh không kịp tuần 6: viên xanh thành phần thưởng
 
 ## 5. Thông số khởi điểm (đặt trong ScriptableObject, chỉnh trong Inspector)
 
-1 ô = 16 px, nhân vật cao 2 ô, máu tính theo vạch.
+1 ô (đơn vị gameplay) = 1 unit = 32 px = 2×2 tile 16 px. Nhân vật cao ~1,8 ô (sprite 64×64, nhân vật ~57 px), máu tính theo vạch.
+Mọi hình (nhân vật, tileset, quái, VFX) nhập với **PPU 32**, Filter Point, không nén; tileset vẫn vẽ ô 16×16 px, Tilemap Grid Cell Size = 0,5.
 
 | Thông số | Giá trị |
 |---|---|
@@ -128,7 +129,7 @@ Dùng **Input System mới**.
 ## 10. Kỹ thuật và quy ước
 
 - **URP 2D:** hồi màu bằng Shader Graph (mask grayscale theo bán kính từ tâm, 2–3 s); hang tối dùng 2D Lights.
-- **Camera:** Cinemachine. Chuyển phòng ≤ 1 s.
+- **Camera:** Cinemachine. Chuyển phòng ≤ 1 s. Pixel Perfect Camera (Assets PPU 32, Reference 640×360, thấy ~20×11,25 ô) + extension CinemachinePixelPerfect. Phòng tối thiểu bằng 1 màn hình: 20×11,25 ô.
 - **Thông số gameplay:** luôn đọc từ ScriptableObject, không hardcode.
 - **Yêu cầu phi chức năng chính:** 60 FPS, input < 100 ms, RAM ≤ 1 GB, không softlock, không phụ thuộc màu để truyền thông tin.
 - **Git:** Git + Git LFS, `.gitignore` chuẩn Unity. Mỗi người làm trên scene/prefab riêng. Không commit thay đổi tự sinh trong `ProjectSettings/ProjectVersion.txt` hoặc `Packages/` do khác bản vá Unity.

@@ -242,7 +242,7 @@ Tác nhân duy nhất là Người chơi; hệ thống game phản hồi. 6 use 
 
 ## 5. Thông số tinh chỉnh gameplay
 
-Giá trị khởi điểm để prototype, sẽ chỉnh sau chơi thử. Đơn vị: 1 ô (tile) = 16 px, giả định nhân vật cao 2 ô; máu tính theo “vạch”.
+Giá trị khởi điểm để prototype, sẽ chỉnh sau chơi thử. Đơn vị: 1 ô = 32 px (= 2×2 tile 16 px; trong Unity 1 ô = 1 unit, mọi hình dùng PPU 32), nhân vật cao khoảng 2 ô (sprite 64×64, nhân vật ~57 px); máu tính theo “vạch”. Màn hình gốc 640×360 phóng ×2 lên 1280×720 (×3 lên 1920×1080), thấy khoảng 20×11,25 ô.
 
 ### 5.1 Nhân vật
 
