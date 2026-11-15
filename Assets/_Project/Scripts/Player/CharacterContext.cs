@@ -58,10 +58,13 @@ namespace Woodcutter.Player
             if (SpriteRenderer == null) SpriteRenderer = GetComponent<SpriteRenderer>();
             if (inputBroker == null) inputBroker = GetComponent<PlayerInputBroker>();
 
-            // Bắt lỗi nếu chưa gán ScriptableObject 
-            if (stats == null) Debug.LogError($"[CharacterContext] BẮT BUỘC gán PlayerStatsSO trên {gameObject.name}!");
-            if (combatStats == null) Debug.LogError($"[CharacterContext] BẮT BUỘC gán PlayerCombatStatsSO trên {gameObject.name}!");
-            if (abilitiesStats == null) Debug.LogError($"[CharacterContext] BẮT BUỘC gán AbilitiesStatsSO trên {gameObject.name}!");
+            // Chốt chặn an toàn: Dừng component nếu thiếu SO
+            if (stats == null || combatStats == null || abilitiesStats == null)
+            {
+                Debug.LogError($"[CharacterContext] Chưa gán đủ Stats SO trên {gameObject.name}!", this);
+                enabled = false;
+                return;
+            }
 
             // 1. Khởi tạo State Machine
             StateMachine = new StateMachine();

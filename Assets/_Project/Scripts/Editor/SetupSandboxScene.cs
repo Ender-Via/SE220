@@ -31,6 +31,10 @@ namespace Woodcutter.EditorTools
                 return;
             }
 
+            PlayerCombatStatsSO combatStats = EnsurePlayerCombatStatsAsset();
+
+            AbilitiesStatsSO abilitiesStats = EnsureAbilitiesStatsAsset();
+            
             // Layer IDs
             int playerLayer = LayerMask.NameToLayer("Player");
             if (playerLayer < 0) playerLayer = 6;
@@ -223,7 +227,6 @@ namespace Woodcutter.EditorTools
             stats.maxFallSpeed = 18f;
             stats.coyoteTime = 0.1f;
             stats.jumpBufferTime = 0.1f;
-            stats.attackDuration = 0.35f;
             stats.rollDistance = 4f;
             stats.rollDuration = 0.35f;
             stats.rollIframeDuration = 0.25f;
@@ -232,6 +235,58 @@ namespace Woodcutter.EditorTools
             AssetDatabase.CreateAsset(stats, path);
             AssetDatabase.SaveAssets();
             return stats;
+        }
+
+        private static PlayerCombatStatsSO EnsurePlayerCombatStatsAsset()
+        {
+            string path = "Assets/_Project/Data/PlayerCombatStats.asset";
+            var combatStats = AssetDatabase.LoadAssetAtPath<PlayerCombatStatsSO>(path);
+
+            if (combatStats == null)
+            {
+                combatStats = ScriptableObject.CreateInstance<PlayerCombatStatsSO>();
+
+                // Khai báo đầy đủ thông số Combat theo SRS 5.1 & 5.2
+                combatStats.attackDuration = 0.35f;
+                combatStats.combo1Damage = 1;
+                combatStats.combo2Damage = 1;
+                combatStats.comboWindow = 0.4f;
+                combatStats.hitboxSize = new Vector2(1.5f, 1.5f);
+                combatStats.heavyChargeTime = 0.6f;
+                combatStats.heavyDamage = 3;
+                combatStats.normalHitStop = 0.05f;
+                combatStats.heavyHitStop = 0.1f;
+
+                AssetDatabase.CreateAsset(combatStats, path);
+                AssetDatabase.SaveAssets();
+            }
+
+            return combatStats;
+        }
+
+        private static AbilitiesStatsSO EnsureAbilitiesStatsAsset()
+        {
+            string path = "Assets/_Project/Data/AbilitiesStats.asset";
+            var abilitiesStats = AssetDatabase.LoadAssetAtPath<AbilitiesStatsSO>(path);
+
+            if (abilitiesStats == null)
+            {
+                abilitiesStats = ScriptableObject.CreateInstance<AbilitiesStatsSO>();
+
+                // Khai báo đầy đủ thông số 3 viên đá theo SRS 5.2
+                abilitiesStats.fireAxeDamage = 2;
+                abilitiesStats.fireAxeCooldown = 1.5f;
+                abilitiesStats.iceEnemyDamageMultiplier = 2.0f;
+                abilitiesStats.dashDistance = 5f;
+                abilitiesStats.dashDuration = 0.2f;
+                abilitiesStats.seedGrowDuration = 0.5f;
+                abilitiesStats.platformHeight = 3f;
+
+                AssetDatabase.CreateAsset(abilitiesStats, path);
+                AssetDatabase.SaveAssets();
+            }
+
+            return abilitiesStats;
         }
 
         private static PhysicsMaterial2D EnsurePlayerPhysicsMaterial()

@@ -19,7 +19,7 @@ namespace Woodcutter.Player.States
 
         public override void Enter()
         {
-            attackTimer = context.Stats.attackDuration;
+            attackTimer = context.CombatStats.attackDuration;
             context.SetVisualState("Attack", new Color(1f, 0.25f, 0.25f)); // Đỏ rực
 
             isAirAttack = !context.CheckGrounded();
