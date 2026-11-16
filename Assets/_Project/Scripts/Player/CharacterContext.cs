@@ -39,6 +39,9 @@ namespace Woodcutter.Player
         // Quản lý Jump Buffer (SRS FR-MOV-03: Bộ đệm lệnh nhảy 0.1s)
         public float JumpBufferTimer { get; private set; }
 
+        // Khóa can thiệp vận tốc ngang tạm thời (dùng khi qua cửa có Arrival Velocity)
+        private float horizontalControlOverrideTimer;
+
         // Cỗ máy FSM
         public StateMachine StateMachine { get; private set; }
 
@@ -118,6 +121,12 @@ namespace Woodcutter.Player
                 JumpBufferTimer -= Time.deltaTime;
             }
 
+            // Đếm ngược thời gian bỏ qua điều khiển ngang (sau khi chuyển phòng có Arrival Velocity)
+            if (horizontalControlOverrideTimer > 0f)
+            {
+                horizontalControlOverrideTimer -= Time.deltaTime;
+            }
+
             // Hồi lại lượt tấn công trên không khi chạm đất
             if (CheckGrounded())
             {
@@ -155,10 +164,28 @@ namespace Woodcutter.Player
         // ================================================================
         // TÍNH TOÁN VẬN TỐC THEO GIA TỐC & GIẢM TỐC (SRS 5.1)
         // ================================================================
+        /// <summary>
+        /// Tạm khóa can thiệp điều khiển ngang trong <paramref name="lockDuration"/> giây (ví dụ: khi vừa qua cửa có vận tốc đẩy ngang).
+        /// Vận tốc ngang hiện tại được giữ nguyên cho đến khi hết thời gian, ngăn FSM xóa mất vận tốc trong 0.06s.
+        /// </summary>
+        public void OverrideHorizontalVelocity(Vector2 velocity, float lockDuration)
+        {
+            if (Rigidbody != null)
+            {
+                Rigidbody.linearVelocity = velocity;
+            }
+            horizontalControlOverrideTimer = lockDuration;
+        }
+
         public float ComputeHorizontalVelocity(float inputX)
         {
+            if (horizontalControlOverrideTimer > 0f)
+            {
+                return Rigidbody != null ? Rigidbody.linearVelocityX : 0f;
+            }
+
             float targetSpeed = inputX * stats.maxRunSpeed;
-            float currentSpeed = Rigidbody.linearVelocityX;
+            float currentSpeed = Rigidbody != null ? Rigidbody.linearVelocityX : 0f;
 
             // Xác định xem đang tăng tốc theo hướng muốn đi hay đang giảm tốc / quay đầu
             bool isAccelerating = Mathf.Abs(targetSpeed) > 0.01f && 
