@@ -69,11 +69,7 @@ namespace Woodcutter.Player.States
 
         public override void HandleJumpPressed()
         {
-            // Bấm nhảy khi đang chém trên không -> Ghi nhận vào Jump Buffer
-            if (isAirAttack)
-            {
-                context.RegisterJumpBuffer();
-            }
+            context.RegisterJumpBuffer();
         }
 
         public override void Exit()

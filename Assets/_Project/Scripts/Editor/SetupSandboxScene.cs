@@ -158,6 +158,8 @@ namespace Woodcutter.EditorTools
             // Gán stats qua SerializedObject
             SerializedObject contextSo = new SerializedObject(context);
             contextSo.FindProperty("stats").objectReferenceValue = stats;
+            contextSo.FindProperty("combatStats").objectReferenceValue = combatStats;
+            contextSo.FindProperty("abilitiesStats").objectReferenceValue = abilitiesStats;
             contextSo.FindProperty("inputBroker").objectReferenceValue = inputBroker;
             contextSo.ApplyModifiedProperties();
 
