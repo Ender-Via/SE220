@@ -18,6 +18,8 @@ namespace Woodcutter.Player
         public Animator Animator;
         [SerializeField] private PlayerInputBroker inputBroker;
         [SerializeField] private PlayerStatsSO stats;
+        [SerializeField] private PlayerCombatStatsSO combatStats;
+        [SerializeField] private AbilitiesStatsSO abilitiesStats;
 
         [Header("Ground Detection")]
         public Transform GroundCheckPoint;
@@ -26,6 +28,8 @@ namespace Woodcutter.Player
 
         // Dữ liệu thời gian thực
         public PlayerStatsSO Stats => stats;
+        public PlayerCombatStatsSO CombatStats => combatStats;
+        public AbilitiesStatsSO AbilitiesStats => abilitiesStats;
         public Vector2 CurrentInputVector { get; private set; }
         public bool IsFacingRight { get; private set; } = true;
 
@@ -54,10 +58,12 @@ namespace Woodcutter.Player
             if (SpriteRenderer == null) SpriteRenderer = GetComponent<SpriteRenderer>();
             if (inputBroker == null) inputBroker = GetComponent<PlayerInputBroker>();
 
-            // Fallback an toàn nếu chưa gán ScriptableObject trong Inspector
-            if (stats == null)
+            // Chốt chặn an toàn: Dừng component nếu thiếu SO
+            if (stats == null || combatStats == null || abilitiesStats == null)
             {
-                stats = ScriptableObject.CreateInstance<PlayerStatsSO>();
+                Debug.LogError($"[CharacterContext] Chưa gán đủ Stats SO trên {gameObject.name}!", this);
+                enabled = false;
+                return;
             }
 
             // 1. Khởi tạo State Machine
@@ -260,6 +266,23 @@ namespace Woodcutter.Player
             {
                 Gizmos.color = Application.isPlaying && CheckGrounded() ? Color.green : Color.red;
                 Gizmos.DrawWireCube(GroundCheckPoint.position, GroundCheckDimensions);
+            }
+        }
+
+        public void HandleLandingTransition()
+        {
+            if (HasBufferedJump())
+            {
+                ConsumeJumpBuffer();
+                StateMachine.ChangeState(JumpState);
+            }
+            else if (Mathf.Abs(CurrentInputVector.x) > 0.05f)
+            {
+                StateMachine.ChangeState(MoveState);
+            }
+            else
+            {
+                StateMachine.ChangeState(IdleState);
             }
         }
     }
