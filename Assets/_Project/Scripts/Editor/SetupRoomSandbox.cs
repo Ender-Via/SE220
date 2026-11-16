@@ -24,7 +24,7 @@ namespace Woodcutter.EditorTools
     public static class SetupRoomSandbox
     {
         private const string SandboxFolder = "Assets/_Project/Scenes/Sandbox";
-        private const string PersistentSceneName = "Sandbox_RoomTransition";
+        private const string PersistentSceneName = RoomManager.DefaultPersistentSceneName;
         private const string RoomA = "Sandbox_RoomA";
         private const string RoomB = "Sandbox_RoomB";
         private const string RoomC = "Sandbox_RoomC";
@@ -128,6 +128,10 @@ namespace Woodcutter.EditorTools
             vcamGo.transform.position = new Vector3(0f, 0f, -10f);
             var vcam = vcamGo.AddComponent<CinemachineCamera>();
             vcam.Follow = player.transform;
+            // Đặt sẵn ortho size theo SO để xem trong Editor khớp lúc Play (RoomCamera.ApplySettings vẫn ghi đè khi chạy)
+            var lens = vcam.Lens;
+            lens.OrthographicSize = settings.orthographicSize;
+            vcam.Lens = lens;
             var composer = vcamGo.AddComponent<CinemachinePositionComposer>();
             composer.CameraDistance = 10f;
             var confiner = vcamGo.AddComponent<CinemachineConfiner2D>();

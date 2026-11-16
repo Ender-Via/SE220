@@ -24,10 +24,6 @@ namespace Woodcutter.Data
         [Tooltip("Độ phân giải tham chiếu gốc (SRS mục 5: 640×360 phóng x2 lên 720p, x3 lên 1080p).")]
         public Vector2Int referenceResolution = new Vector2Int(640, 360);
 
-        [Header("Scene nền")]
-        [Tooltip("Tên scene nền mặc định chứa Player + camera + RoomManager.")]
-        public string persistentSceneName = "Sandbox_RoomTransition";
-
         [Header("Camera - bám theo")]
         [Tooltip("Độ trễ bám theo trục X/Y (giây). 0 = bám cứng.")]
         public Vector2 followDamping = new Vector2(0.3f, 0.5f);

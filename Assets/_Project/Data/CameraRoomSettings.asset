@@ -16,7 +16,6 @@ MonoBehaviour:
   screenPosition: {x: 0, y: -0.1}
   assetsPPU: 32
   referenceResolution: {x: 640, y: 360}
-  persistentSceneName: Sandbox_RoomTransition
   followDamping: {x: 0.3, y: 0.5}
   deadZoneSize: {x: 0.05, y: 0.15}
   lookaheadTime: 0.25

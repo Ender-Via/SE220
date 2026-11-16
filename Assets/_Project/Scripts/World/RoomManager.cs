@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -202,11 +203,17 @@ namespace Woodcutter.World
             if (fader != null)
                 yield return fader.FadeTo(1f, settings.fadeOutDuration);
 
-            // 2. Nạp phòng mới TRƯỚC khi gỡ phòng cũ để kiểm tra an toàn (tránh softlock nếu thiếu component Room)
+            // 2. Nạp phòng mới TRƯỚC khi gỡ phòng cũ để kiểm tra an toàn (tránh softlock nếu thiếu component Room).
+            // Nạp lại chính phòng đang đứng (hồi sinh ở checkpoint cùng phòng FR-CMB-06, tải game) sẽ có 2 scene trùng tên,
+            // nên phải lấy đúng bản vừa nạp, không dùng GetSceneByName (trả về bản cũ).
+            var scenesBefore = new HashSet<Scene>();
+            for (int i = 0; i < SceneManager.sceneCount; i++)
+                scenesBefore.Add(SceneManager.GetSceneAt(i));
+
             AsyncOperation load = SceneManager.LoadSceneAsync(roomId, LoadSceneMode.Additive);
             yield return load;
 
-            Scene scene = SceneManager.GetSceneByName(roomId);
+            Scene scene = FindNewlyLoadedScene(roomId, scenesBefore);
             Room newRoom = scene.IsValid() ? Room.FindInScene(scene) : null;
             Application.backgroundLoadingPriority = previousPriority;
 
@@ -261,6 +268,18 @@ namespace Woodcutter.World
                 Debug.LogWarning($"[RoomManager] Chuyển {fromRoom} -> {roomId} mất {seconds:0.000}s, vượt ngưỡng {settings.transitionWarningThreshold}s (FR-LVL-01).", this);
             else
                 Debug.Log($"[RoomManager] Chuyển {fromRoom} -> {roomId} ({doorId}) mất {seconds:0.000}s.", this);
+        }
+
+        /// <summary>Tìm scene tên <paramref name="roomId"/> vừa được nạp (không có trong <paramref name="scenesBefore"/>).</summary>
+        private static Scene FindNewlyLoadedScene(string roomId, HashSet<Scene> scenesBefore)
+        {
+            for (int i = SceneManager.sceneCount - 1; i >= 0; i--)
+            {
+                Scene s = SceneManager.GetSceneAt(i);
+                if (s.name == roomId && !scenesBefore.Contains(s))
+                    return s;
+            }
+            return default;
         }
 
         private void EnterRoom(Room room, string doorId)
