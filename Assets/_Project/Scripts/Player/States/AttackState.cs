@@ -14,12 +14,30 @@ namespace Woodcutter.Player.States
     {
         private float attackTimer;
         private bool isAirAttack;
+        private float comboWindowTimer;
+        private float chargeTimer;
+
+        // Trạng thái đòn đánh
+        private int currentComboStep; // 1 hoặc 2
+        private bool isCharging;
+        private bool hasFiredHeavyAttack;
+        private bool nextComboBuffered;
 
         public AttackState(CharacterContext context, StateMachine stateMachine) : base(context, stateMachine) { }
 
         public override void Enter()
         {
+            // Khởi tạo mặc định là Combo 1
+            currentComboStep = 1;
+            nextComboBuffered = false;
+            isCharging = true; // Bắt đầu sạc đòn nặng
+            hasFiredHeavyAttack = false;
+            chargeTimer = 0f;
+
+            // Setup thời gian cho đòn thường (sẽ bị ghi đè nếu tung đòn nặng)
             attackTimer = context.CombatStats.attackDuration;
+            comboWindowTimer = context.CombatStats.comboWindow;
+                
             context.SetVisualState("Attack", new Color(1f, 0.25f, 0.25f)); // Đỏ rực
 
             isAirAttack = !context.CheckGrounded();
@@ -29,6 +47,7 @@ namespace Woodcutter.Player.States
                 // Khóa trọng lực và đứng im tuyệt đối trên không trung (không trôi, không recoil)
                 context.Rigidbody.gravityScale = 0f;
                 context.Rigidbody.linearVelocity = Vector2.zero;
+                isCharging = false; // Không cho sạc đòn nặng trên không
             }
             else
             {
@@ -39,21 +58,47 @@ namespace Woodcutter.Player.States
 
         public override void LogicUpdate()
         {
+            float dt = Time.deltaTime;
+
+            // Xử lý sạc đòn nặng (FR-CMB-02)
+            if (isCharging)
+            {
+                chargeTimer += dt;
+
+                // Hiệu ứng nhấp nháy báo hiệu đang sạc
+                float pulse = Mathf.PingPong(Time.time * 5f, 1f);
+                context.SetVisualState("Charging", Color.Lerp(Color.yellow, Color.red, pulse));
+
+                // Tự động tung đòn nặng nếu sạc đủ lâu
+                if (chargeTimer >= context.CombatStats.heavyChargeTime && !hasFiredHeavyAttack)
+                {
+                    FireHeavyAttack();
+                }
+
+                // Đang sạc thì không trừ thời gian đòn thường
+                return;
+            }
+
             attackTimer -= Time.deltaTime;
 
-            // Khi hết thời gian vung đòn -> Tự động quay về State thích hợp
+            // Đếm ngược cửa sổ combo (chỉ áp dụng sau khi tung đòn 1)
+            if (currentComboStep == 1 && !hasFiredHeavyAttack)
+            {
+                comboWindowTimer -= dt;
+            }
+
+            // Khi hết thời gian thi triển đòn
             if (attackTimer <= 0f)
             {
-                if (context.CheckGrounded())
+                // Nếu người chơi đã bấm tiếp phím đánh và vẫn trong cửa sổ combo
+                if (nextComboBuffered && currentComboStep == 1 && comboWindowTimer > 0f)
                 {
-                    // Chạm đất: Nếu có Jump Buffer trước đó thì thực thi nhảy ngay lập tức
-                    context.HandleLandingTransition();
+                    FireComboStep2();
                 }
                 else
                 {
-                    // Vẫn đang ở trên không -> Cho rơi tiếp sau khi chém xong
-                    context.FallState.SetCoyoteTime(false);
-                    stateMachine.ChangeState(context.FallState);
+                    // Kết thúc chuỗi đòn
+                    FinishAttackSequence();
                 }
             }
         }
@@ -72,6 +117,47 @@ namespace Woodcutter.Player.States
             context.RegisterJumpBuffer();
         }
 
+        private void FireComboStep2()
+        {
+            currentComboStep = 2;
+            nextComboBuffered = false;
+
+            // Cài đặt thời gian cho đòn 2
+            attackTimer = context.CombatStats.attackDuration;
+
+            context.SetVisualState("Attack2", new Color(1f, 0f, 0f)); // Đỏ đậm cho Combo 2
+
+            // TODO: Xử lý Hitbox và sát thương (context.CombatStats.combo2Damage)
+            Debug.Log("Tung đòn Combo 2!");
+        }
+
+        private void FireHeavyAttack()
+        {
+            isCharging = false;
+            hasFiredHeavyAttack = true;
+
+            // Tùy chỉnh thời gian thi triển đòn nặng (tạm dùng attackDuration gốc)
+            attackTimer = context.CombatStats.attackDuration * 1.5f;
+
+            context.SetVisualState("HeavyAttack", new Color(0.5f, 0f, 0.5f)); // Tím cho đòn nặng
+
+            // TODO: Xử lý Hitbox phá khiên và hất lùi (context.CombatStats.heavyDamage)
+            Debug.Log("Tung đòn Nặng (Phá khiên)!");
+        }
+
+        private void FinishAttackSequence()
+        {
+            if (context.CheckGrounded())
+            {
+                context.HandleLandingTransition();
+            }
+            else
+            {
+                context.FallState.SetCoyoteTime(false);
+                stateMachine.ChangeState(context.FallState);
+            }
+        }
+
         public override void Exit()
         {
             // Trả lại trọng lực rơi chuẩn khi kết thúc đòn tấn công trên không
@@ -79,6 +165,9 @@ namespace Woodcutter.Player.States
             {
                 context.Rigidbody.gravityScale = context.Stats.fallingGravity;
             }
+
+            // Đảm bảo cờ sạc đòn được tắt khi thoát state
+            isCharging = false;
         }
     }
 }
