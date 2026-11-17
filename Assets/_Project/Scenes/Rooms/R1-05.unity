@@ -2582,6 +2582,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 669027637026397910, guid: 030c1afebca42ca46a646df56152b8db, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.82
+      objectReference: {fileID: 0}
+    - target: {fileID: 669027637026397910, guid: 030c1afebca42ca46a646df56152b8db, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.38
+      objectReference: {fileID: 0}
     - target: {fileID: 1524850883888326151, guid: 030c1afebca42ca46a646df56152b8db, type: 3}
       propertyPath: m_Name
       value: PF_RoomTemplate
@@ -2681,6 +2689,14 @@ PrefabInstance:
     - target: {fileID: 8691305802515848695, guid: 030c1afebca42ca46a646df56152b8db, type: 3}
       propertyPath: targetRoomId
       value: R1-06
+      objectReference: {fileID: 0}
+    - target: {fileID: 8865003564541959930, guid: 030c1afebca42ca46a646df56152b8db, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 8865003564541959930, guid: 030c1afebca42ca46a646df56152b8db, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

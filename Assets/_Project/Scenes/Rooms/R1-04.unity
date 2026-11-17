@@ -172,6 +172,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 669027637026397910, guid: 030c1afebca42ca46a646df56152b8db, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.72
+      objectReference: {fileID: 0}
+    - target: {fileID: 669027637026397910, guid: 030c1afebca42ca46a646df56152b8db, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.95
+      objectReference: {fileID: 0}
     - target: {fileID: 1524850883888326151, guid: 030c1afebca42ca46a646df56152b8db, type: 3}
       propertyPath: m_Name
       value: PF_RoomTemplate
@@ -271,6 +279,14 @@ PrefabInstance:
     - target: {fileID: 8691305802515848695, guid: 030c1afebca42ca46a646df56152b8db, type: 3}
       propertyPath: targetRoomId
       value: R1-05
+      objectReference: {fileID: 0}
+    - target: {fileID: 8865003564541959930, guid: 030c1afebca42ca46a646df56152b8db, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.59
+      objectReference: {fileID: 0}
+    - target: {fileID: 8865003564541959930, guid: 030c1afebca42ca46a646df56152b8db, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.47
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3152,6 +3168,18 @@ PrefabInstance:
     - target: {fileID: 6185602178789167440, guid: b2bcbd6ed441dc145bbb6010a031bdbe, type: 3}
       propertyPath: m_Name
       value: PF_RoomDoor
+      objectReference: {fileID: 0}
+    - target: {fileID: 6371791750386541410, guid: b2bcbd6ed441dc145bbb6010a031bdbe, type: 3}
+      propertyPath: doorId
+      value: Down_Ice
+      objectReference: {fileID: 0}
+    - target: {fileID: 6371791750386541410, guid: b2bcbd6ed441dc145bbb6010a031bdbe, type: 3}
+      propertyPath: targetDoorId
+      value: Top
+      objectReference: {fileID: 0}
+    - target: {fileID: 6371791750386541410, guid: b2bcbd6ed441dc145bbb6010a031bdbe, type: 3}
+      propertyPath: targetRoomId
+      value: R2-01
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

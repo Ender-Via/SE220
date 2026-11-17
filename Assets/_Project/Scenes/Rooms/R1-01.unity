@@ -2564,6 +2564,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 669027637026397910, guid: 030c1afebca42ca46a646df56152b8db, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 669027637026397910, guid: 030c1afebca42ca46a646df56152b8db, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.02
+      objectReference: {fileID: 0}
     - target: {fileID: 1524850883888326151, guid: 030c1afebca42ca46a646df56152b8db, type: 3}
       propertyPath: m_Name
       value: PF_RoomTemplate
@@ -2578,7 +2586,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5428509042245804231, guid: 030c1afebca42ca46a646df56152b8db, type: 3}
       propertyPath: targetDoorId
-      value: Right
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6081586045812885937, guid: 030c1afebca42ca46a646df56152b8db, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2654,7 +2662,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8691305802515848695, guid: 030c1afebca42ca46a646df56152b8db, type: 3}
       propertyPath: targetDoorId
-      value: Lfte
+      value: Left
       objectReference: {fileID: 0}
     - target: {fileID: 8691305802515848695, guid: 030c1afebca42ca46a646df56152b8db, type: 3}
       propertyPath: targetRoomId
