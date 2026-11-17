@@ -19,7 +19,7 @@ namespace Woodcutter.Player.States
 
         public override void Enter()
         {
-            attackTimer = context.Stats.attackDuration;
+            attackTimer = context.CombatStats.attackDuration;
             context.SetVisualState("Attack", new Color(1f, 0.25f, 0.25f)); // Đỏ rực
 
             isAirAttack = !context.CheckGrounded();
@@ -47,19 +47,7 @@ namespace Woodcutter.Player.States
                 if (context.CheckGrounded())
                 {
                     // Chạm đất: Nếu có Jump Buffer trước đó thì thực thi nhảy ngay lập tức
-                    if (context.HasBufferedJump())
-                    {
-                        context.ConsumeJumpBuffer();
-                        stateMachine.ChangeState(context.JumpState);
-                    }
-                    else if (Mathf.Abs(context.CurrentInputVector.x) > 0.05f)
-                    {
-                        stateMachine.ChangeState(context.MoveState);
-                    }
-                    else
-                    {
-                        stateMachine.ChangeState(context.IdleState);
-                    }
+                    context.HandleLandingTransition();
                 }
                 else
                 {
@@ -81,11 +69,7 @@ namespace Woodcutter.Player.States
 
         public override void HandleJumpPressed()
         {
-            // Bấm nhảy khi đang chém trên không -> Ghi nhận vào Jump Buffer
-            if (isAirAttack)
-            {
-                context.RegisterJumpBuffer();
-            }
+            context.RegisterJumpBuffer();
         }
 
         public override void Exit()

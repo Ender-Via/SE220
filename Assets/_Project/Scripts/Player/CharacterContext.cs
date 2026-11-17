@@ -18,6 +18,8 @@ namespace Woodcutter.Player
         public Animator Animator;
         [SerializeField] private PlayerInputBroker inputBroker;
         [SerializeField] private PlayerStatsSO stats;
+        [SerializeField] private PlayerCombatStatsSO combatStats;
+        [SerializeField] private AbilitiesStatsSO abilitiesStats;
 
         [Header("Ground Detection")]
         public Transform GroundCheckPoint;
@@ -26,6 +28,8 @@ namespace Woodcutter.Player
 
         // Dữ liệu thời gian thực
         public PlayerStatsSO Stats => stats;
+        public PlayerCombatStatsSO CombatStats => combatStats;
+        public AbilitiesStatsSO AbilitiesStats => abilitiesStats;
         public Vector2 CurrentInputVector { get; private set; }
         public bool IsFacingRight { get; private set; } = true;
 
@@ -34,6 +38,9 @@ namespace Woodcutter.Player
 
         // Quản lý Jump Buffer (SRS FR-MOV-03: Bộ đệm lệnh nhảy 0.1s)
         public float JumpBufferTimer { get; private set; }
+
+        // Khóa can thiệp vận tốc ngang tạm thời (dùng khi qua cửa có Arrival Velocity)
+        private float horizontalControlOverrideTimer;
 
         // Cỗ máy FSM
         public StateMachine StateMachine { get; private set; }
@@ -54,10 +61,12 @@ namespace Woodcutter.Player
             if (SpriteRenderer == null) SpriteRenderer = GetComponent<SpriteRenderer>();
             if (inputBroker == null) inputBroker = GetComponent<PlayerInputBroker>();
 
-            // Fallback an toàn nếu chưa gán ScriptableObject trong Inspector
-            if (stats == null)
+            // Chốt chặn an toàn: Dừng component nếu thiếu SO
+            if (stats == null || combatStats == null || abilitiesStats == null)
             {
-                stats = ScriptableObject.CreateInstance<PlayerStatsSO>();
+                Debug.LogError($"[CharacterContext] Chưa gán đủ Stats SO trên {gameObject.name}!", this);
+                enabled = false;
+                return;
             }
 
             // 1. Khởi tạo State Machine
@@ -112,6 +121,12 @@ namespace Woodcutter.Player
                 JumpBufferTimer -= Time.deltaTime;
             }
 
+            // Đếm ngược thời gian bỏ qua điều khiển ngang (sau khi chuyển phòng có Arrival Velocity)
+            if (horizontalControlOverrideTimer > 0f)
+            {
+                horizontalControlOverrideTimer -= Time.deltaTime;
+            }
+
             // Hồi lại lượt tấn công trên không khi chạm đất
             if (CheckGrounded())
             {
@@ -149,10 +164,28 @@ namespace Woodcutter.Player
         // ================================================================
         // TÍNH TOÁN VẬN TỐC THEO GIA TỐC & GIẢM TỐC (SRS 5.1)
         // ================================================================
+        /// <summary>
+        /// Tạm khóa can thiệp điều khiển ngang trong <paramref name="lockDuration"/> giây (ví dụ: khi vừa qua cửa có vận tốc đẩy ngang).
+        /// Vận tốc ngang hiện tại được giữ nguyên cho đến khi hết thời gian, ngăn FSM xóa mất vận tốc trong 0.06s.
+        /// </summary>
+        public void OverrideHorizontalVelocity(Vector2 velocity, float lockDuration)
+        {
+            if (Rigidbody != null)
+            {
+                Rigidbody.linearVelocity = velocity;
+            }
+            horizontalControlOverrideTimer = lockDuration;
+        }
+
         public float ComputeHorizontalVelocity(float inputX)
         {
+            if (horizontalControlOverrideTimer > 0f)
+            {
+                return Rigidbody != null ? Rigidbody.linearVelocityX : 0f;
+            }
+
             float targetSpeed = inputX * stats.maxRunSpeed;
-            float currentSpeed = Rigidbody.linearVelocityX;
+            float currentSpeed = Rigidbody != null ? Rigidbody.linearVelocityX : 0f;
 
             // Xác định xem đang tăng tốc theo hướng muốn đi hay đang giảm tốc / quay đầu
             bool isAccelerating = Mathf.Abs(targetSpeed) > 0.01f && 
@@ -260,6 +293,23 @@ namespace Woodcutter.Player
             {
                 Gizmos.color = Application.isPlaying && CheckGrounded() ? Color.green : Color.red;
                 Gizmos.DrawWireCube(GroundCheckPoint.position, GroundCheckDimensions);
+            }
+        }
+
+        public void HandleLandingTransition()
+        {
+            if (HasBufferedJump())
+            {
+                ConsumeJumpBuffer();
+                StateMachine.ChangeState(JumpState);
+            }
+            else if (Mathf.Abs(CurrentInputVector.x) > 0.05f)
+            {
+                StateMachine.ChangeState(MoveState);
+            }
+            else
+            {
+                StateMachine.ChangeState(IdleState);
             }
         }
     }
