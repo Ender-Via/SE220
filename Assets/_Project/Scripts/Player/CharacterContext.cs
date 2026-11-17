@@ -3,6 +3,11 @@ using Woodcutter.Core;
 using Woodcutter.Data;
 using Woodcutter.Player.States;
 
+using System.Collections;
+#if UNITY_EDITOR || !UNITY_EDITOR 
+using Unity.Cinemachine;
+#endif
+
 namespace Woodcutter.Player
 {
     /// <summary>
@@ -25,6 +30,14 @@ namespace Woodcutter.Player
         public Transform GroundCheckPoint;
         public Vector2 GroundCheckDimensions = new Vector2(0.8f, 0.15f);
         public LayerMask GroundLayerMask;
+
+        [Header("Game Feel (FR-CMB-04)")]
+        [Tooltip("Component tạo lực rung cho Cinemachine")]
+        public CinemachineImpulseSource ImpulseSource;
+
+        [Tooltip("Material màu trắng tinh để nháy nháy")]
+        public Material WhiteFlashMaterial;
+        private Material originalMaterial;
 
         // Dữ liệu thời gian thực
         public PlayerStatsSO Stats => stats;
@@ -61,6 +74,12 @@ namespace Woodcutter.Player
             if (Rigidbody == null) Rigidbody = GetComponent<Rigidbody2D>();
             if (SpriteRenderer == null) SpriteRenderer = GetComponent<SpriteRenderer>();
             if (inputBroker == null) inputBroker = GetComponent<PlayerInputBroker>();
+
+            if (SpriteRenderer != null)
+                originalMaterial = SpriteRenderer.material;
+
+            if (ImpulseSource == null)
+                ImpulseSource = GetComponent<CinemachineImpulseSource>();
 
             // Chốt chặn an toàn: Dừng component nếu thiếu SO
             if (stats == null || combatStats == null || abilitiesStats == null)
@@ -100,8 +119,14 @@ namespace Woodcutter.Player
                 inputBroker.OnJumpPressed += ForwardJumpPressedToCurrentState;
                 inputBroker.OnJumpReleased += ForwardJumpReleasedToCurrentState;
                 inputBroker.OnAttackPressed += ForwardAttackPressedToCurrentState;
+                inputBroker.OnAttackReleased += ForwardAttackReleasedToCurrentState;
                 inputBroker.OnDodgePressed += ForwardRollPressedToCurrentState;
             }
+        }
+
+        private void InputBroker_OnAttackReleased()
+        {
+            throw new System.NotImplementedException();
         }
 
         private void OnDisable()
@@ -113,6 +138,7 @@ namespace Woodcutter.Player
                 inputBroker.OnJumpPressed -= ForwardJumpPressedToCurrentState;
                 inputBroker.OnJumpReleased -= ForwardJumpReleasedToCurrentState;
                 inputBroker.OnAttackPressed -= ForwardAttackPressedToCurrentState;
+                inputBroker.OnAttackReleased -= ForwardAttackReleasedToCurrentState;
             }
         }
 
@@ -226,6 +252,12 @@ namespace Woodcutter.Player
         {
             if (StateMachine.CurrentState is CharacterBaseState baseState)
                 baseState.HandleAttackPressed();
+        }
+
+        private void ForwardAttackReleasedToCurrentState()
+        {
+            if (StateMachine.CurrentState is CharacterBaseState baseState)
+                baseState.HandleAttackReleased();
         }
 
         private void ForwardRollPressedToCurrentState()
@@ -367,6 +399,49 @@ namespace Woodcutter.Player
             }
 
             Debug.Log("[CharacterContext] Tắt I-frame.");
+        }
+
+        // ================================================================
+        // GAME FEEL & PHẢN HỒI CHIẾN ĐẤU (FR-CMB-04)
+        // ================================================================
+        public void ApplyHitFeedback(float hitStopDuration, float shakeIntensity = 1f)
+        {
+            // 1. Dừng đọng thời gian (Hit-stop)
+            if (hitStopDuration > 0f)
+            {
+                StartCoroutine(HitStopRoutine(hitStopDuration));
+            }
+
+            // 2. Rung màn hình (Camera Shake)
+            if (ImpulseSource != null)
+            {
+                ImpulseSource.GenerateImpulseWithForce(shakeIntensity);
+            }
+
+            // 3. Nháy trắng nhân vật (White Flash)
+            StartCoroutine(FlashRoutine(0.1f)); // Nháy trong 0.1 giây
+        }
+
+        private IEnumerator HitStopRoutine(float duration)
+        {
+            // Đưa tốc độ game về gần bằng 0 (không dùng 0 tuyệt đối để tránh một số lỗi vật lý)
+            Time.timeScale = 0.01f;
+
+            // BẮT BUỘC dùng WaitForSecondsRealtime vì Time.timeScale đang bị dừng
+            yield return new WaitForSecondsRealtime(duration);
+
+            // Trả lại tốc độ bình thường
+            Time.timeScale = 1f;
+        }
+
+        private IEnumerator FlashRoutine(float duration)
+        {
+            if (SpriteRenderer != null && WhiteFlashMaterial != null)
+            {
+                SpriteRenderer.material = WhiteFlashMaterial;
+                yield return new WaitForSecondsRealtime(duration);
+                SpriteRenderer.material = originalMaterial;
+            }
         }
     }
 }

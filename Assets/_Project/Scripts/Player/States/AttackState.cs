@@ -81,12 +81,6 @@ namespace Woodcutter.Player.States
 
             attackTimer -= Time.deltaTime;
 
-            // Đếm ngược cửa sổ combo (chỉ áp dụng sau khi tung đòn 1)
-            if (currentComboStep == 1 && !hasFiredHeavyAttack)
-            {
-                comboWindowTimer -= dt;
-            }
-
             // Khi hết thời gian thi triển đòn
             if (attackTimer <= 0f)
             {
@@ -115,6 +109,16 @@ namespace Woodcutter.Player.States
         public override void HandleJumpPressed()
         {
             context.RegisterJumpBuffer();
+        }
+
+        public override void HandleAttackPressed()
+        {
+            // Cho phép buffer Combo 2 nếu đang chém nhịp 1
+            if (!isCharging && !hasFiredHeavyAttack && currentComboStep == 1)
+            {
+                nextComboBuffered = true;
+                Debug.Log("-> Đã nhận lệnh bấm bồi (Buffer) cho Combo 2!");
+            }
         }
 
         private void FireComboStep2()
@@ -155,6 +159,26 @@ namespace Woodcutter.Player.States
             {
                 context.FallState.SetCoyoteTime(false);
                 stateMachine.ChangeState(context.FallState);
+            }
+        }
+
+        // Người chơi thả nút chém
+        public override void HandleAttackReleased()
+        {
+            if (isCharging && !hasFiredHeavyAttack)
+            {
+                isCharging = false;
+
+                // Nếu nhả phím sớm trước khi sạc đủ -> Tung Combo 1 bình thường
+                if (chargeTimer < context.CombatStats.heavyChargeTime)
+                {
+                    context.SetVisualState("Attack1", new Color(1f, 0.5f, 0.5f));
+                    // Cấp lại thời gian đánh vì lúc nãy bị đóng băng bởi isCharging
+                    attackTimer = context.CombatStats.attackDuration;
+
+                    // TODO: Xử lý Hitbox và sát thương (context.CombatStats.combo1Damage)
+                    Debug.Log("Tung đòn Combo 1!");
+                }
             }
         }
 
