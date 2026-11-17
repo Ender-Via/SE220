@@ -53,5 +53,13 @@ namespace Woodcutter.Player.States
         {
             stateMachine.ChangeState(context.AttackState);
         }
+
+        public override void HandleDodgePressed()
+        {
+            if (context.CanRoll())
+            {
+                stateMachine.ChangeState(context.RollState);
+            }
+        }
     }
 }

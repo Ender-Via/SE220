@@ -51,6 +51,7 @@ namespace Woodcutter.Player
         public JumpState JumpState { get; private set; }
         public FallState FallState { get; private set; }
         public AttackState AttackState { get; private set; }
+        public RollState RollState { get; private set; }
 
         // Buffer kiểm tra va chạm mặt đất (Không sinh rác bộ nhớ)
         private readonly Collider2D[] groundHitBuffer = new Collider2D[8];
@@ -78,6 +79,7 @@ namespace Woodcutter.Player
             JumpState = new JumpState(this, StateMachine);
             FallState = new FallState(this, StateMachine);
             AttackState = new AttackState(this, StateMachine);
+            RollState = new RollState(this, StateMachine);
         }
 
         private void Start()
@@ -98,6 +100,7 @@ namespace Woodcutter.Player
                 inputBroker.OnJumpPressed += ForwardJumpPressedToCurrentState;
                 inputBroker.OnJumpReleased += ForwardJumpReleasedToCurrentState;
                 inputBroker.OnAttackPressed += ForwardAttackPressedToCurrentState;
+                inputBroker.OnDodgePressed += ForwardRollPressedToCurrentState;
             }
         }
 
@@ -225,6 +228,12 @@ namespace Woodcutter.Player
                 baseState.HandleAttackPressed();
         }
 
+        private void ForwardRollPressedToCurrentState()
+        {
+            if (StateMachine.CurrentState is CharacterBaseState baseState)
+                baseState.HandleDodgePressed(); 
+        }
+
         // ================================================================
         // CÁC HÀM TIỆN ÍCH DÙNG CHUNG (SHARED UTILITIES)
         // ================================================================
@@ -311,6 +320,53 @@ namespace Woodcutter.Player
             {
                 StateMachine.ChangeState(IdleState);
             }
+        }
+
+        // ================================================================
+        // QUẢN LÝ KỸ NĂNG: LĂN / NÉ (ROLL) VÀ I-FRAME
+        // ================================================================
+        private float lastRollTime = -100f;
+
+        public bool CanRoll()
+        {
+            return Time.time >= lastRollTime + Stats.rollCooldown;
+        }
+
+        public void MarkRollUsed()
+        {
+            lastRollTime = Time.time;
+        }
+
+        // --- MỚI THÊM: Hàm xử lý I-frame an toàn ---
+        public void EnableIFrames()
+        {
+            // Chuyển Layer vật lý của nhân vật sang layer không bị sát thương (Ví dụ: "PlayerIFrame")
+            // Hoặc đơn giản là tắt Collider nhận sát thương
+
+            // Giả lập trực quan: Làm mờ nhân vật một chút để nhận biết đang có I-frame
+            if (SpriteRenderer != null)
+            {
+                Color c = SpriteRenderer.color;
+                c.a = 0.5f; // Giảm Alpha xuống 50%
+                SpriteRenderer.color = c;
+            }
+
+            Debug.Log("[CharacterContext] Bật I-frame vô địch.");
+        }
+
+        public void DisableIFrames()
+        {
+            // Trả Layer vật lý về bình thường (Ví dụ: "Player")
+
+            // Phục hồi độ mờ
+            if (SpriteRenderer != null)
+            {
+                Color c = SpriteRenderer.color;
+                c.a = 1f; // Phục hồi Alpha 100%
+                SpriteRenderer.color = c;
+            }
+
+            Debug.Log("[CharacterContext] Tắt I-frame.");
         }
     }
 }
