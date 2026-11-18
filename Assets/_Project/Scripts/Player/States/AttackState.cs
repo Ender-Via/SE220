@@ -37,22 +37,23 @@ namespace Woodcutter.Player.States
             // Setup thời gian cho đòn thường (sẽ bị ghi đè nếu tung đòn nặng)
             attackTimer = context.CombatStats.attackDuration;
             comboWindowTimer = context.CombatStats.comboWindow;
-                
-            context.SetVisualState("Attack", new Color(1f, 0.25f, 0.25f)); // Đỏ rực
 
             isAirAttack = !context.CheckGrounded();
-
             if (isAirAttack)
             {
-                // Khóa trọng lực và đứng im tuyệt đối trên không trung (không trôi, không recoil)
                 context.Rigidbody.gravityScale = 0f;
                 context.Rigidbody.linearVelocity = Vector2.zero;
-                isCharging = false; // Không cho sạc đòn nặng trên không
+                isCharging = false;
+
+                // Đánh trên không không sạc được -> Phát luôn dáng Combo 1
+                context.SetVisualState("Attack", Color.white);
             }
             else
             {
-                // Trên mặt đất: dừng vận tốc ngang
-                context.Rigidbody.linearVelocity = new Vector2(0f, context.Rigidbody.linearVelocityY);
+                context.Rigidbody.linearVelocity = new Vector2(0f, context.Rigidbody.linearVelocity.y);
+
+                // Mặc định dưới đất luôn bắt đầu bằng frame lấy đà của đòn nặng
+                context.SetVisualState("HeavyAttack", Color.white);
             }
         }
 
@@ -64,10 +65,6 @@ namespace Woodcutter.Player.States
             if (isCharging)
             {
                 chargeTimer += dt;
-
-                // Hiệu ứng nhấp nháy báo hiệu đang sạc
-                float pulse = Mathf.PingPong(Time.time * 5f, 1f);
-                context.SetVisualState("Charging", Color.Lerp(Color.yellow, Color.red, pulse));
 
                 // Tự động tung đòn nặng nếu sạc đủ lâu
                 if (chargeTimer >= context.CombatStats.heavyChargeTime && !hasFiredHeavyAttack)
@@ -85,14 +82,14 @@ namespace Woodcutter.Player.States
             if (attackTimer <= 0f)
             {
                 // Nếu người chơi đã bấm tiếp phím đánh và vẫn trong cửa sổ combo
-                if (nextComboBuffered && currentComboStep == 1 && comboWindowTimer > 0f)
+                if (currentComboStep == 1 && attackTimer <= 0f)
                 {
-                    FireComboStep2();
-                }
-                else
-                {
-                    // Kết thúc chuỗi đòn
-                    FinishAttackSequence();
+                    if (nextComboBuffered) { FireComboStep2(); return; }
+
+                    // Giữ state thêm comboWindow để chờ bấm nhịp 2
+                    comboWindowTimer -= Time.deltaTime;
+                    if (comboWindowTimer <= 0f) FinishAttackSequence();
+                    return;
                 }
             }
         }
@@ -172,7 +169,7 @@ namespace Woodcutter.Player.States
                 // Nếu nhả phím sớm trước khi sạc đủ -> Tung Combo 1 bình thường
                 if (chargeTimer < context.CombatStats.heavyChargeTime)
                 {
-                    context.SetVisualState("Attack1", new Color(1f, 0.5f, 0.5f));
+                    context.SetVisualState("Attack", new Color(1f, 0.5f, 0.5f));
                     // Cấp lại thời gian đánh vì lúc nãy bị đóng băng bởi isCharging
                     attackTimer = context.CombatStats.attackDuration;
 

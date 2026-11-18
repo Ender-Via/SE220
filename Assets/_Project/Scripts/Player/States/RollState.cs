@@ -19,6 +19,8 @@ namespace Woodcutter.Player.States
             iFrameTimer = context.Stats.rollIframeDuration;
             hasDisabledIFrames = false;
 
+            context.SetVisualState("Roll", Color.white);
+
             // Ghi nhận cooldown và bật I-frame
             context.MarkRollUsed();
             context.EnableIFrames();

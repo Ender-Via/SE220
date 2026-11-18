@@ -16,14 +16,14 @@ namespace Woodcutter.Data
         public float comboWindow = 0.4f;
 
         [Tooltip("Thời gian khóa hành động của đòn chém thường (s)")]
-        public float attackDuration = 0.35f;
+        public float attackDuration = 0.7f;
 
         [Tooltip("Kích thước Hitbox chém (ngang x dọc)")]
         public Vector2 hitboxSize = new Vector2(1.5f, 1.5f);
 
         [Header("Heavy Attack (SRS 5.2)")]
         [Tooltip("Thời gian nạp đòn nặng (giây)")]
-        public float heavyChargeTime = 0.6f;
+        public float heavyChargeTime = 0.5f;
 
         [Tooltip("Sát thương đòn nặng (phá khiên)")]
         public int heavyDamage = 3;

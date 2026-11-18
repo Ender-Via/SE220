@@ -3,10 +3,8 @@ using Woodcutter.Core;
 using Woodcutter.Data;
 using Woodcutter.Player.States;
 
-using System.Collections;
-#if UNITY_EDITOR || !UNITY_EDITOR 
+using System.Collections; 
 using Unity.Cinemachine;
-#endif
 
 namespace Woodcutter.Player
 {
@@ -34,10 +32,6 @@ namespace Woodcutter.Player
         [Header("Game Feel (FR-CMB-04)")]
         [Tooltip("Component tạo lực rung cho Cinemachine")]
         public CinemachineImpulseSource ImpulseSource;
-
-        [Tooltip("Material màu trắng tinh để nháy nháy")]
-        public Material WhiteFlashMaterial;
-        private Material originalMaterial;
 
         // Dữ liệu thời gian thực
         public PlayerStatsSO Stats => stats;
@@ -74,9 +68,6 @@ namespace Woodcutter.Player
             if (Rigidbody == null) Rigidbody = GetComponent<Rigidbody2D>();
             if (SpriteRenderer == null) SpriteRenderer = GetComponent<SpriteRenderer>();
             if (inputBroker == null) inputBroker = GetComponent<PlayerInputBroker>();
-
-            if (SpriteRenderer != null)
-                originalMaterial = SpriteRenderer.material;
 
             if (ImpulseSource == null)
                 ImpulseSource = GetComponent<CinemachineImpulseSource>();
@@ -124,11 +115,6 @@ namespace Woodcutter.Player
             }
         }
 
-        private void InputBroker_OnAttackReleased()
-        {
-            throw new System.NotImplementedException();
-        }
-
         private void OnDisable()
         {
             // 4. HỦY ĐĂNG KÝ: Bảo vệ bộ nhớ, chống rò rỉ (Zero dangling references)
@@ -139,6 +125,7 @@ namespace Woodcutter.Player
                 inputBroker.OnJumpReleased -= ForwardJumpReleasedToCurrentState;
                 inputBroker.OnAttackPressed -= ForwardAttackPressedToCurrentState;
                 inputBroker.OnAttackReleased -= ForwardAttackReleasedToCurrentState;
+                inputBroker.OnDodgePressed -= ForwardRollPressedToCurrentState;
             }
         }
 
@@ -370,36 +357,9 @@ namespace Woodcutter.Player
         }
 
         // --- MỚI THÊM: Hàm xử lý I-frame an toàn ---
-        public void EnableIFrames()
-        {
-            // Chuyển Layer vật lý của nhân vật sang layer không bị sát thương (Ví dụ: "PlayerIFrame")
-            // Hoặc đơn giản là tắt Collider nhận sát thương
-
-            // Giả lập trực quan: Làm mờ nhân vật một chút để nhận biết đang có I-frame
-            if (SpriteRenderer != null)
-            {
-                Color c = SpriteRenderer.color;
-                c.a = 0.5f; // Giảm Alpha xuống 50%
-                SpriteRenderer.color = c;
-            }
-
-            Debug.Log("[CharacterContext] Bật I-frame vô địch.");
-        }
-
-        public void DisableIFrames()
-        {
-            // Trả Layer vật lý về bình thường (Ví dụ: "Player")
-
-            // Phục hồi độ mờ
-            if (SpriteRenderer != null)
-            {
-                Color c = SpriteRenderer.color;
-                c.a = 1f; // Phục hồi Alpha 100%
-                SpriteRenderer.color = c;
-            }
-
-            Debug.Log("[CharacterContext] Tắt I-frame.");
-        }
+        public bool IsInvulnerable { get; private set; }
+        public void EnableIFrames() { IsInvulnerable = true; }
+        public void DisableIFrames() { IsInvulnerable = false; }
 
         // ================================================================
         // GAME FEEL & PHẢN HỒI CHIẾN ĐẤU (FR-CMB-04)
@@ -409,7 +369,7 @@ namespace Woodcutter.Player
             // 1. Dừng đọng thời gian (Hit-stop)
             if (hitStopDuration > 0f)
             {
-                StartCoroutine(HitStopRoutine(hitStopDuration));
+                HitStop.Request(hitStopDuration);
             }
 
             // 2. Rung màn hình (Camera Shake)
@@ -417,30 +377,22 @@ namespace Woodcutter.Player
             {
                 ImpulseSource.GenerateImpulseWithForce(shakeIntensity);
             }
-
-            // 3. Nháy trắng nhân vật (White Flash)
-            StartCoroutine(FlashRoutine(0.1f)); // Nháy trong 0.1 giây
         }
 
-        private IEnumerator HitStopRoutine(float duration)
+        public static class HitStop
         {
-            // Đưa tốc độ game về gần bằng 0 (không dùng 0 tuyệt đối để tránh một số lỗi vật lý)
-            Time.timeScale = 0.01f;
-
-            // BẮT BUỘC dùng WaitForSecondsRealtime vì Time.timeScale đang bị dừng
-            yield return new WaitForSecondsRealtime(duration);
-
-            // Trả lại tốc độ bình thường
-            Time.timeScale = 1f;
-        }
-
-        private IEnumerator FlashRoutine(float duration)
-        {
-            if (SpriteRenderer != null && WhiteFlashMaterial != null)
+            static float endTime;
+            public static bool IsPaused; // menu tạm dừng bật/tắt cờ này
+            public static void Request(float duration)
             {
-                SpriteRenderer.material = WhiteFlashMaterial;
-                yield return new WaitForSecondsRealtime(duration);
-                SpriteRenderer.material = originalMaterial;
+                endTime = Mathf.Max(endTime, Time.unscaledTime + duration);
+                if (!IsPaused) Time.timeScale = 0f;
+            }
+            // Gọi mỗi khung (ví dụ từ một MonoBehaviour quản lý)
+            public static void Tick()
+            {
+                if (!IsPaused && Time.timeScale == 0f && Time.unscaledTime >= endTime)
+                    Time.timeScale = 1f;
             }
         }
     }
