@@ -49,5 +49,19 @@ namespace Woodcutter.Core
                 spriteRenderer.sharedMaterial = originalMaterial;
             }
         }
+
+        private void OnDisable()
+        {
+            if (flashCoroutine != null)
+            {
+                StopCoroutine(flashCoroutine);
+                flashCoroutine = null;
+            }
+
+            if (spriteRenderer != null && originalMaterial != null)
+            {
+                spriteRenderer.sharedMaterial = originalMaterial;
+            }
+        }
     }
 }

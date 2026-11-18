@@ -15,8 +15,9 @@ MonoBehaviour:
   combo1Damage: 1
   combo2Damage: 1
   comboWindow: 0.4
+  attackDuration: 0.7
   hitboxSize: {x: 1.5, y: 1.5}
-  heavyChargeTime: 0.6
+  heavyChargeTime: 0.5
   heavyDamage: 3
   normalHitStop: 0.05
   heavyHitStop: 0.1

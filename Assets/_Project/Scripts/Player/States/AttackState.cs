@@ -61,36 +61,42 @@ namespace Woodcutter.Player.States
         {
             float dt = Time.deltaTime;
 
-            // Xử lý sạc đòn nặng (FR-CMB-02)
+            // 1. Xử lý sạc đòn nặng
             if (isCharging)
             {
                 chargeTimer += dt;
-
-                // Tự động tung đòn nặng nếu sạc đủ lâu
                 if (chargeTimer >= context.CombatStats.heavyChargeTime && !hasFiredHeavyAttack)
                 {
                     FireHeavyAttack();
                 }
-
-                // Đang sạc thì không trừ thời gian đòn thường
                 return;
             }
 
-            attackTimer -= Time.deltaTime;
+            attackTimer -= dt;
 
-            // Khi hết thời gian thi triển đòn
+            // 2. Khi hết thời gian thi triển đòn
             if (attackTimer <= 0f)
             {
-                // Nếu người chơi đã bấm tiếp phím đánh và vẫn trong cửa sổ combo
-                if (currentComboStep == 1 && attackTimer <= 0f)
+                // Chỉ nhịp 1 dưới đất mới buffer sang nhịp 2
+                if (!isAirAttack && !hasFiredHeavyAttack && currentComboStep == 1)
                 {
-                    if (nextComboBuffered) { FireComboStep2(); return; }
+                    if (nextComboBuffered)
+                    {
+                        FireComboStep2();
+                        return;
+                    }
 
-                    // Giữ state thêm comboWindow để chờ bấm nhịp 2
-                    comboWindowTimer -= Time.deltaTime;
-                    if (comboWindowTimer <= 0f) FinishAttackSequence();
+                    // Chờ người chơi bấm bồi trong cửa sổ combo
+                    comboWindowTimer -= dt;
+                    if (comboWindowTimer <= 0f)
+                    {
+                        FinishAttackSequence();
+                    }
                     return;
                 }
+
+                // Nhịp 2, Đòn nặng và Đòn trên không: thoát state ngay khi hết đòn
+                FinishAttackSequence();
             }
         }
 

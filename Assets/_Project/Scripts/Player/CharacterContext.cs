@@ -19,6 +19,7 @@ namespace Woodcutter.Player
         public Rigidbody2D Rigidbody;
         public SpriteRenderer SpriteRenderer;
         public Animator Animator;
+        private HitFlash hitFlashComponent;
         [SerializeField] private PlayerInputBroker inputBroker;
         [SerializeField] private PlayerStatsSO stats;
         [SerializeField] private PlayerCombatStatsSO combatStats;
@@ -65,6 +66,8 @@ namespace Woodcutter.Player
 
         private void Awake()
         {
+            hitFlashComponent = GetComponent<HitFlash>();
+
             if (Rigidbody == null) Rigidbody = GetComponent<Rigidbody2D>();
             if (SpriteRenderer == null) SpriteRenderer = GetComponent<SpriteRenderer>();
             if (inputBroker == null) inputBroker = GetComponent<PlayerInputBroker>();
@@ -131,6 +134,8 @@ namespace Woodcutter.Player
 
         private void Update()
         {
+            HitStop.Tick();
+
             // Đếm ngược Jump Buffer (SRS FR-MOV-03)
             if (JumpBufferTimer > 0f)
             {
@@ -376,6 +381,11 @@ namespace Woodcutter.Player
             if (ImpulseSource != null)
             {
                 ImpulseSource.GenerateImpulseWithForce(shakeIntensity);
+            }
+
+            if (hitFlashComponent != null)
+            {
+                hitFlashComponent.TriggerFlash();
             }
         }
 
