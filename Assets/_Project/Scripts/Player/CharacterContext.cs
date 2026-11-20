@@ -3,6 +3,9 @@ using Woodcutter.Core;
 using Woodcutter.Data;
 using Woodcutter.Player.States;
 
+using System.Collections; 
+using Unity.Cinemachine;
+
 namespace Woodcutter.Player
 {
     /// <summary>
@@ -16,6 +19,7 @@ namespace Woodcutter.Player
         public Rigidbody2D Rigidbody;
         public SpriteRenderer SpriteRenderer;
         public Animator Animator;
+        private HitFlash hitFlashComponent;
         [SerializeField] private PlayerInputBroker inputBroker;
         [SerializeField] private PlayerStatsSO stats;
         [SerializeField] private PlayerCombatStatsSO combatStats;
@@ -25,6 +29,10 @@ namespace Woodcutter.Player
         public Transform GroundCheckPoint;
         public Vector2 GroundCheckDimensions = new Vector2(0.8f, 0.15f);
         public LayerMask GroundLayerMask;
+
+        [Header("Game Feel (FR-CMB-04)")]
+        [Tooltip("Component tạo lực rung cho Cinemachine")]
+        public CinemachineImpulseSource ImpulseSource;
 
         // Dữ liệu thời gian thực
         public PlayerStatsSO Stats => stats;
@@ -51,15 +59,21 @@ namespace Woodcutter.Player
         public JumpState JumpState { get; private set; }
         public FallState FallState { get; private set; }
         public AttackState AttackState { get; private set; }
+        public RollState RollState { get; private set; }
 
         // Buffer kiểm tra va chạm mặt đất (Không sinh rác bộ nhớ)
         private readonly Collider2D[] groundHitBuffer = new Collider2D[8];
 
         private void Awake()
         {
+            hitFlashComponent = GetComponent<HitFlash>();
+
             if (Rigidbody == null) Rigidbody = GetComponent<Rigidbody2D>();
             if (SpriteRenderer == null) SpriteRenderer = GetComponent<SpriteRenderer>();
             if (inputBroker == null) inputBroker = GetComponent<PlayerInputBroker>();
+
+            if (ImpulseSource == null)
+                ImpulseSource = GetComponent<CinemachineImpulseSource>();
 
             // Chốt chặn an toàn: Dừng component nếu thiếu SO
             if (stats == null || combatStats == null || abilitiesStats == null)
@@ -78,6 +92,7 @@ namespace Woodcutter.Player
             JumpState = new JumpState(this, StateMachine);
             FallState = new FallState(this, StateMachine);
             AttackState = new AttackState(this, StateMachine);
+            RollState = new RollState(this, StateMachine);
         }
 
         private void Start()
@@ -98,6 +113,8 @@ namespace Woodcutter.Player
                 inputBroker.OnJumpPressed += ForwardJumpPressedToCurrentState;
                 inputBroker.OnJumpReleased += ForwardJumpReleasedToCurrentState;
                 inputBroker.OnAttackPressed += ForwardAttackPressedToCurrentState;
+                inputBroker.OnAttackReleased += ForwardAttackReleasedToCurrentState;
+                inputBroker.OnDodgePressed += ForwardRollPressedToCurrentState;
             }
         }
 
@@ -110,11 +127,15 @@ namespace Woodcutter.Player
                 inputBroker.OnJumpPressed -= ForwardJumpPressedToCurrentState;
                 inputBroker.OnJumpReleased -= ForwardJumpReleasedToCurrentState;
                 inputBroker.OnAttackPressed -= ForwardAttackPressedToCurrentState;
+                inputBroker.OnAttackReleased -= ForwardAttackReleasedToCurrentState;
+                inputBroker.OnDodgePressed -= ForwardRollPressedToCurrentState;
             }
         }
 
         private void Update()
         {
+            HitStop.Tick();
+
             // Đếm ngược Jump Buffer (SRS FR-MOV-03)
             if (JumpBufferTimer > 0f)
             {
@@ -225,6 +246,18 @@ namespace Woodcutter.Player
                 baseState.HandleAttackPressed();
         }
 
+        private void ForwardAttackReleasedToCurrentState()
+        {
+            if (StateMachine.CurrentState is CharacterBaseState baseState)
+                baseState.HandleAttackReleased();
+        }
+
+        private void ForwardRollPressedToCurrentState()
+        {
+            if (StateMachine.CurrentState is CharacterBaseState baseState)
+                baseState.HandleDodgePressed(); 
+        }
+
         // ================================================================
         // CÁC HÀM TIỆN ÍCH DÙNG CHUNG (SHARED UTILITIES)
         // ================================================================
@@ -310,6 +343,66 @@ namespace Woodcutter.Player
             else
             {
                 StateMachine.ChangeState(IdleState);
+            }
+        }
+
+        // ================================================================
+        // QUẢN LÝ KỸ NĂNG: LĂN / NÉ (ROLL) VÀ I-FRAME
+        // ================================================================
+        private float lastRollTime = -100f;
+
+        public bool CanRoll()
+        {
+            return Time.time >= lastRollTime + Stats.rollCooldown;
+        }
+
+        public void MarkRollUsed()
+        {
+            lastRollTime = Time.time;
+        }
+
+        // --- MỚI THÊM: Hàm xử lý I-frame an toàn ---
+        public bool IsInvulnerable { get; private set; }
+        public void EnableIFrames() { IsInvulnerable = true; }
+        public void DisableIFrames() { IsInvulnerable = false; }
+
+        // ================================================================
+        // GAME FEEL & PHẢN HỒI CHIẾN ĐẤU (FR-CMB-04)
+        // ================================================================
+        public void ApplyHitFeedback(float hitStopDuration, float shakeIntensity = 1f)
+        {
+            // 1. Dừng đọng thời gian (Hit-stop)
+            if (hitStopDuration > 0f)
+            {
+                HitStop.Request(hitStopDuration);
+            }
+
+            // 2. Rung màn hình (Camera Shake)
+            if (ImpulseSource != null)
+            {
+                ImpulseSource.GenerateImpulseWithForce(shakeIntensity);
+            }
+
+            if (hitFlashComponent != null)
+            {
+                hitFlashComponent.TriggerFlash();
+            }
+        }
+
+        public static class HitStop
+        {
+            static float endTime;
+            public static bool IsPaused; // menu tạm dừng bật/tắt cờ này
+            public static void Request(float duration)
+            {
+                endTime = Mathf.Max(endTime, Time.unscaledTime + duration);
+                if (!IsPaused) Time.timeScale = 0f;
+            }
+            // Gọi mỗi khung (ví dụ từ một MonoBehaviour quản lý)
+            public static void Tick()
+            {
+                if (!IsPaused && Time.timeScale == 0f && Time.unscaledTime >= endTime)
+                    Time.timeScale = 1f;
             }
         }
     }
