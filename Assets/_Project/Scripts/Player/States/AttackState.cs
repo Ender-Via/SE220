@@ -47,6 +47,7 @@ namespace Woodcutter.Player.States
 
                 // Đánh trên không không sạc được -> Phát luôn dáng Combo 1
                 context.SetVisualState("Attack", Color.white);
+                context.PerformAttackHitbox(context.CombatStats.combo1Damage, DamageType.Normal, 5f);
             }
             else
             {
@@ -134,7 +135,7 @@ namespace Woodcutter.Player.States
 
             context.SetVisualState("Attack2", new Color(1f, 0f, 0f)); // Đỏ đậm cho Combo 2
 
-            // TODO: Xử lý Hitbox và sát thương (context.CombatStats.combo2Damage)
+            context.PerformAttackHitbox(context.CombatStats.combo2Damage, DamageType.Normal, 6f);
             Debug.Log("Tung đòn Combo 2!");
         }
 
@@ -148,7 +149,7 @@ namespace Woodcutter.Player.States
 
             context.SetVisualState("HeavyAttack", new Color(0.5f, 0f, 0.5f)); // Tím cho đòn nặng
 
-            // TODO: Xử lý Hitbox phá khiên và hất lùi (context.CombatStats.heavyDamage)
+            context.PerformAttackHitbox(context.CombatStats.heavyDamage, DamageType.Heavy, 9f);
             Debug.Log("Tung đòn Nặng (Phá khiên)!");
         }
 
@@ -179,7 +180,7 @@ namespace Woodcutter.Player.States
                     // Cấp lại thời gian đánh vì lúc nãy bị đóng băng bởi isCharging
                     attackTimer = context.CombatStats.attackDuration;
 
-                    // TODO: Xử lý Hitbox và sát thương (context.CombatStats.combo1Damage)
+                    context.PerformAttackHitbox(context.CombatStats.combo1Damage, DamageType.Normal, 5f);
                     Debug.Log("Tung đòn Combo 1!");
                 }
             }
