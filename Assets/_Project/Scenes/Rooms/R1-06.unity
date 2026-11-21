@@ -6321,8 +6321,8 @@ Tilemap:
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Origin: {x: -19, y: -14, z: 0}
-  m_Size: {x: 102, y: 24, z: 1}
+  m_Origin: {x: -27, y: -14, z: 0}
+  m_Size: {x: 110, y: 24, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
   m_TileOrientation: 0
   m_TileOrientationMatrix:
@@ -6356,11 +6356,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3011163606113114506, guid: 030c1afebca42ca46a646df56152b8db, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -41.2
+      value: -40.87
       objectReference: {fileID: 0}
     - target: {fileID: 3011163606113114506, guid: 030c1afebca42ca46a646df56152b8db, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7.4
+      value: -6.2
       objectReference: {fileID: 0}
     - target: {fileID: 5428509042245804231, guid: 030c1afebca42ca46a646df56152b8db, type: 3}
       propertyPath: targetDoorId

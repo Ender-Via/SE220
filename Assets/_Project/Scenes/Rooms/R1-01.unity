@@ -9842,7 +9842,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5428509042245804231, guid: 030c1afebca42ca46a646df56152b8db, type: 3}
       propertyPath: targetDoorId
-      value: 
+      value: Right
+      objectReference: {fileID: 0}
+    - target: {fileID: 5428509042245804231, guid: 030c1afebca42ca46a646df56152b8db, type: 3}
+      propertyPath: targetRoomId
+      value: R2-07
       objectReference: {fileID: 0}
     - target: {fileID: 6081586045812885937, guid: 030c1afebca42ca46a646df56152b8db, type: 3}
       propertyPath: m_LocalPosition.x
