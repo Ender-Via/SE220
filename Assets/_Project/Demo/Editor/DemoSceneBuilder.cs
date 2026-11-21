@@ -14,7 +14,7 @@ namespace Woodcutter.EditorTools
     /// </summary>
     public static class DemoSceneBuilder
     {
-        const string ScenePath = "Assets/_Project/Scenes/Sandbox/Sandbox_DemoGioiThieu.unity";
+        const string ScenePath = "Assets/_Project/Demo/Sandbox_DemoGioiThieu.unity";
         const string Enemies = "Assets/_Project/Art/Characters/Enemies/";
 
         static Sprite square;

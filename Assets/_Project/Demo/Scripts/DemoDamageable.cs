@@ -40,7 +40,8 @@ namespace Woodcutter.Demo
         }
 
         /// <returns>true nếu đòn có tác dụng.</returns>
-        public bool TakeHit(int damage, bool isFire)
+        /// <param name="iceMultiplier">Hệ số rìu lửa với vật/quái băng (AbilitiesStatsSO.iceEnemyDamageMultiplier).</param>
+        public bool TakeHit(int damage, bool isFire, float iceMultiplier = 1f)
         {
             if (IsDead) return false;
             if (requiresFire && !isFire)
@@ -50,9 +51,10 @@ namespace Woodcutter.Demo
                 return false;
             }
 
-            if (isFire && isIce) damage *= 2;
+            bool iceBonus = isFire && isIce && iceMultiplier > 1f;
+            if (iceBonus) damage = Mathf.RoundToInt(damage * iceMultiplier);
             Hp = Mathf.Max(0, Hp - damage);
-            DemoUI.Popup(transform.position + Vector3.up * 1.8f, "-" + damage + (isFire && isIce ? " (x2 băng)" : ""),
+            DemoUI.Popup(transform.position + Vector3.up * 1.8f, "-" + damage + (iceBonus ? " (x" + iceMultiplier.ToString("0.#") + " băng)" : ""),
                 isFire ? new Color(1f, 0.55f, 0.2f) : Color.white);
             OnDamaged?.Invoke(damage, isFire);
             StopCoroutine(nameof(Flash));

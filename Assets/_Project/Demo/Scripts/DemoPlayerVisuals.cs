@@ -4,9 +4,9 @@ using Woodcutter.Player;
 namespace Woodcutter.Demo
 {
     /// <summary>
-    /// CHỈ DÙNG CHO SCENE DEMO. Trên main, CharacterContext.SetVisualState vẫn tô màu debug
-    /// (xanh khi chạy, vàng khi nhảy...). Component này đổi sang phát animation tiều phu
-    /// (AC_Woodcutter) theo state hiện tại và trả màu sprite về trắng, để demo trông như game thật.
+    /// CHỈ DÙNG CHO SCENE DEMO. Phát animation tiều phu (AC_Woodcutter) theo state của CharacterContext
+    /// và theo đòn mà DemoPlayerCombat báo (nhịp 1 / nhịp 2 / đòn nặng / rìu lửa).
+    /// Không đọc màu debug: chỉ trả màu sprite về trắng vì CharacterContext.SetVisualState trên main vẫn tô màu.
     /// </summary>
     [RequireComponent(typeof(CharacterContext))]
     public class DemoPlayerVisuals : MonoBehaviour
@@ -14,6 +14,7 @@ namespace Woodcutter.Demo
         public RuntimeAnimatorController controller;
 
         CharacterContext ctx;
+        DemoPlayerCombat combat;
         Animator anim;
         SpriteRenderer sr;
         string current;
@@ -21,6 +22,7 @@ namespace Woodcutter.Demo
         void Awake()
         {
             ctx = GetComponent<CharacterContext>();
+            combat = GetComponent<DemoPlayerCombat>();
             sr = GetComponent<SpriteRenderer>();
             anim = GetComponent<Animator>();
             if (anim == null) anim = gameObject.AddComponent<Animator>();
@@ -30,12 +32,22 @@ namespace Woodcutter.Demo
         void Start()
         {
             if (ctx.StateMachine != null) ctx.StateMachine.OnStateChanged += OnStateChanged;
+            if (combat != null)
+            {
+                combat.OnAttackFired += OnAttackFired;
+                combat.OnChargeStarted += OnChargeStarted;
+            }
             Play("Idle");
         }
 
         void OnDestroy()
         {
             if (ctx != null && ctx.StateMachine != null) ctx.StateMachine.OnStateChanged -= OnStateChanged;
+            if (combat != null)
+            {
+                combat.OnAttackFired -= OnAttackFired;
+                combat.OnChargeStarted -= OnChargeStarted;
+            }
         }
 
         void OnStateChanged(Woodcutter.Core.IState s)
@@ -45,29 +57,30 @@ namespace Woodcutter.Demo
             else if (s == ctx.JumpState) Play("Jump");
             else if (s == ctx.FallState) Play("Fall");
             else if (s == ctx.RollState) Play("Roll");
-            // AttackState: chọn theo màu debug ở LateUpdate
+            // AttackState: chờ DemoPlayerCombat báo đòn cụ thể
+        }
+
+        // Dưới đất AttackState bắt đầu bằng tư thế lấy đà (giống SetVisualState("HeavyAttack") trong AttackState.Enter)
+        void OnChargeStarted() => Play("HeavyAttack", true);
+
+        void OnAttackFired(DemoPlayerCombat.AttackKind kind)
+        {
+            switch (kind)
+            {
+                case DemoPlayerCombat.AttackKind.Combo1: Play("Attack", true); break;
+                case DemoPlayerCombat.AttackKind.Combo2: Play("Attack2", true); break;
+                case DemoPlayerCombat.AttackKind.Heavy: Play("HeavyAttack", true); break;
+                case DemoPlayerCombat.AttackKind.FireAxe: Play("Attack", true); break;
+            }
         }
 
         void LateUpdate()
         {
             if (sr == null) return;
             Color c = sr.color;
-            if (c.r > 1.01f) return; // đang nháy trắng (hit flash)
-
-            if (ctx.StateMachine != null && ctx.StateMachine.CurrentState == ctx.AttackState)
-            {
-                // Màu debug AttackState: trắng = đang nạp / đánh trên không, hồng = nhịp 1, đỏ = nhịp 2, tím = đòn nặng
-                if (Near(c, new Color(1f, 0.5f, 0.5f))) Play("Attack", true);
-                else if (Near(c, new Color(1f, 0f, 0f))) Play("Attack2", true);
-                else if (Near(c, new Color(0.5f, 0f, 0.5f))) Play("HeavyAttack", true);
-                else if (current != "Attack" && current != "Attack2" && current != "HeavyAttack")
-                    Play(ctx.CheckGrounded() ? "HeavyAttack" : "Attack");
-            }
+            // Bỏ màu debug của SetVisualState; giữ nguyên khi đang nháy (alpha 0 lúc nhấp nháy bất tử)
             if (c != Color.white && c.a > 0f) sr.color = Color.white;
         }
-
-        static bool Near(Color a, Color b) =>
-            Mathf.Abs(a.r - b.r) < 0.02f && Mathf.Abs(a.g - b.g) < 0.02f && Mathf.Abs(a.b - b.b) < 0.02f;
 
         void Play(string state, bool restart = false)
         {

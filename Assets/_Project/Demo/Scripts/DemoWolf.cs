@@ -28,6 +28,7 @@ namespace Woodcutter.Demo
         DemoPlayerHealth player;
         float minX, maxX;
         bool busy, dead;
+        Coroutine attackRoutine;
 
         void Awake()
         {
@@ -49,7 +50,7 @@ namespace Woodcutter.Demo
             float dx = player.transform.position.x - transform.position.x;
             float dy = Mathf.Abs(player.transform.position.y - transform.position.y);
             Face(dx);
-            if (Mathf.Abs(dx) < detectRange && dy < 3f) StartCoroutine(Attack(Mathf.Sign(dx)));
+            if (Mathf.Abs(dx) < detectRange && dy < 3f) attackRoutine = StartCoroutine(Attack(Mathf.Sign(dx)));
         }
 
         void Face(float dx)
@@ -103,7 +104,7 @@ namespace Woodcutter.Demo
         IEnumerator Die()
         {
             dead = true;
-            StopAllCoroutinesExceptThis();
+            CancelAttack();
             Play("Dead");
             foreach (var c in GetComponentsInChildren<Collider2D>()) c.enabled = false;
             DemoUI.Banner("Hạ được Sói tuyết!", 2f);
@@ -111,8 +112,10 @@ namespace Woodcutter.Demo
             gameObject.SetActive(false);
         }
 
-        void StopAllCoroutinesExceptThis()
+        /// <summary>Dừng đợt tấn công đang chạy (gầm/vồ/nghỉ) và đưa sprite về vị trí gốc.</summary>
+        void CancelAttack()
         {
+            if (attackRoutine != null) { StopCoroutine(attackRoutine); attackRoutine = null; }
             busy = true;
             if (sprite != null) sprite.localPosition = Vector3.zero;
         }

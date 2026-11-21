@@ -17,25 +17,21 @@ namespace Woodcutter.Demo
         [Tooltip("Vùng hồi màu khi nhặt đá (tùy chọn).")]
         public DemoColorZone colorZone;
 
-        PlayerInputBroker input;
         Transform player;
         bool taken;
         Vector3 basePos;
 
         void Start()
         {
-            input = FindAnyObjectByType<PlayerInputBroker>();
+            var input = FindAnyObjectByType<PlayerInputBroker>();
             if (input != null) player = input.transform;
-            if (input != null) input.OnInteractPressed += Interact;
             basePos = transform.position;
+            DemoUI.RegisterPickup(this); // phím E do DemoUI xử lý tập trung
         }
 
-        void OnDestroy()
-        {
-            if (input != null) input.OnInteractPressed -= Interact;
-        }
-
-        bool InRange => player != null && Vector2.Distance(player.position + Vector3.up * 0.9f, transform.position) < range;
+        public float DistanceToPlayer => player != null ? Vector2.Distance(player.position + Vector3.up * 0.9f, transform.position) : float.MaxValue;
+        bool InRange => DistanceToPlayer < range;
+        public bool CanUse => !taken && isActiveAndEnabled && InRange;
 
         void Update()
         {
@@ -44,10 +40,10 @@ namespace Woodcutter.Demo
             if (InRange) DemoUI.Prompt(transform.position + Vector3.up * 1.2f, kind == Kind.Note ? "E: đọc mẩu giấy" : "E: nhặt viên đá");
         }
 
-        void Interact()
+        /// <summary>Gọi bởi DemoUI khi người chơi bấm E và vật này gần nhất.</summary>
+        public void Use()
         {
-            if (DemoUI.NoteOpen) { DemoUI.CloseNote(); return; }
-            if (taken || !InRange) return;
+            if (!CanUse) return;
 
             if (kind == Kind.Note)
             {

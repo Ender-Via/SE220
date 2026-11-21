@@ -33,7 +33,6 @@ namespace Woodcutter.Demo
         {
             inst = this;
             HasRedStone = false;
-            ResetHitStop();
             font = Font.CreateDynamicFontFromOSFont(new[] { "Segoe UI", "Arial", "Tahoma" }, 20);
             panelTex = Solid(new Color(0.05f, 0.07f, 0.1f, 0.78f));
             noteTex = Solid(new Color(0.93f, 0.88f, 0.76f, 0.97f));
@@ -41,26 +40,42 @@ namespace Woodcutter.Demo
             hpOff = Solid(new Color(0.25f, 0.28f, 0.33f));
         }
 
+        Woodcutter.Player.PlayerInputBroker input;
+        readonly List<DemoPickup> pickups = new List<DemoPickup>();
+
         void Start()
         {
             hp = FindAnyObjectByType<DemoPlayerHealth>();
             combat = FindAnyObjectByType<DemoPlayerCombat>();
+            input = FindAnyObjectByType<Woodcutter.Player.PlayerInputBroker>();
+            if (input != null) input.OnInteractPressed += HandleInteract;
+        }
+
+        void OnDestroy()
+        {
+            if (input != null) input.OnInteractPressed -= HandleInteract;
+            if (inst == this) inst = null;
         }
 
         /// <summary>
-        /// Project tắt Domain Reload khi vào Play, nên biến tĩnh HitStop.endTime còn giữ giá trị của lần Play trước
-        /// (vd 64 s) trong khi Time.unscaledTime đếm lại từ 0 -> cú chém đầu tiên làm game đứng tới hết thời gian đó.
-        /// Demo đặt lại về 0 mỗi lần bắt đầu. Cách sửa gốc (cho LEAD): reset trong
-        /// [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)] của HitStop.
+        /// Phím E chỉ xử lý ở đây (một chỗ duy nhất): đang mở mẩu giấy thì đóng; nếu không thì dùng
+        /// vật nhặt gần nhất trong tầm. Tránh lỗi nhiều pickup cùng nghe E làm mẩu giấy vừa đóng đã mở lại.
         /// </summary>
-        static void ResetHitStop()
+        void HandleInteract()
         {
-            var f = typeof(Woodcutter.Player.CharacterContext.HitStop).GetField("endTime",
-                System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Static);
-            if (f != null) f.SetValue(null, 0f);
-            Woodcutter.Player.CharacterContext.HitStop.IsPaused = false;
-            Time.timeScale = 1f;
+            if (noteText != null) { noteText = null; return; }
+            DemoPickup best = null;
+            float bestDist = float.MaxValue;
+            foreach (var p in pickups)
+            {
+                if (p == null || !p.CanUse) continue;
+                float d = p.DistanceToPlayer;
+                if (d < bestDist) { bestDist = d; best = p; }
+            }
+            if (best != null) best.Use();
         }
+
+        public static void RegisterPickup(DemoPickup p) { if (inst != null && !inst.pickups.Contains(p)) inst.pickups.Add(p); }
 
         static Texture2D Solid(Color c)
         {
