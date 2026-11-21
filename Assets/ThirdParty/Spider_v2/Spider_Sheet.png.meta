@@ -351,7 +351,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Spider_Sheet_r00c00
+      name: SPR_PixelSpider_r0_c00
       rect:
         serializedVersion: 2
         x: 0
@@ -373,7 +373,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spider_Sheet_r00c01
+      name: SPR_PixelSpider_r0_c01
       rect:
         serializedVersion: 2
         x: 32
@@ -395,7 +395,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spider_Sheet_r00c02
+      name: SPR_PixelSpider_r0_c02
       rect:
         serializedVersion: 2
         x: 64
@@ -417,7 +417,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spider_Sheet_r00c03
+      name: SPR_PixelSpider_r0_c03
       rect:
         serializedVersion: 2
         x: 96
@@ -439,7 +439,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spider_Sheet_r00c04
+      name: SPR_PixelSpider_r0_c04
       rect:
         serializedVersion: 2
         x: 128
@@ -461,7 +461,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spider_Sheet_r01c00
+      name: SPR_PixelSpider_r1_c00
       rect:
         serializedVersion: 2
         x: 0
@@ -483,7 +483,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spider_Sheet_r01c01
+      name: SPR_PixelSpider_r1_c01
       rect:
         serializedVersion: 2
         x: 32
@@ -505,7 +505,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spider_Sheet_r01c02
+      name: SPR_PixelSpider_r1_c02
       rect:
         serializedVersion: 2
         x: 64
@@ -527,7 +527,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spider_Sheet_r01c03
+      name: SPR_PixelSpider_r1_c03
       rect:
         serializedVersion: 2
         x: 96
@@ -549,7 +549,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spider_Sheet_r01c04
+      name: SPR_PixelSpider_r1_c04
       rect:
         serializedVersion: 2
         x: 128
@@ -571,7 +571,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spider_Sheet_r01c05
+      name: SPR_PixelSpider_r1_c05
       rect:
         serializedVersion: 2
         x: 160
@@ -593,7 +593,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spider_Sheet_r02c00
+      name: SPR_PixelSpider_r2_c00
       rect:
         serializedVersion: 2
         x: 0
@@ -615,7 +615,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spider_Sheet_r02c01
+      name: SPR_PixelSpider_r2_c01
       rect:
         serializedVersion: 2
         x: 32
@@ -637,7 +637,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spider_Sheet_r02c02
+      name: SPR_PixelSpider_r2_c02
       rect:
         serializedVersion: 2
         x: 64
@@ -659,7 +659,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spider_Sheet_r02c03
+      name: SPR_PixelSpider_r2_c03
       rect:
         serializedVersion: 2
         x: 96
@@ -681,7 +681,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spider_Sheet_r02c04
+      name: SPR_PixelSpider_r2_c04
       rect:
         serializedVersion: 2
         x: 128
@@ -703,7 +703,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spider_Sheet_r02c05
+      name: SPR_PixelSpider_r2_c05
       rect:
         serializedVersion: 2
         x: 160
@@ -725,7 +725,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spider_Sheet_r02c06
+      name: SPR_PixelSpider_r2_c06
       rect:
         serializedVersion: 2
         x: 192
@@ -747,7 +747,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spider_Sheet_r02c07
+      name: SPR_PixelSpider_r2_c07
       rect:
         serializedVersion: 2
         x: 224
@@ -769,7 +769,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spider_Sheet_r02c08
+      name: SPR_PixelSpider_r2_c08
       rect:
         serializedVersion: 2
         x: 256
@@ -791,7 +791,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spider_Sheet_r03c00
+      name: SPR_PixelSpider_r3_c00
       rect:
         serializedVersion: 2
         x: 0
@@ -813,7 +813,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spider_Sheet_r04c00
+      name: SPR_PixelSpider_r4_c00
       rect:
         serializedVersion: 2
         x: 0
@@ -835,7 +835,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spider_Sheet_r04c01
+      name: SPR_PixelSpider_r4_c01
       rect:
         serializedVersion: 2
         x: 32
@@ -857,7 +857,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spider_Sheet_r04c02
+      name: SPR_PixelSpider_r4_c02
       rect:
         serializedVersion: 2
         x: 64
@@ -879,7 +879,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spider_Sheet_r04c03
+      name: SPR_PixelSpider_r4_c03
       rect:
         serializedVersion: 2
         x: 96
@@ -901,7 +901,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spider_Sheet_r05c00
+      name: SPR_PixelSpider_r5_c00
       rect:
         serializedVersion: 2
         x: 0
@@ -923,7 +923,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spider_Sheet_r05c01
+      name: SPR_PixelSpider_r5_c01
       rect:
         serializedVersion: 2
         x: 32
@@ -945,7 +945,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spider_Sheet_r05c02
+      name: SPR_PixelSpider_r5_c02
       rect:
         serializedVersion: 2
         x: 64
@@ -967,7 +967,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spider_Sheet_r06c00
+      name: SPR_PixelSpider_r6_c00
       rect:
         serializedVersion: 2
         x: 0
@@ -989,7 +989,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spider_Sheet_r06c01
+      name: SPR_PixelSpider_r6_c01
       rect:
         serializedVersion: 2
         x: 32
@@ -1011,7 +1011,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spider_Sheet_r06c02
+      name: SPR_PixelSpider_r6_c02
       rect:
         serializedVersion: 2
         x: 64
@@ -1033,7 +1033,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spider_Sheet_r06c03
+      name: SPR_PixelSpider_r6_c03
       rect:
         serializedVersion: 2
         x: 96
@@ -1055,7 +1055,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spider_Sheet_r06c04
+      name: SPR_PixelSpider_r6_c04
       rect:
         serializedVersion: 2
         x: 128
@@ -1077,7 +1077,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spider_Sheet_r06c05
+      name: SPR_PixelSpider_r6_c05
       rect:
         serializedVersion: 2
         x: 160
@@ -1099,7 +1099,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spider_Sheet_r06c06
+      name: SPR_PixelSpider_r6_c06
       rect:
         serializedVersion: 2
         x: 192
@@ -1121,7 +1121,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spider_Sheet_r06c07
+      name: SPR_PixelSpider_r6_c07
       rect:
         serializedVersion: 2
         x: 224
@@ -1143,7 +1143,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spider_Sheet_r06c08
+      name: SPR_PixelSpider_r6_c08
       rect:
         serializedVersion: 2
         x: 256
@@ -1165,7 +1165,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spider_Sheet_r07c00
+      name: SPR_PixelSpider_r7_c00
       rect:
         serializedVersion: 2
         x: 0
@@ -1187,7 +1187,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spider_Sheet_r07c01
+      name: SPR_PixelSpider_r7_c01
       rect:
         serializedVersion: 2
         x: 32
@@ -1209,7 +1209,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spider_Sheet_r07c02
+      name: SPR_PixelSpider_r7_c02
       rect:
         serializedVersion: 2
         x: 64
@@ -1231,7 +1231,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spider_Sheet_r07c03
+      name: SPR_PixelSpider_r7_c03
       rect:
         serializedVersion: 2
         x: 96
@@ -1253,7 +1253,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spider_Sheet_r07c04
+      name: SPR_PixelSpider_r7_c04
       rect:
         serializedVersion: 2
         x: 128
@@ -1275,7 +1275,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spider_Sheet_r07c05
+      name: SPR_PixelSpider_r7_c05
       rect:
         serializedVersion: 2
         x: 160
@@ -1297,7 +1297,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spider_Sheet_r08c00
+      name: SPR_PixelSpider_r8_c00
       rect:
         serializedVersion: 2
         x: 0
@@ -1319,7 +1319,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spider_Sheet_r08c01
+      name: SPR_PixelSpider_r8_c01
       rect:
         serializedVersion: 2
         x: 32
@@ -1341,7 +1341,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spider_Sheet_r08c02
+      name: SPR_PixelSpider_r8_c02
       rect:
         serializedVersion: 2
         x: 64
@@ -1363,7 +1363,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spider_Sheet_r08c03
+      name: SPR_PixelSpider_r8_c03
       rect:
         serializedVersion: 2
         x: 96
@@ -1385,7 +1385,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spider_Sheet_r08c04
+      name: SPR_PixelSpider_r8_c04
       rect:
         serializedVersion: 2
         x: 128
@@ -1407,7 +1407,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spider_Sheet_r09c00
+      name: SPR_PixelSpider_r9_c00
       rect:
         serializedVersion: 2
         x: 0
@@ -1429,7 +1429,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spider_Sheet_r09c01
+      name: SPR_PixelSpider_r9_c01
       rect:
         serializedVersion: 2
         x: 32
@@ -1451,7 +1451,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spider_Sheet_r09c02
+      name: SPR_PixelSpider_r9_c02
       rect:
         serializedVersion: 2
         x: 64
@@ -1473,7 +1473,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spider_Sheet_r09c03
+      name: SPR_PixelSpider_r9_c03
       rect:
         serializedVersion: 2
         x: 96
@@ -1495,7 +1495,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spider_Sheet_r09c04
+      name: SPR_PixelSpider_r9_c04
       rect:
         serializedVersion: 2
         x: 128
@@ -1517,7 +1517,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spider_Sheet_r09c05
+      name: SPR_PixelSpider_r9_c05
       rect:
         serializedVersion: 2
         x: 160
@@ -1539,7 +1539,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spider_Sheet_r10c00
+      name: SPR_PixelSpider_r10_c00
       rect:
         serializedVersion: 2
         x: 0
@@ -1561,7 +1561,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spider_Sheet_r10c01
+      name: SPR_PixelSpider_r10_c01
       rect:
         serializedVersion: 2
         x: 32
@@ -1583,7 +1583,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spider_Sheet_r10c02
+      name: SPR_PixelSpider_r10_c02
       rect:
         serializedVersion: 2
         x: 64
@@ -1605,7 +1605,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spider_Sheet_r10c03
+      name: SPR_PixelSpider_r10_c03
       rect:
         serializedVersion: 2
         x: 96
@@ -1627,7 +1627,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spider_Sheet_r10c04
+      name: SPR_PixelSpider_r10_c04
       rect:
         serializedVersion: 2
         x: 128
@@ -1649,7 +1649,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spider_Sheet_r10c05
+      name: SPR_PixelSpider_r10_c05
       rect:
         serializedVersion: 2
         x: 160
@@ -1671,7 +1671,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spider_Sheet_r10c06
+      name: SPR_PixelSpider_r10_c06
       rect:
         serializedVersion: 2
         x: 192
@@ -1693,7 +1693,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spider_Sheet_r10c07
+      name: SPR_PixelSpider_r10_c07
       rect:
         serializedVersion: 2
         x: 224
@@ -1715,7 +1715,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spider_Sheet_r10c08
+      name: SPR_PixelSpider_r10_c08
       rect:
         serializedVersion: 2
         x: 256
@@ -1737,7 +1737,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spider_Sheet_r11c00
+      name: SPR_PixelSpider_r11_c00
       rect:
         serializedVersion: 2
         x: 0
@@ -1759,7 +1759,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spider_Sheet_r12c00
+      name: SPR_PixelSpider_r12_c00
       rect:
         serializedVersion: 2
         x: 0
@@ -1781,7 +1781,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spider_Sheet_r12c01
+      name: SPR_PixelSpider_r12_c01
       rect:
         serializedVersion: 2
         x: 32
@@ -1803,7 +1803,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spider_Sheet_r12c02
+      name: SPR_PixelSpider_r12_c02
       rect:
         serializedVersion: 2
         x: 64
@@ -1825,7 +1825,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spider_Sheet_r12c03
+      name: SPR_PixelSpider_r12_c03
       rect:
         serializedVersion: 2
         x: 96
@@ -1847,7 +1847,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spider_Sheet_r13c00
+      name: SPR_PixelSpider_r13_c00
       rect:
         serializedVersion: 2
         x: 0
@@ -1869,7 +1869,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spider_Sheet_r13c01
+      name: SPR_PixelSpider_r13_c01
       rect:
         serializedVersion: 2
         x: 32
@@ -1891,7 +1891,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spider_Sheet_r13c02
+      name: SPR_PixelSpider_r13_c02
       rect:
         serializedVersion: 2
         x: 64
@@ -1913,7 +1913,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spider_Sheet_r14c00
+      name: SPR_PixelSpider_r14_c00
       rect:
         serializedVersion: 2
         x: 0
@@ -1935,7 +1935,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spider_Sheet_r14c01
+      name: SPR_PixelSpider_r14_c01
       rect:
         serializedVersion: 2
         x: 32
@@ -1957,7 +1957,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spider_Sheet_r14c02
+      name: SPR_PixelSpider_r14_c02
       rect:
         serializedVersion: 2
         x: 64
@@ -1979,7 +1979,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spider_Sheet_r14c03
+      name: SPR_PixelSpider_r14_c03
       rect:
         serializedVersion: 2
         x: 96
@@ -2001,7 +2001,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spider_Sheet_r14c04
+      name: SPR_PixelSpider_r14_c04
       rect:
         serializedVersion: 2
         x: 128
@@ -2023,7 +2023,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spider_Sheet_r14c05
+      name: SPR_PixelSpider_r14_c05
       rect:
         serializedVersion: 2
         x: 160
@@ -2045,7 +2045,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spider_Sheet_r14c06
+      name: SPR_PixelSpider_r14_c06
       rect:
         serializedVersion: 2
         x: 192
@@ -2067,7 +2067,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spider_Sheet_r14c07
+      name: SPR_PixelSpider_r14_c07
       rect:
         serializedVersion: 2
         x: 224
@@ -2089,7 +2089,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spider_Sheet_r14c08
+      name: SPR_PixelSpider_r14_c08
       rect:
         serializedVersion: 2
         x: 256
@@ -2111,7 +2111,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spider_Sheet_r15c00
+      name: SPR_PixelSpider_r15_c00
       rect:
         serializedVersion: 2
         x: 0
@@ -2133,7 +2133,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spider_Sheet_r15c01
+      name: SPR_PixelSpider_r15_c01
       rect:
         serializedVersion: 2
         x: 32
@@ -2155,7 +2155,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spider_Sheet_r15c02
+      name: SPR_PixelSpider_r15_c02
       rect:
         serializedVersion: 2
         x: 64
@@ -2177,7 +2177,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spider_Sheet_r15c03
+      name: SPR_PixelSpider_r15_c03
       rect:
         serializedVersion: 2
         x: 96
@@ -2199,7 +2199,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spider_Sheet_r15c04
+      name: SPR_PixelSpider_r15_c04
       rect:
         serializedVersion: 2
         x: 128
@@ -2221,7 +2221,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spider_Sheet_r15c05
+      name: SPR_PixelSpider_r15_c05
       rect:
         serializedVersion: 2
         x: 160
@@ -2256,6 +2256,92 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
+      SPR_PixelSpider_r0_c00: 645537927
+      SPR_PixelSpider_r0_c01: 1486243225
+      SPR_PixelSpider_r0_c02: -904980628
+      SPR_PixelSpider_r0_c03: 1925259876
+      SPR_PixelSpider_r0_c04: -965689278
+      SPR_PixelSpider_r10_c00: -961179335
+      SPR_PixelSpider_r10_c01: -1603655249
+      SPR_PixelSpider_r10_c02: -1704113546
+      SPR_PixelSpider_r10_c03: -2040465273
+      SPR_PixelSpider_r10_c04: 299761229
+      SPR_PixelSpider_r10_c05: 512569202
+      SPR_PixelSpider_r10_c06: 1005892776
+      SPR_PixelSpider_r10_c07: 327059217
+      SPR_PixelSpider_r10_c08: 1994150297
+      SPR_PixelSpider_r11_c00: 466131550
+      SPR_PixelSpider_r12_c00: 1433838260
+      SPR_PixelSpider_r12_c01: -2112361836
+      SPR_PixelSpider_r12_c02: 1405892467
+      SPR_PixelSpider_r12_c03: 10183797
+      SPR_PixelSpider_r13_c00: -1134391584
+      SPR_PixelSpider_r13_c01: -1743200248
+      SPR_PixelSpider_r13_c02: -350591384
+      SPR_PixelSpider_r14_c00: 1810429189
+      SPR_PixelSpider_r14_c01: -1038405817
+      SPR_PixelSpider_r14_c02: 456807220
+      SPR_PixelSpider_r14_c03: -2091934130
+      SPR_PixelSpider_r14_c04: -1921239703
+      SPR_PixelSpider_r14_c05: -1466653862
+      SPR_PixelSpider_r14_c06: 1511533317
+      SPR_PixelSpider_r14_c07: -793823006
+      SPR_PixelSpider_r14_c08: -2048043345
+      SPR_PixelSpider_r15_c00: -1198771019
+      SPR_PixelSpider_r15_c01: -187074209
+      SPR_PixelSpider_r15_c02: -631340822
+      SPR_PixelSpider_r15_c03: -1852409560
+      SPR_PixelSpider_r15_c04: 1342904839
+      SPR_PixelSpider_r15_c05: -239307978
+      SPR_PixelSpider_r1_c00: 1247258491
+      SPR_PixelSpider_r1_c01: 445756387
+      SPR_PixelSpider_r1_c02: -1136272448
+      SPR_PixelSpider_r1_c03: -1831525030
+      SPR_PixelSpider_r1_c04: -1277090427
+      SPR_PixelSpider_r1_c05: -972117415
+      SPR_PixelSpider_r2_c00: 804164110
+      SPR_PixelSpider_r2_c01: -1307986269
+      SPR_PixelSpider_r2_c02: -1853361672
+      SPR_PixelSpider_r2_c03: 524503362
+      SPR_PixelSpider_r2_c04: 1602186837
+      SPR_PixelSpider_r2_c05: 798834053
+      SPR_PixelSpider_r2_c06: 1954473843
+      SPR_PixelSpider_r2_c07: -735219124
+      SPR_PixelSpider_r2_c08: -1595276810
+      SPR_PixelSpider_r3_c00: 359866816
+      SPR_PixelSpider_r4_c00: 1317954668
+      SPR_PixelSpider_r4_c01: -219113369
+      SPR_PixelSpider_r4_c02: 1526656943
+      SPR_PixelSpider_r4_c03: -686913267
+      SPR_PixelSpider_r5_c00: -1072509446
+      SPR_PixelSpider_r5_c01: -670422462
+      SPR_PixelSpider_r5_c02: 1443518451
+      SPR_PixelSpider_r6_c00: -1324973206
+      SPR_PixelSpider_r6_c01: -1493970907
+      SPR_PixelSpider_r6_c02: 1794425096
+      SPR_PixelSpider_r6_c03: -918229438
+      SPR_PixelSpider_r6_c04: 1893240110
+      SPR_PixelSpider_r6_c05: -1314720872
+      SPR_PixelSpider_r6_c06: 1432136116
+      SPR_PixelSpider_r6_c07: 1671853271
+      SPR_PixelSpider_r6_c08: 19093991
+      SPR_PixelSpider_r7_c00: 836012001
+      SPR_PixelSpider_r7_c01: -1298807306
+      SPR_PixelSpider_r7_c02: -777385330
+      SPR_PixelSpider_r7_c03: -325441898
+      SPR_PixelSpider_r7_c04: -1752369650
+      SPR_PixelSpider_r7_c05: -603241635
+      SPR_PixelSpider_r8_c00: -487045761
+      SPR_PixelSpider_r8_c01: 494132808
+      SPR_PixelSpider_r8_c02: 681985994
+      SPR_PixelSpider_r8_c03: 341347537
+      SPR_PixelSpider_r8_c04: -1302798806
+      SPR_PixelSpider_r9_c00: -830928720
+      SPR_PixelSpider_r9_c01: 131947850
+      SPR_PixelSpider_r9_c02: 1572699410
+      SPR_PixelSpider_r9_c03: 1264788852
+      SPR_PixelSpider_r9_c04: -796934045
+      SPR_PixelSpider_r9_c05: -1827094533
       Spider_Sheet_0: -539261387193375460
       Spider_Sheet_1: 8702434590778450048
       Spider_Sheet_10: -3740395345467186734

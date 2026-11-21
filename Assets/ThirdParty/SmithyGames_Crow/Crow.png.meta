@@ -219,7 +219,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Crow_r0c00
+      name: SPR_GreyCrow_r0_c00
       rect:
         serializedVersion: 2
         x: 0
@@ -241,7 +241,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Crow_r0c01
+      name: SPR_GreyCrow_r0_c01
       rect:
         serializedVersion: 2
         x: 48
@@ -263,7 +263,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Crow_r0c02
+      name: SPR_GreyCrow_r0_c02
       rect:
         serializedVersion: 2
         x: 96
@@ -285,7 +285,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Crow_r0c03
+      name: SPR_GreyCrow_r0_c03
       rect:
         serializedVersion: 2
         x: 144
@@ -307,7 +307,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Crow_r0c04
+      name: SPR_GreyCrow_r0_c04
       rect:
         serializedVersion: 2
         x: 192
@@ -329,7 +329,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Crow_r0c05
+      name: SPR_GreyCrow_r0_c05
       rect:
         serializedVersion: 2
         x: 240
@@ -351,7 +351,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Crow_r0c06
+      name: SPR_GreyCrow_r0_c06
       rect:
         serializedVersion: 2
         x: 288
@@ -373,7 +373,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Crow_r1c00
+      name: SPR_GreyCrow_r1_c00
       rect:
         serializedVersion: 2
         x: 0
@@ -395,7 +395,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Crow_r1c01
+      name: SPR_GreyCrow_r1_c01
       rect:
         serializedVersion: 2
         x: 48
@@ -417,7 +417,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Crow_r1c02
+      name: SPR_GreyCrow_r1_c02
       rect:
         serializedVersion: 2
         x: 96
@@ -439,7 +439,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Crow_r1c03
+      name: SPR_GreyCrow_r1_c03
       rect:
         serializedVersion: 2
         x: 144
@@ -461,7 +461,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Crow_r1c04
+      name: SPR_GreyCrow_r1_c04
       rect:
         serializedVersion: 2
         x: 192
@@ -483,7 +483,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Crow_r1c05
+      name: SPR_GreyCrow_r1_c05
       rect:
         serializedVersion: 2
         x: 240
@@ -505,7 +505,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Crow_r1c06
+      name: SPR_GreyCrow_r1_c06
       rect:
         serializedVersion: 2
         x: 288
@@ -527,7 +527,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Crow_r2c00
+      name: SPR_GreyCrow_r2_c00
       rect:
         serializedVersion: 2
         x: 0
@@ -549,7 +549,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Crow_r2c01
+      name: SPR_GreyCrow_r2_c01
       rect:
         serializedVersion: 2
         x: 48
@@ -571,7 +571,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Crow_r2c02
+      name: SPR_GreyCrow_r2_c02
       rect:
         serializedVersion: 2
         x: 96
@@ -593,7 +593,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Crow_r2c03
+      name: SPR_GreyCrow_r2_c03
       rect:
         serializedVersion: 2
         x: 144
@@ -615,7 +615,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Crow_r2c04
+      name: SPR_GreyCrow_r2_c04
       rect:
         serializedVersion: 2
         x: 192
@@ -637,7 +637,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Crow_r2c05
+      name: SPR_GreyCrow_r2_c05
       rect:
         serializedVersion: 2
         x: 240
@@ -659,7 +659,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Crow_r2c06
+      name: SPR_GreyCrow_r2_c06
       rect:
         serializedVersion: 2
         x: 288
@@ -681,7 +681,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Crow_r3c00
+      name: SPR_GreyCrow_r3_c00
       rect:
         serializedVersion: 2
         x: 0
@@ -703,7 +703,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Crow_r3c01
+      name: SPR_GreyCrow_r3_c01
       rect:
         serializedVersion: 2
         x: 48
@@ -725,7 +725,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Crow_r3c02
+      name: SPR_GreyCrow_r3_c02
       rect:
         serializedVersion: 2
         x: 96
@@ -747,7 +747,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Crow_r3c03
+      name: SPR_GreyCrow_r3_c03
       rect:
         serializedVersion: 2
         x: 144
@@ -769,7 +769,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Crow_r3c04
+      name: SPR_GreyCrow_r3_c04
       rect:
         serializedVersion: 2
         x: 192
@@ -791,7 +791,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Crow_r3c05
+      name: SPR_GreyCrow_r3_c05
       rect:
         serializedVersion: 2
         x: 240
@@ -813,7 +813,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Crow_r3c06
+      name: SPR_GreyCrow_r3_c06
       rect:
         serializedVersion: 2
         x: 288
@@ -835,7 +835,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Crow_r4c00
+      name: SPR_GreyCrow_r4_c00
       rect:
         serializedVersion: 2
         x: 0
@@ -857,7 +857,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Crow_r4c01
+      name: SPR_GreyCrow_r4_c01
       rect:
         serializedVersion: 2
         x: 48
@@ -879,7 +879,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Crow_r4c02
+      name: SPR_GreyCrow_r4_c02
       rect:
         serializedVersion: 2
         x: 96
@@ -901,7 +901,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Crow_r4c03
+      name: SPR_GreyCrow_r4_c03
       rect:
         serializedVersion: 2
         x: 144
@@ -923,7 +923,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Crow_r4c04
+      name: SPR_GreyCrow_r4_c04
       rect:
         serializedVersion: 2
         x: 192
@@ -945,7 +945,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Crow_r4c05
+      name: SPR_GreyCrow_r4_c05
       rect:
         serializedVersion: 2
         x: 240
@@ -967,7 +967,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Crow_r4c06
+      name: SPR_GreyCrow_r4_c06
       rect:
         serializedVersion: 2
         x: 288
@@ -989,7 +989,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Crow_r5c00
+      name: SPR_GreyCrow_r5_c00
       rect:
         serializedVersion: 2
         x: 0
@@ -1011,7 +1011,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Crow_r5c01
+      name: SPR_GreyCrow_r5_c01
       rect:
         serializedVersion: 2
         x: 48
@@ -1033,7 +1033,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Crow_r5c02
+      name: SPR_GreyCrow_r5_c02
       rect:
         serializedVersion: 2
         x: 96
@@ -1055,7 +1055,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Crow_r5c03
+      name: SPR_GreyCrow_r5_c03
       rect:
         serializedVersion: 2
         x: 144
@@ -1077,7 +1077,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Crow_r5c04
+      name: SPR_GreyCrow_r5_c04
       rect:
         serializedVersion: 2
         x: 192
@@ -1099,7 +1099,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Crow_r5c05
+      name: SPR_GreyCrow_r5_c05
       rect:
         serializedVersion: 2
         x: 240
@@ -1215,6 +1215,47 @@ TextureImporter:
       Crow_r5c03: -1144420172
       Crow_r5c04: 1481202812
       Crow_r5c05: -574130489
+      SPR_GreyCrow_r0_c00: -348336077
+      SPR_GreyCrow_r0_c01: -428815708
+      SPR_GreyCrow_r0_c02: -1352373065
+      SPR_GreyCrow_r0_c03: -1741449070
+      SPR_GreyCrow_r0_c04: 2129082393
+      SPR_GreyCrow_r0_c05: -1326563582
+      SPR_GreyCrow_r0_c06: 1964165356
+      SPR_GreyCrow_r1_c00: 400471325
+      SPR_GreyCrow_r1_c01: 1843319565
+      SPR_GreyCrow_r1_c02: -1088094939
+      SPR_GreyCrow_r1_c03: -836237166
+      SPR_GreyCrow_r1_c04: 270973856
+      SPR_GreyCrow_r1_c05: 936095274
+      SPR_GreyCrow_r1_c06: -1259407771
+      SPR_GreyCrow_r2_c00: -61238517
+      SPR_GreyCrow_r2_c01: -1972619208
+      SPR_GreyCrow_r2_c02: 1278180736
+      SPR_GreyCrow_r2_c03: 212309565
+      SPR_GreyCrow_r2_c04: 175477200
+      SPR_GreyCrow_r2_c05: 563723318
+      SPR_GreyCrow_r2_c06: -1643797914
+      SPR_GreyCrow_r3_c00: -1495296058
+      SPR_GreyCrow_r3_c01: 884138298
+      SPR_GreyCrow_r3_c02: 1701712313
+      SPR_GreyCrow_r3_c03: -652562651
+      SPR_GreyCrow_r3_c04: -1111477929
+      SPR_GreyCrow_r3_c05: -1959874591
+      SPR_GreyCrow_r3_c06: 1532622437
+      SPR_GreyCrow_r4_c00: -498910585
+      SPR_GreyCrow_r4_c01: 2014619782
+      SPR_GreyCrow_r4_c02: 1617163434
+      SPR_GreyCrow_r4_c03: 1386343721
+      SPR_GreyCrow_r4_c04: -1935562993
+      SPR_GreyCrow_r4_c05: 911500142
+      SPR_GreyCrow_r4_c06: 1605682914
+      SPR_GreyCrow_r5_c00: 1996536165
+      SPR_GreyCrow_r5_c01: 1639111200
+      SPR_GreyCrow_r5_c02: 2000570350
+      SPR_GreyCrow_r5_c03: -1144420172
+      SPR_GreyCrow_r5_c04: 1481202812
+      SPR_GreyCrow_r5_c05: -574130489
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

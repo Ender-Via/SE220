@@ -195,7 +195,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SkullWolf_Sheet_r00c00
+      name: SPR_SkullWolf_r0_c00
       rect:
         serializedVersion: 2
         x: 0
@@ -217,7 +217,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SkullWolf_Sheet_r00c01
+      name: SPR_SkullWolf_r0_c01
       rect:
         serializedVersion: 2
         x: 64
@@ -239,7 +239,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SkullWolf_Sheet_r00c02
+      name: SPR_SkullWolf_r0_c02
       rect:
         serializedVersion: 2
         x: 128
@@ -261,7 +261,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SkullWolf_Sheet_r00c03
+      name: SPR_SkullWolf_r0_c03
       rect:
         serializedVersion: 2
         x: 192
@@ -283,7 +283,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SkullWolf_Sheet_r00c04
+      name: SPR_SkullWolf_r0_c04
       rect:
         serializedVersion: 2
         x: 256
@@ -305,7 +305,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SkullWolf_Sheet_r00c05
+      name: SPR_SkullWolf_r0_c05
       rect:
         serializedVersion: 2
         x: 320
@@ -327,7 +327,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SkullWolf_Sheet_r01c00
+      name: SPR_SkullWolf_r1_c00
       rect:
         serializedVersion: 2
         x: 0
@@ -349,7 +349,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SkullWolf_Sheet_r01c01
+      name: SPR_SkullWolf_r1_c01
       rect:
         serializedVersion: 2
         x: 64
@@ -371,7 +371,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SkullWolf_Sheet_r01c02
+      name: SPR_SkullWolf_r1_c02
       rect:
         serializedVersion: 2
         x: 128
@@ -393,7 +393,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SkullWolf_Sheet_r01c03
+      name: SPR_SkullWolf_r1_c03
       rect:
         serializedVersion: 2
         x: 192
@@ -415,7 +415,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SkullWolf_Sheet_r01c04
+      name: SPR_SkullWolf_r1_c04
       rect:
         serializedVersion: 2
         x: 256
@@ -437,7 +437,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SkullWolf_Sheet_r02c00
+      name: SPR_SkullWolf_r2_c00
       rect:
         serializedVersion: 2
         x: 0
@@ -459,7 +459,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SkullWolf_Sheet_r02c01
+      name: SPR_SkullWolf_r2_c01
       rect:
         serializedVersion: 2
         x: 64
@@ -481,7 +481,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SkullWolf_Sheet_r02c02
+      name: SPR_SkullWolf_r2_c02
       rect:
         serializedVersion: 2
         x: 128
@@ -503,7 +503,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SkullWolf_Sheet_r02c03
+      name: SPR_SkullWolf_r2_c03
       rect:
         serializedVersion: 2
         x: 192
@@ -525,7 +525,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SkullWolf_Sheet_r03c00
+      name: SPR_SkullWolf_r3_c00
       rect:
         serializedVersion: 2
         x: 0
@@ -547,7 +547,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SkullWolf_Sheet_r03c01
+      name: SPR_SkullWolf_r3_c01
       rect:
         serializedVersion: 2
         x: 64
@@ -569,7 +569,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SkullWolf_Sheet_r03c02
+      name: SPR_SkullWolf_r3_c02
       rect:
         serializedVersion: 2
         x: 128
@@ -591,7 +591,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SkullWolf_Sheet_r03c03
+      name: SPR_SkullWolf_r3_c03
       rect:
         serializedVersion: 2
         x: 192
@@ -613,7 +613,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SkullWolf_Sheet_r03c04
+      name: SPR_SkullWolf_r3_c04
       rect:
         serializedVersion: 2
         x: 256
@@ -635,7 +635,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SkullWolf_Sheet_r03c05
+      name: SPR_SkullWolf_r3_c05
       rect:
         serializedVersion: 2
         x: 320
@@ -657,7 +657,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SkullWolf_Sheet_r03c06
+      name: SPR_SkullWolf_r3_c06
       rect:
         serializedVersion: 2
         x: 384
@@ -692,6 +692,28 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
+      SPR_SkullWolf_r0_c00: -1532749000
+      SPR_SkullWolf_r0_c01: -1344529085
+      SPR_SkullWolf_r0_c02: -147115680
+      SPR_SkullWolf_r0_c03: -1388291630
+      SPR_SkullWolf_r0_c04: 938733897
+      SPR_SkullWolf_r0_c05: 577088139
+      SPR_SkullWolf_r1_c00: -1260178055
+      SPR_SkullWolf_r1_c01: -1646689204
+      SPR_SkullWolf_r1_c02: 2059506209
+      SPR_SkullWolf_r1_c03: 1514532991
+      SPR_SkullWolf_r1_c04: 328065205
+      SPR_SkullWolf_r2_c00: 1914975253
+      SPR_SkullWolf_r2_c01: -1038513198
+      SPR_SkullWolf_r2_c02: -68962166
+      SPR_SkullWolf_r2_c03: -1601817084
+      SPR_SkullWolf_r3_c00: -608606558
+      SPR_SkullWolf_r3_c01: -1128592615
+      SPR_SkullWolf_r3_c02: -1339260127
+      SPR_SkullWolf_r3_c03: -792241578
+      SPR_SkullWolf_r3_c04: 102062202
+      SPR_SkullWolf_r3_c05: -112938180
+      SPR_SkullWolf_r3_c06: 1258441049
       SkullWolf_Sheet_0: 7760187803686195583
       SkullWolf_Sheet_1: -1439296342064632320
       SkullWolf_Sheet_10: 3984369890858130498
