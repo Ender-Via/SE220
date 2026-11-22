@@ -256,6 +256,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Woodcutter.UI.ScreenFader
   canvasGroup: {fileID: 271526025}
+  overlay: {fileID: 0}
 --- !u!225 &271526025
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -449,14 +450,17 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1779076474837018359, guid: 4f4bb763a85ef04419d26c4e154d2220, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 589231736}
   m_SourcePrefab: {fileID: 100100000, guid: 4f4bb763a85ef04419d26c4e154d2220, type: 3}
 --- !u!114 &589231732 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6189045583418330255, guid: 4f4bb763a85ef04419d26c4e154d2220, type: 3}
   m_PrefabInstance: {fileID: 589231731}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 589231735}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
@@ -472,6 +476,27 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 652875327404252935, guid: 4f4bb763a85ef04419d26c4e154d2220, type: 3}
   m_PrefabInstance: {fileID: 589231731}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &589231735 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1779076474837018359, guid: 4f4bb763a85ef04419d26c4e154d2220, type: 3}
+  m_PrefabInstance: {fileID: 589231731}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &589231736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 589231735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 547a2a3e9cbec5d48b3f009f7a45feb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Woodcutter.Player.PlayerHealth
+  context: {fileID: 0}
+  spriteRenderer: {fileID: 0}
+  defaultKnockback: {x: 6, y: 5}
+  knockbackControlLockTime: 0.2
 --- !u!1 &679451307
 GameObject:
   m_ObjectHideFlags: 0
@@ -650,6 +675,68 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1420233644
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1420233647}
+  - component: {fileID: 1420233646}
+  - component: {fileID: 1420233645}
+  m_Layer: 0
+  m_Name: GameSession
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1420233645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1420233644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 614fadb3db3370a44a4b95aae40b6597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Woodcutter.World.RespawnController
+  playerHealth: {fileID: 589231736}
+  fader: {fileID: 271526024}
+--- !u!114 &1420233646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1420233644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b9ae4dbcc24d8f42af3b5932b73a45d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Woodcutter.World.GameProgress
+  settings: {fileID: 0}
+  playerHealth: {fileID: 589231736}
+  loadExistingSaveOnStart: 1
+--- !u!4 &1420233647
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1420233644}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -926,3 +1013,4 @@ SceneRoots:
   - {fileID: 679451314}
   - {fileID: 271526028}
   - {fileID: 557845165}
+  - {fileID: 1420233647}
