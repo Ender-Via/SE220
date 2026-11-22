@@ -1,16 +1,21 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Woodcutter.UI
 {
     /// <summary>
-    /// Màn đen phủ toàn màn hình, dùng khi chuyển phòng / hồi sinh.
+    /// Màn phủ toàn màn hình, dùng khi chuyển phòng (đen) / hồi sinh (trắng, UC-05).
     /// Chạy theo thời gian thực (unscaled) để không bị ảnh hưởng bởi hit-stop hay pause.
     /// </summary>
     [RequireComponent(typeof(CanvasGroup))]
     public class ScreenFader : MonoBehaviour
     {
         [SerializeField] private CanvasGroup canvasGroup;
+        [Tooltip("Ảnh phủ màn hình. Để trống = tự tìm Graphic con đầu tiên.")]
+        [SerializeField] private Graphic overlay;
+
+        private Color defaultColor = Color.black;
 
         public bool IsOpaque => canvasGroup != null && canvasGroup.alpha >= 0.999f;
 
@@ -19,6 +24,20 @@ namespace Woodcutter.UI
             if (canvasGroup == null) canvasGroup = GetComponent<CanvasGroup>();
             canvasGroup.blocksRaycasts = false;
             canvasGroup.interactable = false;
+            if (overlay == null) overlay = GetComponentInChildren<Graphic>(true);
+            if (overlay != null) defaultColor = overlay.color;
+        }
+
+        /// <summary>Đổi màu màn phủ (độ mờ vẫn do CanvasGroup quyết định).</summary>
+        public void SetColor(Color color)
+        {
+            if (overlay != null) overlay.color = new Color(color.r, color.g, color.b, 1f);
+        }
+
+        /// <summary>Trả về màu ban đầu trong scene (đen).</summary>
+        public void ResetColor()
+        {
+            if (overlay != null) overlay.color = defaultColor;
         }
 
         public void SetAlpha(float alpha)
