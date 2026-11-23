@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 2975882336081349404}
   - component: {fileID: 3719610853238869403}
   - component: {fileID: 4417290865318204721}
+  - component: {fileID: 5634907434645789010}
   m_Layer: 6
   m_Name: PF_PlayerPrototype
   m_TagString: Untagged
@@ -230,7 +231,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Woodcutter.Player.CharacterContext
   Rigidbody: {fileID: 7187066980741092389}
   SpriteRenderer: {fileID: 2901814295903274715}
-  Animator: {fileID: 5301912750965515718}
+  Animator: {fileID: 5634907434645789010}
   inputBroker: {fileID: 4994982080136297231}
   stats: {fileID: 11400000, guid: 0c6708b9cb4debc4b84647361088e261, type: 2}
   combatStats: {fileID: 11400000, guid: 8d361191bb2e76a49853a7983d775fb5, type: 2}
@@ -324,6 +325,28 @@ MonoBehaviour:
   spriteRenderer: {fileID: 2901814295903274715}
   defaultKnockback: {x: 6, y: 5}
   knockbackControlLockTime: 0.2
+--- !u!95 &5634907434645789010
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1779076474837018359}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5050584c9d74ce2478ef0564c68bbfda, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &5030540569571976456
 GameObject:
   m_ObjectHideFlags: 0
