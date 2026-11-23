@@ -348,10 +348,6 @@ namespace Woodcutter.EditorTools
             {
                 var player = (GameObject)PrefabUtility.InstantiatePrefab(playerPrefab);
                 player.transform.position = new Vector3(-12f, 0.5f, 0f);
-                if (player.GetComponent<PlayerHealth>() == null)
-                {
-                    player.AddComponent<PlayerHealth>();
-                }
             }
 
             // Spawn the 3 Enemies

@@ -12,7 +12,7 @@ namespace Woodcutter.Player
     /// Thực thể Context: Đóng vai trò là Trọng tài điều phối nhân vật.
     /// Nắm giữ các Component vật lý, nạp ScriptableObject thông số, khởi tạo FSM, và nối dây Event từ Broker sang State.
     /// </summary>
-    [RequireComponent(typeof(Rigidbody2D), typeof(Collider2D))]
+    [RequireComponent(typeof(Rigidbody2D), typeof(Collider2D), typeof(PlayerHealth))]
     public class CharacterContext : MonoBehaviour
     {
         [Header("Components & References")]
@@ -74,9 +74,6 @@ namespace Woodcutter.Player
 
             if (ImpulseSource == null)
                 ImpulseSource = GetComponent<CinemachineImpulseSource>();
-
-            if (GetComponent<PlayerHealth>() == null)
-                gameObject.AddComponent<PlayerHealth>();
 
             // Chốt chặn an toàn: Dừng component nếu thiếu SO
             if (stats == null || combatStats == null || abilitiesStats == null)

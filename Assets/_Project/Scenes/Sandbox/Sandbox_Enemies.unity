@@ -314,32 +314,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1779076474837018359, guid: 4f4bb763a85ef04419d26c4e154d2220, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 238791601}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f4bb763a85ef04419d26c4e154d2220, type: 3}
---- !u!1 &238791600 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1779076474837018359, guid: 4f4bb763a85ef04419d26c4e154d2220, type: 3}
-  m_PrefabInstance: {fileID: 238791599}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &238791601
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 238791600}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 547a2a3e9cbec5d48b3f009f7a45feb6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Woodcutter.Player.PlayerHealth
-  context: {fileID: 0}
-  spriteRenderer: {fileID: 0}
-  defaultKnockback: {x: 6, y: 5}
-  knockbackControlLockTime: 0.2
 --- !u!1001 &571431256
 PrefabInstance:
   m_ObjectHideFlags: 0
