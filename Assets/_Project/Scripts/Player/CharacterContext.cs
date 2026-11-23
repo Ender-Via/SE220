@@ -12,7 +12,7 @@ namespace Woodcutter.Player
     /// Thực thể Context: Đóng vai trò là Trọng tài điều phối nhân vật.
     /// Nắm giữ các Component vật lý, nạp ScriptableObject thông số, khởi tạo FSM, và nối dây Event từ Broker sang State.
     /// </summary>
-    [RequireComponent(typeof(Rigidbody2D), typeof(Collider2D))]
+    [RequireComponent(typeof(Rigidbody2D), typeof(Collider2D), typeof(PlayerHealth))]
     public class CharacterContext : MonoBehaviour
     {
         [Header("Components & References")]
@@ -382,6 +382,67 @@ namespace Woodcutter.Player
         public void DisableIFrames() { IsInvulnerable = false; }
 
         // ================================================================
+        // XỬ LÝ HITBOX VÀ SÁT THƯƠNG ĐÒN ĐÁNH (FR-CMB-01, FR-CMB-02, FR-CMB-04)
+        // ================================================================
+        private readonly Collider2D[] attackHitBuffer = new Collider2D[16];
+        private readonly System.Collections.Generic.HashSet<object> hitTargetsThisSwing = new System.Collections.Generic.HashSet<object>();
+
+        public void PerformAttackHitbox(int damage, DamageType damageType, float knockbackForce = 5f)
+        {
+            hitTargetsThisSwing.Clear();
+
+            Vector2 hitboxSize = combatStats != null ? combatStats.hitboxSize : new Vector2(1.5f, 1.5f);
+            float dirX = IsFacingRight ? 1f : -1f;
+            Vector2 origin = (Vector2)transform.position + Vector2.up * 0.9f + Vector2.right * (dirX * hitboxSize.x * 0.5f);
+
+            int hitCount = Physics2D.OverlapBox(origin, hitboxSize, 0f, ContactFilter2D.noFilter, attackHitBuffer);
+            bool landedHit = false;
+
+            for (int i = 0; i < hitCount; i++)
+            {
+                Collider2D hit = attackHitBuffer[i];
+                if (hit == null || hit.gameObject == gameObject || hit.transform.IsChildOf(transform))
+                    continue;
+
+                // 1. Gửi qua IDamageable
+                var damageable = hit.GetComponent<IDamageable>() ?? hit.GetComponentInParent<IDamageable>();
+                if (damageable != null && !hitTargetsThisSwing.Contains(damageable))
+                {
+                    hitTargetsThisSwing.Add(damageable);
+                    Vector2 knockDir = ((Vector2)(hit.transform.position - transform.position)).normalized;
+                    if (knockDir.sqrMagnitude < 0.01f) knockDir = IsFacingRight ? Vector2.right : Vector2.left;
+
+                    var dmgData = new DamageData(damage, damageType, hit.transform.position, knockDir, knockbackForce, gameObject);
+                    if (damageable.TakeDamage(dmgData))
+                    {
+                        landedHit = true;
+                    }
+                    continue;
+                }
+
+                // 2. Tương thích ngược với DemoDamageable trong Demo scene
+                var demoDmg = hit.GetComponent<Demo.DemoDamageable>() ?? hit.GetComponentInParent<Demo.DemoDamageable>();
+                if (demoDmg != null && !hitTargetsThisSwing.Contains(demoDmg))
+                {
+                    hitTargetsThisSwing.Add(demoDmg);
+                    float iceMult = abilitiesStats != null ? abilitiesStats.iceEnemyDamageMultiplier : 2f;
+                    if (demoDmg.TakeHit(damage, damageType == DamageType.Fire, iceMult))
+                    {
+                        landedHit = true;
+                    }
+                }
+            }
+
+            if (landedHit)
+            {
+                float hitStop = damageType == DamageType.Heavy
+                    ? (combatStats != null ? combatStats.heavyHitStop : 0.1f)
+                    : (combatStats != null ? combatStats.normalHitStop : 0.05f);
+                ApplyHitFeedback(hitStop, damageType == DamageType.Heavy ? 1.5f : 1f);
+            }
+        }
+
+        // ================================================================
         // GAME FEEL & PHẢN HỒI CHIẾN ĐẤU (FR-CMB-04)
         // ================================================================
         public void ApplyHitFeedback(float hitStopDuration, float shakeIntensity = 1f)
@@ -408,6 +469,17 @@ namespace Woodcutter.Player
         {
             static float endTime;
             public static bool IsPaused; // menu tạm dừng bật/tắt cờ này
+
+            // Project tắt Domain Reload khi vào Play (Enter Play Mode Options), nên biến static giữ giá trị
+            // của lần Play trước. Time.unscaledTime lại đếm từ 0 -> endTime cũ (vd 64 s) làm cú đánh đầu tiên
+            // dừng game hàng chục giây. Unity gọi hàm này đầu mỗi lần vào Play để đặt lại.
+            [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+            static void ResetStatics()
+            {
+                endTime = 0f;
+                IsPaused = false;
+                Time.timeScale = 1f;
+            }
             public static void Request(float duration)
             {
                 endTime = Mathf.Max(endTime, Time.unscaledTime + duration);

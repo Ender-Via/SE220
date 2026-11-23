@@ -22,6 +22,7 @@ namespace Woodcutter.World
 
         private static readonly List<Room> loadedRooms = new List<Room>();
         private readonly Dictionary<string, RoomDoor> doorLookup = new Dictionary<string, RoomDoor>();
+        private Checkpoint checkpoint;
         private bool doorsCached;
 
         /// <summary>Các phòng đang được nạp (thường chỉ có 1).</summary>
@@ -37,6 +38,16 @@ namespace Woodcutter.World
         public string PersistentSceneName => !string.IsNullOrEmpty(persistentSceneOverride)
             ? persistentSceneOverride
             : RoomManager.DefaultPersistentSceneName;
+
+        /// <summary>Checkpoint của phòng (mỗi phòng tối đa 1, SRS mục 7). Null nếu phòng không có.</summary>
+        public Checkpoint Checkpoint
+        {
+            get
+            {
+                if (!doorsCached) CacheDoors();
+                return checkpoint;
+            }
+        }
 
         public Vector2 DefaultSpawnPosition => defaultSpawn != null ? (Vector2)defaultSpawn.position : (Vector2)transform.position;
 
@@ -82,6 +93,12 @@ namespace Woodcutter.World
 
                 doorLookup.Add(door.DoorId, door);
             }
+
+            Checkpoint[] checkpoints = GetComponentsInChildren<Checkpoint>(true);
+            checkpoint = checkpoints.Length > 0 ? checkpoints[0] : null;
+            if (checkpoints.Length > 1)
+                Debug.LogError($"[Room] Phòng {RoomId} có {checkpoints.Length} checkpoint; mỗi phòng chỉ được 1 (checkpoint_id = mã phòng).", this);
+
             doorsCached = true;
         }
 

@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 925ef8633dd246640b961af587e60a0f, type: 3}
+  m_Name: SO_GreyCrowStats
+  m_EditorClassIdentifier: Assembly-CSharp::Woodcutter.Data.RangedEnemyStatsSO
+  maxHp: 2
+  contactDamage: 1
+  isIceEnemy: 1
+  iceDamageMultiplier: 2
+  knockbackResistance: 0
+  moveSpeed: 3.5
+  detectRange: 8
+  telegraphDuration: 0.6
+  recoverDuration: 0.8
+  projectileSpeed: 7
+  projectileDamage: 1
+  projectileLifetime: 4
+  burstCount: 1
+  burstInterval: 0.2
+  attackCooldown: 2.5
+  hoverAltitude: 2.5
+  hoverBobbingAmplitude: 0.3
+  hoverBobbingFrequency: 2
+  kiteDistance: 3.5
+  swoopDownOnAttack: 1
+  swoopDistanceY: 1.2
