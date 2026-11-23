@@ -20,6 +20,7 @@ namespace Woodcutter.Player
         public SpriteRenderer SpriteRenderer;
         public Animator Animator;
         private HitFlash hitFlashComponent;
+        private PlayerHealth playerHealth;
         [SerializeField] private PlayerInputBroker inputBroker;
         [SerializeField] private PlayerStatsSO stats;
         [SerializeField] private PlayerCombatStatsSO combatStats;
@@ -68,6 +69,7 @@ namespace Woodcutter.Player
         private void Awake()
         {
             hitFlashComponent = GetComponent<HitFlash>();
+            playerHealth = GetComponent<PlayerHealth>();
 
             if (Rigidbody == null) Rigidbody = GetComponent<Rigidbody2D>();
             if (SpriteRenderer == null) SpriteRenderer = GetComponent<SpriteRenderer>();
@@ -118,6 +120,12 @@ namespace Woodcutter.Player
                 inputBroker.OnAttackReleased += ForwardAttackReleasedToCurrentState;
                 inputBroker.OnDodgePressed += ForwardRollPressedToCurrentState;
             }
+
+            if (playerHealth != null)
+            {
+                playerHealth.OnDied += EnterDeathState;
+                playerHealth.OnRevived += Revive;
+            }
         }
 
         private void OnDisable()
@@ -131,6 +139,12 @@ namespace Woodcutter.Player
                 inputBroker.OnAttackPressed -= ForwardAttackPressedToCurrentState;
                 inputBroker.OnAttackReleased -= ForwardAttackReleasedToCurrentState;
                 inputBroker.OnDodgePressed -= ForwardRollPressedToCurrentState;
+            }
+
+            if (playerHealth != null)
+            {
+                playerHealth.OnDied -= EnterDeathState;
+                playerHealth.OnRevived -= Revive;
             }
         }
 
@@ -311,12 +325,8 @@ namespace Woodcutter.Player
             }
         }
 
-        private string currentVisualState;
-
         public void SetVisualState(string stateName, Color color)
         {
-            // Không ghi đè SpriteRenderer.color ở đây để tránh xóa mất hiệu ứng nháy của HitFlash / I-frame
-
             if (Animator == null)
                 Animator = GetComponent<Animator>();
 
@@ -324,12 +334,9 @@ namespace Woodcutter.Player
 
             Animator.SetBool("isMoving", stateName == "Move");
 
-            // Chỉ gọi Play khi state thực sự thay đổi để tránh reset animation từ frame 0
-            if (currentVisualState == stateName) return;
-            currentVisualState = stateName;
-
             int stateHash = Animator.StringToHash(stateName);
-            if (Animator.HasState(0, stateHash))
+            if (Animator.HasState(0, stateHash) &&
+                Animator.GetCurrentAnimatorStateInfo(0).shortNameHash != stateHash)
             {
                 Animator.Play(stateHash);
             }
@@ -513,7 +520,6 @@ namespace Woodcutter.Player
             }
 
             CanAirAttack = true;
-            currentVisualState = string.Empty; // Reset cache để Animator phát lại Idle/Fall chuẩn xác
 
             if (CheckGrounded())
                 StateMachine.ChangeState(IdleState);
