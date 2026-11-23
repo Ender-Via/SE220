@@ -454,6 +454,17 @@ namespace Woodcutter.Player
         {
             static float endTime;
             public static bool IsPaused; // menu tạm dừng bật/tắt cờ này
+
+            // Project tắt Domain Reload khi vào Play (Enter Play Mode Options), nên biến static giữ giá trị
+            // của lần Play trước. Time.unscaledTime lại đếm từ 0 -> endTime cũ (vd 64 s) làm cú đánh đầu tiên
+            // dừng game hàng chục giây. Unity gọi hàm này đầu mỗi lần vào Play để đặt lại.
+            [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+            static void ResetStatics()
+            {
+                endTime = 0f;
+                IsPaused = false;
+                Time.timeScale = 1f;
+            }
             public static void Request(float duration)
             {
                 endTime = Mathf.Max(endTime, Time.unscaledTime + duration);
