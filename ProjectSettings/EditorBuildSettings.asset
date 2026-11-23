@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/_Project/Scenes/MainMenu.unity
+    guid: 710805319827feb4d8551df76d639559
+  - enabled: 1
     path: Assets/_Project/Scenes/Sandbox/Sandbox_RoomTransition.unity
     guid: 11c5e90a27e40ef4783b0bc96c245a49
   - enabled: 1

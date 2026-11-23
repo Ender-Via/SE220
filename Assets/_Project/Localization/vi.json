@@ -1,0 +1,23 @@
+{
+  "entries": [
+    { "key": "game.title", "value": "Tiều phu và những viên đá màu" },
+
+    { "key": "common.yes", "value": "Có" },
+    { "key": "common.no", "value": "Không" },
+    { "key": "common.ok", "value": "Đồng ý" },
+
+    { "key": "menu.new_game", "value": "Chơi mới" },
+    { "key": "menu.continue", "value": "Tiếp tục" },
+    { "key": "menu.options", "value": "Tùy chọn" },
+    { "key": "menu.quit", "value": "Thoát" },
+    { "key": "menu.confirm_overwrite", "value": "Đã có tiến trình được lưu. Chơi mới sẽ xóa tiến trình cũ. Vẫn chơi mới?" },
+    { "key": "menu.save_corrupt", "value": "Không đọc được file lưu (file bị hỏng). Bắt đầu chơi mới?" },
+
+    { "key": "pause.title", "value": "Tạm dừng" },
+    { "key": "pause.resume", "value": "Tiếp tục" },
+    { "key": "pause.notes", "value": "Mẩu giấy" },
+    { "key": "pause.options", "value": "Tùy chọn" },
+    { "key": "pause.main_menu", "value": "Về menu" },
+    { "key": "pause.confirm_main_menu", "value": "Về menu chính? Tiến trình từ checkpoint cuối đến giờ sẽ không được lưu." }
+  ]
+}
