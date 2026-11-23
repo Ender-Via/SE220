@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d0f9ae0f79fdf34c8d70cded2486291, type: 3}
+  m_Name: SO_PixelSpiderStats
+  m_EditorClassIdentifier: Assembly-CSharp::Woodcutter.Data.PatrolEnemyStatsSO
+  maxHp: 2
+  contactDamage: 1
+  isIceEnemy: 1
+  iceDamageMultiplier: 2
+  knockbackResistance: 0
+  moveSpeed: 2
+  detectRange: 5
+  telegraphDuration: 0.5
+  recoverDuration: 0.8
+  patrolSpeed: 2
+  patrolDistance: 4
+  idleWaitTime: 1.2
+  chaseSpeed: 3.5
+  attackRange: 1.2
+  hasFrontShield: 0
+  canAmbushFromCeiling: 1
+  ceilingDropSpeed: 8

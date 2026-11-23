@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d894803c32515374aa00ea2c452cc174, type: 3}
+  m_Name: SO_SkullWolfStats
+  m_EditorClassIdentifier: Assembly-CSharp::Woodcutter.Data.ChargeEnemyStatsSO
+  maxHp: 3
+  contactDamage: 1
+  isIceEnemy: 1
+  iceDamageMultiplier: 2
+  knockbackResistance: 0
+  moveSpeed: 3
+  detectRange: 7
+  telegraphDuration: 0.6
+  recoverDuration: 0.9
+  chargeSpeed: 10
+  chargeDuration: 0.45
+  chargeCooldown: 2
+  minChargeDistance: 1
+  isSleepingByDefault: 0
+  wakeUpDistance: 5

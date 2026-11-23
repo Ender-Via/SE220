@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 801422633305694651}
   - component: {fileID: 2975882336081349404}
   - component: {fileID: 3719610853238869403}
+  - component: {fileID: 4417290865318204721}
   m_Layer: 6
   m_Name: PF_PlayerPrototype
   m_TagString: Untagged
@@ -307,6 +308,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Woodcutter.Core.HitFlash
   flashMaterial: {fileID: 2100000, guid: c149a0be59ef64842b84a455a71323d1, type: 2}
   flashDuration: 0.1
+--- !u!114 &4417290865318204721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1779076474837018359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 547a2a3e9cbec5d48b3f009f7a45feb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Woodcutter.Player.PlayerHealth
+  context: {fileID: 801422633305694651}
+  spriteRenderer: {fileID: 2901814295903274715}
+  defaultKnockback: {x: 6, y: 5}
+  knockbackControlLockTime: 0.2
 --- !u!1 &5030540569571976456
 GameObject:
   m_ObjectHideFlags: 0
