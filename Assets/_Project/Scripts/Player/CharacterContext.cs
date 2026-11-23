@@ -60,6 +60,8 @@ namespace Woodcutter.Player
         public FallState FallState { get; private set; }
         public AttackState AttackState { get; private set; }
         public RollState RollState { get; private set; }
+        public DeathState DeathState { get; private set; }
+        public PlayerRespawn RespawnComponent { get; private set; }
 
         // Buffer kiểm tra va chạm mặt đất (Không sinh rác bộ nhớ)
         private readonly Collider2D[] groundHitBuffer = new Collider2D[8];
@@ -93,6 +95,8 @@ namespace Woodcutter.Player
             FallState = new FallState(this, StateMachine);
             AttackState = new AttackState(this, StateMachine);
             RollState = new RollState(this, StateMachine);
+            RespawnComponent = GetComponent<PlayerRespawn>();
+            DeathState = new DeathState(this, StateMachine);
         }
 
         private void Start()
@@ -225,6 +229,8 @@ namespace Woodcutter.Player
         private void HandleMoveInputReceived(Vector2 input)
         {
             CurrentInputVector = input;
+            if (StateMachine != null && StateMachine.CurrentState == DeathState)
+                return;
             OrientFacingDirection(input.x);
         }
 
@@ -310,13 +316,20 @@ namespace Woodcutter.Player
         public void SetVisualState(string stateName, Color color)
         {
             if (SpriteRenderer != null)
-            {
                 SpriteRenderer.color = color;
-            }
 
-            if (Animator != null)
+            // Tự động tìm lại nếu chưa gán hoặc được script khác tạo lúc runtime
+            if (Animator == null)
+                Animator = GetComponent<Animator>();
+
+            if (Animator == null) return;
+
+            Animator.SetBool("isMoving", stateName == "Move");
+
+            int stateHash = Animator.StringToHash(stateName);
+            if (Animator.HasState(0, stateHash))
             {
-                Animator.SetBool("isMoving", stateName == "Move");
+                Animator.Play(stateHash);
             }
         }
 
