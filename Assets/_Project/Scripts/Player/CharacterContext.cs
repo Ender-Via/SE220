@@ -61,7 +61,6 @@ namespace Woodcutter.Player
         public AttackState AttackState { get; private set; }
         public RollState RollState { get; private set; }
         public DeathState DeathState { get; private set; }
-        public PlayerRespawn RespawnComponent { get; private set; }
 
         // Buffer kiểm tra va chạm mặt đất (Không sinh rác bộ nhớ)
         private readonly Collider2D[] groundHitBuffer = new Collider2D[8];
@@ -95,7 +94,6 @@ namespace Woodcutter.Player
             FallState = new FallState(this, StateMachine);
             AttackState = new AttackState(this, StateMachine);
             RollState = new RollState(this, StateMachine);
-            RespawnComponent = GetComponent<PlayerRespawn>();
             DeathState = new DeathState(this, StateMachine);
         }
 
@@ -313,18 +311,22 @@ namespace Woodcutter.Player
             }
         }
 
+        private string currentVisualState;
+
         public void SetVisualState(string stateName, Color color)
         {
-            if (SpriteRenderer != null)
-                SpriteRenderer.color = color;
+            // Không ghi đè SpriteRenderer.color ở đây để tránh xóa mất hiệu ứng nháy của HitFlash / I-frame
 
-            // Tự động tìm lại nếu chưa gán hoặc được script khác tạo lúc runtime
             if (Animator == null)
                 Animator = GetComponent<Animator>();
 
             if (Animator == null) return;
 
             Animator.SetBool("isMoving", stateName == "Move");
+
+            // Chỉ gọi Play khi state thực sự thay đổi để tránh reset animation từ frame 0
+            if (currentVisualState == stateName) return;
+            currentVisualState = stateName;
 
             int stateHash = Animator.StringToHash(stateName);
             if (Animator.HasState(0, stateHash))
@@ -417,6 +419,34 @@ namespace Woodcutter.Player
                 if (!IsPaused && Time.timeScale == 0f && Time.unscaledTime >= endTime)
                     Time.timeScale = 1f;
             }
+        }
+
+        // ================================================================
+        // CẦU NỐI TRẠNG THÁI CHẾT & HỒI SINH (CHỜ NỐI VỚI SYS #16/#18)
+        // ================================================================
+        public void EnterDeathState()
+        {
+            if (StateMachine != null && DeathState != null && StateMachine.CurrentState != DeathState)
+            {
+                StateMachine.ChangeState(DeathState);
+            }
+        }
+
+        public void Revive()
+        {
+            if (Rigidbody != null)
+            {
+                Rigidbody.linearVelocity = Vector2.zero;
+                Rigidbody.gravityScale = stats.fallingGravity;
+            }
+
+            CanAirAttack = true;
+            currentVisualState = string.Empty; // Reset cache để Animator phát lại Idle/Fall chuẩn xác
+
+            if (CheckGrounded())
+                StateMachine.ChangeState(IdleState);
+            else
+                StateMachine.ChangeState(FallState);
         }
     }
 }
