@@ -21,6 +21,9 @@ namespace Woodcutter.World
     {
         public static RoomManager Instance { get; private set; }
 
+        /// <summary>Mã điểm xuất hiện đặc biệt: đặt nhân vật ở checkpoint của phòng (hồi sinh, tải game).</summary>
+        public const string CheckpointSpawnId = "@checkpoint";
+
         /// <summary>Tên scene nền mặc định chứa Player + camera + RoomManager.</summary>
         public const string DefaultPersistentSceneName = "Sandbox_RoomTransition";
 
@@ -107,6 +110,18 @@ namespace Woodcutter.World
                 CompleteArrival();
                 if (fader != null) fader.SetAlpha(0f);
                 return;
+            }
+
+            // Có file lưu với checkpoint hợp lệ -> vào checkpoint cuối (UC-01 Tiếp tục, FR-SYS-06)
+            GameProgress progress = GameProgress.Instance;
+            if (progress != null && progress.Data.HasCheckpoint)
+            {
+                if (Application.CanStreamedLevelBeLoaded(progress.CheckpointRoomId))
+                {
+                    LoadRoom(progress.CheckpointRoomId, CheckpointSpawnId);
+                    return;
+                }
+                Debug.LogError($"[RoomManager] Checkpoint '{progress.CheckpointRoomId}' trong file lưu không có trong Build Profiles. Vào phòng bắt đầu.", this);
             }
 
             if (!string.IsNullOrEmpty(startRoomId))
@@ -287,7 +302,14 @@ namespace Woodcutter.World
             Vector2 position = room.DefaultSpawnPosition;
             pendingArrivalVelocity = Vector2.zero;
 
-            if (!string.IsNullOrEmpty(doorId))
+            if (doorId == CheckpointSpawnId)
+            {
+                if (room.Checkpoint != null)
+                    position = room.Checkpoint.SpawnPosition;
+                else
+                    Debug.LogWarning($"[RoomManager] Phòng {room.RoomId} không có Checkpoint. Đặt nhân vật ở Default Spawn.", room);
+            }
+            else if (!string.IsNullOrEmpty(doorId))
             {
                 if (room.TryGetDoor(doorId, out RoomDoor door))
                 {
@@ -336,7 +358,8 @@ namespace Woodcutter.World
             doorCooldownUntil = Time.unscaledTime + settings.doorCooldownAfterArrival;
         }
 
-        private void SetPlayerFrozen(bool frozen)
+        /// <summary>Khóa/mở nhân vật (vật lý + input). Dùng khi chuyển phòng, chết, cắt cảnh.</summary>
+        public void SetPlayerFrozen(bool frozen)
         {
             if (playerBody != null)
             {

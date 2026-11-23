@@ -29,6 +29,15 @@ namespace Woodcutter.Player
         public event Action<DamageData> OnDamaged;
         public event Action OnDied;
 
+        /// <summary>Bắn ra sau khi hồi sinh đầy máu (checkpoint hoặc dịch chuyển dự phòng).</summary>
+        public event Action OnRevived;
+
+        /// <summary>
+        /// Bật bởi RespawnController (scene nền có lưu game): khi chết chỉ bắn <see cref="OnDied"/>,
+        /// việc đưa về checkpoint do RespawnController làm (FR-CMB-06). Tắt = dịch chuyển về respawnPosition như cũ.
+        /// </summary>
+        public bool UseExternalRespawn { get; set; }
+
         private float invulnerableUntil;
         private Coroutine blinkRoutine;
         private Vector3 respawnPosition;
@@ -43,7 +52,8 @@ namespace Woodcutter.Player
 
         private void Start()
         {
-            InitializeHealth();
+            // GameProgress có thể đã đặt máu tối đa từ file lưu trước Start này
+            if (MaxHp <= 0) InitializeHealth();
         }
 
         public void InitializeHealth()
@@ -57,6 +67,34 @@ namespace Woodcutter.Player
         public void SetRespawnPosition(Vector3 newRespawnPos)
         {
             respawnPosition = newRespawnPos;
+        }
+
+        /// <summary>Đặt máu tối đa (tải game). Bị giới hạn bởi maxHealthLimit trong PlayerStats.</summary>
+        public void SetMaxHealth(int maxHp, bool refill)
+        {
+            int maxLimit = (context != null && context.Stats != null) ? context.Stats.maxHealthLimit : 8;
+            MaxHp = Mathf.Clamp(maxHp, 1, maxLimit);
+            CurrentHp = refill ? MaxHp : Mathf.Min(CurrentHp, MaxHp);
+            OnHealthChanged?.Invoke(CurrentHp, MaxHp);
+        }
+
+        /// <summary>Hồi sinh: đầy máu, xóa i-frame bị đánh, dừng nhấp nháy.</summary>
+        public void ReviveFull()
+        {
+            if (blinkRoutine != null)
+            {
+                StopCoroutine(blinkRoutine);
+                blinkRoutine = null;
+            }
+            if (spriteRenderer != null) spriteRenderer.enabled = true;
+
+            invulnerableUntil = 0f;
+            if (context != null && context.Rigidbody != null)
+                context.Rigidbody.linearVelocity = Vector2.zero;
+
+            CurrentHp = MaxHp;
+            OnHealthChanged?.Invoke(CurrentHp, MaxHp);
+            OnRevived?.Invoke();
         }
 
         public void IncreaseMaxHealth(int amount)
@@ -147,7 +185,8 @@ namespace Woodcutter.Player
         private void Die()
         {
             OnDied?.Invoke();
-            StartCoroutine(RespawnRoutine());
+            if (!UseExternalRespawn)
+                StartCoroutine(RespawnRoutine());
         }
 
         private IEnumerator RespawnRoutine()
@@ -160,8 +199,7 @@ namespace Woodcutter.Player
             }
 
             transform.position = respawnPosition;
-            CurrentHp = MaxHp;
-            OnHealthChanged?.Invoke(CurrentHp, MaxHp);
+            ReviveFull();
         }
 
         private void OnDisable()
