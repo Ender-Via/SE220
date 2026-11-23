@@ -20,6 +20,7 @@ namespace Woodcutter.Player
         public SpriteRenderer SpriteRenderer;
         public Animator Animator;
         private HitFlash hitFlashComponent;
+        private PlayerHealth playerHealth;
         [SerializeField] private PlayerInputBroker inputBroker;
         [SerializeField] private PlayerStatsSO stats;
         [SerializeField] private PlayerCombatStatsSO combatStats;
@@ -60,6 +61,7 @@ namespace Woodcutter.Player
         public FallState FallState { get; private set; }
         public AttackState AttackState { get; private set; }
         public RollState RollState { get; private set; }
+        public DeathState DeathState { get; private set; }
 
         // Buffer kiểm tra va chạm mặt đất (Không sinh rác bộ nhớ)
         private readonly Collider2D[] groundHitBuffer = new Collider2D[8];
@@ -67,6 +69,7 @@ namespace Woodcutter.Player
         private void Awake()
         {
             hitFlashComponent = GetComponent<HitFlash>();
+            playerHealth = GetComponent<PlayerHealth>();
 
             if (Rigidbody == null) Rigidbody = GetComponent<Rigidbody2D>();
             if (SpriteRenderer == null) SpriteRenderer = GetComponent<SpriteRenderer>();
@@ -93,6 +96,7 @@ namespace Woodcutter.Player
             FallState = new FallState(this, StateMachine);
             AttackState = new AttackState(this, StateMachine);
             RollState = new RollState(this, StateMachine);
+            DeathState = new DeathState(this, StateMachine);
         }
 
         private void Start()
@@ -116,6 +120,12 @@ namespace Woodcutter.Player
                 inputBroker.OnAttackReleased += ForwardAttackReleasedToCurrentState;
                 inputBroker.OnDodgePressed += ForwardRollPressedToCurrentState;
             }
+
+            if (playerHealth != null)
+            {
+                playerHealth.OnDied += EnterDeathState;
+                playerHealth.OnRevived += Revive;
+            }
         }
 
         private void OnDisable()
@@ -129,6 +139,12 @@ namespace Woodcutter.Player
                 inputBroker.OnAttackPressed -= ForwardAttackPressedToCurrentState;
                 inputBroker.OnAttackReleased -= ForwardAttackReleasedToCurrentState;
                 inputBroker.OnDodgePressed -= ForwardRollPressedToCurrentState;
+            }
+
+            if (playerHealth != null)
+            {
+                playerHealth.OnDied -= EnterDeathState;
+                playerHealth.OnRevived -= Revive;
             }
         }
 
@@ -225,6 +241,8 @@ namespace Woodcutter.Player
         private void HandleMoveInputReceived(Vector2 input)
         {
             CurrentInputVector = input;
+            if (StateMachine != null && StateMachine.CurrentState == DeathState)
+                return;
             OrientFacingDirection(input.x);
         }
 
@@ -309,14 +327,18 @@ namespace Woodcutter.Player
 
         public void SetVisualState(string stateName, Color color)
         {
-            if (SpriteRenderer != null)
-            {
-                SpriteRenderer.color = color;
-            }
+            if (Animator == null)
+                Animator = GetComponent<Animator>();
 
-            if (Animator != null)
+            if (Animator == null) return;
+
+            Animator.SetBool("isMoving", stateName == "Move");
+
+            int stateHash = Animator.StringToHash(stateName);
+            if (Animator.HasState(0, stateHash) &&
+                Animator.GetCurrentAnimatorStateInfo(0).shortNameHash != stateHash)
             {
-                Animator.SetBool("isMoving", stateName == "Move");
+                Animator.Play(stateHash);
             }
         }
 
@@ -476,6 +498,33 @@ namespace Woodcutter.Player
                 if (!IsPaused && Time.timeScale == 0f && Time.unscaledTime >= endTime)
                     Time.timeScale = 1f;
             }
+        }
+
+        // ================================================================
+        // CẦU NỐI TRẠNG THÁI CHẾT & HỒI SINH (CHỜ NỐI VỚI SYS #16/#18)
+        // ================================================================
+        public void EnterDeathState()
+        {
+            if (StateMachine != null && DeathState != null && StateMachine.CurrentState != DeathState)
+            {
+                StateMachine.ChangeState(DeathState);
+            }
+        }
+
+        public void Revive()
+        {
+            if (Rigidbody != null)
+            {
+                Rigidbody.linearVelocity = Vector2.zero;
+                Rigidbody.gravityScale = stats.fallingGravity;
+            }
+
+            CanAirAttack = true;
+
+            if (CheckGrounded())
+                StateMachine.ChangeState(IdleState);
+            else
+                StateMachine.ChangeState(FallState);
         }
     }
 }
