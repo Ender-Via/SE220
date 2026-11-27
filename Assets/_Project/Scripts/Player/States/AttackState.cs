@@ -46,7 +46,7 @@ namespace Woodcutter.Player.States
                 isCharging = false;
 
                 // Đánh trên không không sạc được -> Phát luôn dáng Combo 1
-                context.SetVisualState("Attack", Color.white);
+                context.SetVisualState("Attack1", Color.white);
                 context.PerformAttackHitbox(context.CombatStats.combo1Damage, DamageType.Normal, 5f);
             }
             else
@@ -54,7 +54,7 @@ namespace Woodcutter.Player.States
                 context.Rigidbody.linearVelocity = new Vector2(0f, context.Rigidbody.linearVelocity.y);
 
                 // Mặc định dưới đất luôn bắt đầu bằng frame lấy đà của đòn nặng
-                context.SetVisualState("HeavyAttack", Color.white);
+                context.SetVisualState("HeavyCharge", Color.white);
             }
         }
 
@@ -176,7 +176,7 @@ namespace Woodcutter.Player.States
                 // Nếu nhả phím sớm trước khi sạc đủ -> Tung Combo 1 bình thường
                 if (chargeTimer < context.CombatStats.heavyChargeTime)
                 {
-                    context.SetVisualState("Attack", new Color(1f, 0.5f, 0.5f));
+                    context.SetVisualState("Attack1", new Color(1f, 0.5f, 0.5f));
                     // Cấp lại thời gian đánh vì lúc nãy bị đóng băng bởi isCharging
                     attackTimer = context.CombatStats.attackDuration;
 
