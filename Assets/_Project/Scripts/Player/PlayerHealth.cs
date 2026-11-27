@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using UnityEngine;
 using Woodcutter.Core;
@@ -40,12 +40,16 @@ namespace Woodcutter.Player
 
         private float invulnerableUntil;
         private Coroutine blinkRoutine;
+        private SpriteRenderer[] blinkRenderers;
+        private bool blinkVisible = true;
         private Vector3 respawnPosition;
 
         private void Awake()
         {
             if (context == null) context = GetComponent<CharacterContext>();
             if (spriteRenderer == null) spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+            // Nhân vật rig nhiều mảnh: nháy tất cả SpriteRenderer con (đầu, thân, tay, chân, khăn, rìu...)
+            blinkRenderers = GetComponentsInChildren<SpriteRenderer>(true);
 
             respawnPosition = transform.position;
         }
@@ -86,7 +90,7 @@ namespace Woodcutter.Player
                 StopCoroutine(blinkRoutine);
                 blinkRoutine = null;
             }
-            if (spriteRenderer != null) spriteRenderer.enabled = true;
+            SetBlinkVisible(true);
 
             invulnerableUntil = 0f;
             if (context != null && context.Rigidbody != null)
@@ -168,18 +172,25 @@ namespace Woodcutter.Player
         {
             while (Time.time < invulnerableUntil)
             {
-                if (spriteRenderer != null)
-                {
-                    spriteRenderer.enabled = !spriteRenderer.enabled;
-                }
+                SetBlinkVisible(!blinkVisible);
                 yield return new WaitForSeconds(0.08f);
             }
 
-            if (spriteRenderer != null)
-            {
-                spriteRenderer.enabled = true;
-            }
+            SetBlinkVisible(true);
             blinkRoutine = null;
+        }
+
+        // Ẩn/hiện mọi mảnh của nhân vật khi nháy i-frame
+        private void SetBlinkVisible(bool visible)
+        {
+            blinkVisible = visible;
+            if (blinkRenderers == null || blinkRenderers.Length == 0)
+            {
+                if (spriteRenderer != null) spriteRenderer.enabled = visible;
+                return;
+            }
+            for (int i = 0; i < blinkRenderers.Length; i++)
+                if (blinkRenderers[i] != null) blinkRenderers[i].enabled = visible;
         }
 
         private void Die()
@@ -209,10 +220,7 @@ namespace Woodcutter.Player
                 StopCoroutine(blinkRoutine);
                 blinkRoutine = null;
             }
-            if (spriteRenderer != null)
-            {
-                spriteRenderer.enabled = true;
-            }
+            SetBlinkVisible(true);
         }
     }
 }

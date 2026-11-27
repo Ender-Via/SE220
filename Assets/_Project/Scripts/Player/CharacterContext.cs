@@ -77,6 +77,9 @@ namespace Woodcutter.Player
 
             if (ImpulseSource == null)
                 ImpulseSource = GetComponent<CinemachineImpulseSource>();
+            if (Animator == null)
+                Animator = GetComponentInChildren<Animator>();
+            afterimageTrail = GetComponentInChildren<Woodcutter.VFX.AfterimageTrail>();
 
             // Chốt chặn an toàn: Dừng component nếu thiếu SO
             if (stats == null || combatStats == null || abilitiesStats == null)
@@ -125,6 +128,7 @@ namespace Woodcutter.Player
             {
                 playerHealth.OnDied += EnterDeathState;
                 playerHealth.OnRevived += Revive;
+                playerHealth.OnDamaged += HandleDamagedVisual;
             }
         }
 
@@ -145,6 +149,7 @@ namespace Woodcutter.Player
             {
                 playerHealth.OnDied -= EnterDeathState;
                 playerHealth.OnRevived -= Revive;
+                playerHealth.OnDamaged -= HandleDamagedVisual;
             }
         }
 
@@ -172,6 +177,8 @@ namespace Woodcutter.Player
 
             // Ủy thác toàn bộ logic cho State hiện tại
             StateMachine.LogicUpdate();
+
+            ResumeVisualAfterHit();
         }
 
         private void FixedUpdate()
@@ -325,21 +332,65 @@ namespace Woodcutter.Player
             }
         }
 
+        [Header("Animation (FR-ART)")]
+        [Tooltip("Thời gian trộn tư thế khi đổi animation (giây). Đòn đánh nên trộn ngắn để ra đòn ngay.")]
+        [SerializeField] private float visualCrossFade = 0.08f;
+        [SerializeField] private float attackCrossFade = 0.03f;
+
+        [Tooltip("Thời gian animation Hit được ưu tiên, không bị chạy/nhảy/rơi ghi đè (giây)")]
+        [SerializeField] private float hitVisualDuration = 0.25f;
+
+        private string currentVisual;
+        private float hitVisualUntil;
+        private Woodcutter.VFX.AfterimageTrail afterimageTrail;
+
+        /// <summary>
+        /// Phát animation có tên <paramref name="stateName"/> trên Animator của hình nhân vật (PF_WoodcutterV2_Pixel).
+        /// Tên state: Idle, Run, Jump, Fall, Attack1, Attack2, HeavyCharge, HeavyAttack, Dash, Hit, Die.
+        /// <paramref name="color"/> chỉ còn dùng cho bản gray-box chưa có Animator.
+        /// </summary>
         public void SetVisualState(string stateName, Color color)
         {
-            if (Animator == null)
-                Animator = GetComponent<Animator>();
+            currentVisual = stateName;
 
-            if (Animator == null) return;
+            if (afterimageTrail != null) afterimageTrail.SetEmitting(stateName == "Dash");
 
-            Animator.SetBool("isMoving", stateName == "Move");
+            if (Animator == null || Animator.runtimeAnimatorController == null)
+            {
+                if (SpriteRenderer != null) SpriteRenderer.color = color;
+                return;
+            }
 
             int stateHash = Animator.StringToHash(stateName);
-            if (Animator.HasState(0, stateHash) &&
-                Animator.GetCurrentAnimatorStateInfo(0).shortNameHash != stateHash)
-            {
-                Animator.Play(stateHash);
-            }
+            if (!Animator.HasState(0, stateHash)) return;
+
+            // Đòn đánh luôn phát lại từ đầu; state khác chỉ đổi khi đang không phát đúng state đó
+            bool isAttack = stateName == "Attack1" || stateName == "Attack2" || stateName == "HeavyAttack";
+
+            // Đang phát Hit: chạy/nhảy/rơi/đứng chờ Hit xong mới phát (ResumeVisualAfterHit); đòn đánh, né, chết thì phát ngay
+            bool overridesHit = isAttack || stateName == "HeavyCharge" || stateName == "Dash" || stateName == "Die";
+            if (Time.time < hitVisualUntil && !overridesHit) return;
+            if (overridesHit) hitVisualUntil = 0f;
+
+            if (!isAttack && Animator.GetCurrentAnimatorStateInfo(0).shortNameHash == stateHash) return;
+
+            Animator.CrossFadeInFixedTime(stateHash, isAttack ? attackCrossFade : visualCrossFade, 0, 0f);
+        }
+
+        private void HandleDamagedVisual(DamageData _)
+        {
+            if (playerHealth != null && playerHealth.IsDead) return;
+            if (Animator == null || !Animator.HasState(0, Animator.StringToHash("Hit"))) return;
+            hitVisualUntil = Time.time + hitVisualDuration;
+            Animator.CrossFadeInFixedTime("Hit", attackCrossFade, 0, 0f);
+        }
+
+        // Hết thời gian ưu tiên Hit: phát lại animation của state hiện tại (chạy, rơi, đứng...)
+        private void ResumeVisualAfterHit()
+        {
+            if (hitVisualUntil <= 0f || Time.time < hitVisualUntil) return;
+            hitVisualUntil = 0f;
+            if (currentVisual != null) SetVisualState(currentVisual, Color.white);
         }
 
         private void OnDrawGizmos()

@@ -13,7 +13,7 @@ namespace Woodcutter.Player.States
 
         public override void Enter()
         {
-            context.SetVisualState("Move", new Color(0.35f, 0.75f, 1f)); // Xanh dương nhạt
+            context.SetVisualState("Run", new Color(0.35f, 0.75f, 1f)); // Xanh dương nhạt
         }
 
         public override void LogicUpdate()

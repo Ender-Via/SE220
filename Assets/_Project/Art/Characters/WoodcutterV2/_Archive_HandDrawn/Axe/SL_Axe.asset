@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bf7c34a0dc4e6348bea04faa70406ee, type: 3}
+  m_Name: SL_Axe
+  m_EditorClassIdentifier: Unity.2D.Animation.Runtime::UnityEngine.U2D.Animation.SpriteLibraryAsset
+  m_Labels:
+  - m_Name: Axe
+    m_Hash: 338122956
+    m_CategoryList:
+    - m_Name: Rest
+      m_Hash: 489066222
+      m_Sprite: {fileID: 21300000, guid: c31f12740331aa842861cc6a7d235389, type: 3}
+    - m_Name: Raise
+      m_Hash: 967292061
+      m_Sprite: {fileID: 21300000, guid: eb784c84598da68469c9963d92949736, type: 3}
+    - m_Name: Swing
+      m_Hash: 551000158
+      m_Sprite: {fileID: 21300000, guid: bbad92f4c1c1f0f438fd9c65bbcdce04, type: 3}
+    - m_Name: Follow
+      m_Hash: 798507334
+      m_Sprite: {fileID: 21300000, guid: 120db2aafebf14442925af77ac48a53f, type: 3}
+    - m_Name: Slam
+      m_Hash: 919865879
+      m_Sprite: {fileID: 21300000, guid: 4b17b3d092a0c35499cf01d42eb5d302, type: 3}
+  m_ModificationHash: 0
+  m_Version: 1

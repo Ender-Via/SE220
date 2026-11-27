@@ -21,7 +21,7 @@ namespace Woodcutter.Player.States
                 context.Rigidbody.linearVelocity = new Vector2(0f, context.Rigidbody.linearVelocity.y);
             }
 
-            context.SetVisualState("Death", Color.white);
+            context.SetVisualState("Die", Color.white);
         }
 
         public override void PhysicsUpdate()
