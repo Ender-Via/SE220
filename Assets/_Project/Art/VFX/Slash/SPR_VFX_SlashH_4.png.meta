@@ -1,0 +1,483 @@
+fileFormatVersion: 2
+guid: cef98ef92cb7ae048bc004e1b8939afa
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7810118439346018234
+    second: SPR_VFX_SlashH_4_0
+  - first:
+      213: -8864915932724905202
+    second: SPR_VFX_SlashH_4_1
+  - first:
+      213: 6509389858213554160
+    second: SPR_VFX_SlashH_4_2
+  - first:
+      213: -5057718112469998138
+    second: SPR_VFX_SlashH_4_3
+  - first:
+      213: -3196576683458160091
+    second: SPR_VFX_SlashH_4_4
+  - first:
+      213: 5995148518152127285
+    second: SPR_VFX_SlashH_4_5
+  - first:
+      213: -6768780368125012190
+    second: SPR_VFX_SlashH_4_6
+  - first:
+      213: -1711920046388982931
+    second: SPR_VFX_SlashH_4_7
+  - first:
+      213: -7500690077509732786
+    second: SPR_VFX_SlashH_4_8
+  - first:
+      213: 1367123485915735547
+    second: SPR_VFX_SlashH_4_9
+  - first:
+      213: 1154549267405164961
+    second: SPR_VFX_SlashH_4_10
+  - first:
+      213: 5609865444569316639
+    second: SPR_VFX_SlashH_4_11
+  - first:
+      213: -6825934338535981279
+    second: SPR_VFX_SlashH_4_12
+  - first:
+      213: 1181907847714225269
+    second: SPR_VFX_SlashH_4_13
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 230
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationMethod: 0
+  spriteTessellationDetail: -1
+  spriteGeometrySubdivision: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SPR_VFX_SlashH_4_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 81
+        height: 219
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab792fe375d136c60800000000000000
+      internalID: 7810118439346018234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPR_VFX_SlashH_4_1
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 164
+        width: 65
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0b3b327ded79f480800000000000000
+      internalID: -8864915932724905202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPR_VFX_SlashH_4_2
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 251
+        width: 13
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f7695b769ff55a50800000000000000
+      internalID: 6509389858213554160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPR_VFX_SlashH_4_3
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 202
+        width: 41
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c5aa247c206fc9b0800000000000000
+      internalID: -5057718112469998138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPR_VFX_SlashH_4_4
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 140
+        width: 68
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52a1e2d417a73a3d0800000000000000
+      internalID: -3196576683458160091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPR_VFX_SlashH_4_5
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 154
+        width: 25
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 533ca2840db033350800000000000000
+      internalID: 5995148518152127285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPR_VFX_SlashH_4_6
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 148
+        width: 16
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22755432e167012a0800000000000000
+      internalID: -6768780368125012190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPR_VFX_SlashH_4_7
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 108
+        width: 15
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6b4d17b9c90e38e0800000000000000
+      internalID: -1711920046388982931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPR_VFX_SlashH_4_8
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 114
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e463cb76d1238e790800000000000000
+      internalID: -7500690077509732786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPR_VFX_SlashH_4_9
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 116
+        width: 23
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf5e91e219ff8f210800000000000000
+      internalID: 1367123485915735547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPR_VFX_SlashH_4_10
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 21
+        width: 122
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a15f5f0178c50010800000000000000
+      internalID: 1154549267405164961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPR_VFX_SlashH_4_11
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 77
+        width: 12
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1dfa4546ee3add40800000000000000
+      internalID: 5609865444569316639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPR_VFX_SlashH_4_12
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 33
+        width: 31
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12ffb6b62e86541a0800000000000000
+      internalID: -6825934338535981279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPR_VFX_SlashH_4_13
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 5
+        width: 122
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57cb04ceceaf66010800000000000000
+      internalID: 1181907847714225269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      SPR_VFX_SlashH_4_0: 7810118439346018234
+      SPR_VFX_SlashH_4_1: -8864915932724905202
+      SPR_VFX_SlashH_4_10: 1154549267405164961
+      SPR_VFX_SlashH_4_11: 5609865444569316639
+      SPR_VFX_SlashH_4_12: -6825934338535981279
+      SPR_VFX_SlashH_4_13: 1181907847714225269
+      SPR_VFX_SlashH_4_2: 6509389858213554160
+      SPR_VFX_SlashH_4_3: -5057718112469998138
+      SPR_VFX_SlashH_4_4: -3196576683458160091
+      SPR_VFX_SlashH_4_5: 5995148518152127285
+      SPR_VFX_SlashH_4_6: -6768780368125012190
+      SPR_VFX_SlashH_4_7: -1711920046388982931
+      SPR_VFX_SlashH_4_8: -7500690077509732786
+      SPR_VFX_SlashH_4_9: 1367123485915735547
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
