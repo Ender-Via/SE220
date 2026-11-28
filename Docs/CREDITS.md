@@ -12,8 +12,8 @@ File duy nhất ghi nguồn, giấy phép và ghi công cho mọi asset không d
 | [Pixel Valley – Winter Forest](#21-pixel-valley--winter-forest-16x16) | Kauzz | Miễn phí phi thương mại; thương mại nên ủng hộ | **Tác giả đề nghị** | Tileset khu 1 |
 | [Skull Wolf Pixel Art](#22-skull-wolf-pixel-art) | atari-boy | Dùng thương mại, được sửa | Không bắt buộc, tác giả mong được ghi | Sói tuyết |
 | [2D Pixel Art Spider Sprites](#23-2d-pixel-art-spider-sprites) | Elthen | CC BY-NC 4.0 + quyền thương mại, cấm NFT | Không bắt buộc | Nhện băng |
-| [Crow Sprite](#24-crow-sprite) | Smithy Games | CC0 (⚠️ chưa xác nhận) | Không cần | Quạ xám |
-| [Bat (`Bat.zip`)](#25-bat-batzip) | ⚠️ **chưa rõ** | ⚠️ **chưa rõ** | ⚠️ chưa rõ | Dơi hang |
+| [Crow Sprite](#24-crow-sprite) | Smithy Games | CC0 1.0 | Không cần | Quạ xám |
+| [Bat Pixel art (FREE)](#25-bat-pixel-art-free) | QuimeraGames | CC0 (theo nhóm) – tác giả xác nhận dùng tự do | Không cần | Dơi hang |
 | [Tinh linh sương](#31-tinh-linh-sương) | ChatGPT (AI) | Nhóm sở hữu | Không cần | Quái khu 2–3 |
 | [Giáp băng](#32-giáp-băng) | ChatGPT (AI) | Nhóm sở hữu | Không cần | Quái khu 2 |
 | [Dơi hang – khung vẽ thêm](#33-dơi-hang--khung-vẽ-thêm) | ChatGPT (AI) | Theo giấy phép `Bat.zip` | Theo `Bat.zip` | Quái khu 2 |
@@ -71,22 +71,22 @@ Quy tắc chung: không sửa file gốc trong `Assets/ThirdParty/`. Mọi chỉ
 - **Ngày đưa vào:** 2026-11-20
 - **Thư mục:** `Assets/ThirdParty/SmithyGames_Crow/`
 - **Dùng cho:** Quạ xám (khu 1)
-- **Điều khoản:** CC0 1.0 Universal (Public Domain): dùng tự do, kể cả thương mại, được sửa, không cần ghi công. ⚠️ Thông tin lấy từ kết quả tìm kiếm, **chưa đọc trực tiếp trên trang itch.io**.
+- **Điều khoản:** CC0 1.0 Universal (Public Domain): dùng tự do, kể cả thương mại, được sửa, không cần ghi công. Tác giả chỉ đề nghị không nhận hình là của mình. Đã xác nhận trên trang itch.io (2026-11-29): mô tả và mục "Asset license: Creative Commons Zero v1.0 Universal".
 - **Việc cần làm:**
-  - [ ] Mở trang itch.io xác nhận CC0, rồi xóa dòng ⚠️.
   - [ ] (Tùy chọn) Ghi tên vào credits trong game.
 - **Kỹ thuật:** `Crow.png` lưới 7×6 ô 48×48, 41 frame `SPR_GreyCrow_r<hàng>_c<cột>`. Hàng 5 (Fly) có frame chữ "CAW" ở cột 5, không đưa vào clip. Clip và Animator ở `Assets/_Project/Art/Characters/Enemies/GreyCrow/`.
 
-### 2.5. Bat (`Bat.zip`)
+### 2.5. Bat Pixel art (FREE)
 
-- **Tác giả:** ⚠️ CHƯA RÕ
-- **Trang tải:** ⚠️ CHƯA RÕ
-- **Giấy phép:** ⚠️ CHƯA RÕ
+- **Tác giả:** QuimeraGames
+- **Trang tải:** https://quimeragames.itch.io/bat-pixel-art-free (file `Bat.zip`)
+- **Giá:** "Name your own price", tác giả ghi "completely free"
 - **Ngày đưa vào:** 2026-11-28
+- **Điều khoản:** nhóm xếp vào CC0. Trên trang itch.io (đọc 2026-11-29) **không có mục giấy phép ghi rõ CC0**; khi được hỏi có dùng cho game thương mại không, tác giả trả lời trong phần bình luận: "Yes, you can use it freely."
 - **Nội dung gốc:** khung 50×50, Idle (2), Fly (4), Fall (3), Hit (2), Dead (1), màu tím. File gốc **không** nằm trong project; chỉ có bản đã ghép dải và đổi sang bảng màu xám trong `Assets/_Project/Art/Characters/Enemies/CaveBat/` (dùng Idle, Fly, Fall, Hit).
 - **Việc cần làm:**
-  - [ ] Tìm lại trang tải, điền tác giả, link, giấy phép rồi xóa các dòng ⚠️.
-  - [ ] Nếu không tìm được nguồn, hoặc giấy phép không cho sửa hay dùng thương mại: thay bằng dơi tự vẽ trước tuần 8 (SRS: asset bên ngoài phải có giấy phép).
+  - [ ] (Tùy chọn) Ghi tên vào credits trong game.
+  - [ ] (Tùy chọn) Chụp lại bình luận xác nhận của tác giả để lưu, phòng khi trang thay đổi.
 
 ## 3. Hình tạo bằng AI (ChatGPT, OpenAI)
 
@@ -117,12 +117,10 @@ Asset bên ngoài
   Sói tuyết – "Skull Wolf" – atari-boy (atari-boy.itch.io)
   Nhện băng – "2D Pixel Art Spider Sprites" – Elthen (elthen.itch.io)
   Quạ xám – "Crow Sprite" – Smithy Games (smithygames.itch.io)
-  Dơi hang – <tác giả Bat.zip – CẦN ĐIỀN>
+  Dơi hang – "Bat Pixel art" – QuimeraGames (quimeragames.itch.io)
 ```
 
 ## 5. Việc còn mở
 
-- [ ] **Dơi hang:** tìm nguồn và giấy phép `Bat.zip` (mục 2.5).
-- [ ] **Quạ xám:** xác nhận CC0 trên trang itch.io (mục 2.4).
 - [ ] **Winter Forest:** ủng hộ tác giả nếu phát hành có thu tiền (mục 2.1).
 - [ ] **Nhạc và SFX:** chưa có, thêm vào đây khi ARTE chọn nguồn (câu hỏi mở trong SRS).
