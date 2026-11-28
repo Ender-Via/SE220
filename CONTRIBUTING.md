@@ -40,6 +40,7 @@ Checklist trước khi tạo PR:
 - [ ] Không sửa scene/prefab của người khác khi chưa báo.
 - [ ] Chuỗi chữ hiển thị trong game nằm trong file ngôn ngữ (`Assets/_Project/Localization`).
 - [ ] Đã kèm đủ file `.meta`, không có file thừa trong `Library/`, `Temp/`, `Logs/`.
+- [ ] Asset bên ngoài hoặc tạo bằng AI mới thêm đã được ghi nguồn, giấy phép và ghi công trong [Docs/CREDITS.md](Docs/CREDITS.md).
 
 ## 5. Cấu trúc thư mục
 
