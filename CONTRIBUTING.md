@@ -16,8 +16,8 @@
 
 - `main`: luôn mở được và chạy được. Chỉ nhận thay đổi qua Pull Request, cần ≥ 1 người duyệt.
 - Nhánh tính năng: `<vai>/<mã-SRS>-<mô-tả-ngắn>`
-  - Vai: `lead`, `sys`, `lvl`, `artc`, `arte`
-  - Ví dụ: `lead/MOV-03-coyote-time`, `sys/SYS-05-save-load`, `lvl/LVL-02-greybox-khu1`
+  - Vai: `lead`, `game`, `sys`, `lvl`, `arte` (art nhân vật, quái, boss do LEAD làm nên dùng `lead`)
+  - Ví dụ: `game/MOV-03-coyote-time`, `sys/SYS-05-save-load`, `lvl/LVL-02-greybox-khu1`, `lead/quai-khu2-art`
 - Mã yêu cầu lấy theo SRS mục 3 (MOV, CMB, ABL, LVL, NAR, AUD, SYS). Việc không có mã thì bỏ phần mã.
 
 ## 3. Commit

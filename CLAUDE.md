@@ -139,11 +139,14 @@ Dùng **Input System mới**.
 
 | Mã | Vai trò | Phụ trách |
 |---|---|---|
-| LEAD | Trưởng nhóm + lập trình gameplay | Di chuyển, chiến đấu, năng lực, game feel, Git |
+| LEAD | Trưởng nhóm + họa sĩ nhân vật | Quản lý tiến độ, quy ước nhóm; tiều phu, quái, boss, animation, VFX đòn đánh |
+| GAME | Lập trình gameplay | Di chuyển, chiến đấu, năng lực, game feel, setup project/Git |
 | SYS | Lập trình hệ thống + AI | Quái, boss, lưu/tải, UI, chuyển phòng, shader hồi màu |
-| LVL | Thiết kế màn chơi + cốt truyện | 18 phòng, mẩu giấy, cân bằng, chơi thử |
-| ARTC | Họa sĩ nhân vật | Tiều phu, quái, boss, animation, VFX |
-| ARTE | Họa sĩ môi trường + âm thanh | Tileset, nền, UI, nhạc xếp lớp, SFX |
+| LVL | Thiết kế màn chơi + cốt truyện | 18 phòng, mẩu giấy, cân bằng thông số, chơi thử |
+| ARTE | Họa sĩ môi trường + âm thanh | Tileset, nền, UI, bảng màu, nhạc, hiệu ứng âm |
+| ALL | Cả nhóm | Việc chung |
+
+Mã vai trò dùng thống nhất với bảng phân công `Phân công.xlsx` (sheet "Vai trò").
 
 ## 12. Lịch 8 tuần
 
