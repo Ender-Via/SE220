@@ -1,0 +1,607 @@
+fileFormatVersion: 2
+guid: 0d6a802d037b72045a1bf5d8a3aa141e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6400166200614046179
+    second: SPR_FrostSpirit_05-tan-suong_0
+  - first:
+      213: -5839581714510591982
+    second: SPR_FrostSpirit_05-tan-suong_1
+  - first:
+      213: -3484061978976086776
+    second: SPR_FrostSpirit_05-tan-suong_2
+  - first:
+      213: 1108020536749216547
+    second: SPR_FrostSpirit_05-tan-suong_3
+  - first:
+      213: 7604084034422133025
+    second: SPR_FrostSpirit_05-tan-suong_4
+  - first:
+      213: -7375585066652315409
+    second: SPR_FrostSpirit_05-tan-suong_5
+  - first:
+      213: -6531278167092508719
+    second: SPR_FrostSpirit_05-tan-suong_6
+  - first:
+      213: -3034349049337726371
+    second: SPR_FrostSpirit_05-tan-suong_7
+  - first:
+      213: -6889011770586654266
+    second: SPR_FrostSpirit_05-tan-suong_8
+  - first:
+      213: 5167474293556997341
+    second: SPR_FrostSpirit_05-tan-suong_9
+  - first:
+      213: -4913643846973981549
+    second: SPR_FrostSpirit_05-tan-suong_10
+  - first:
+      213: 562856168881383398
+    second: SPR_FrostSpirit_05-tan-suong_11
+  - first:
+      213: -4653868525255567609
+    second: SPR_FrostSpirit_05-tan-suong_12
+  - first:
+      213: -5321906799858638079
+    second: SPR_FrostSpirit_05-tan-suong_13
+  - first:
+      213: -6799291291277635046
+    second: SPR_FrostSpirit_05-tan-suong_14
+  - first:
+      213: -6460049652413447333
+    second: SPR_FrostSpirit_05-tan-suong_15
+  - first:
+      213: -6194621300492471478
+    second: SPR_FrostSpirit_05-tan-suong_16
+  - first:
+      213: -5521612164837431851
+    second: SPR_FrostSpirit_05-tan-suong_17
+  - first:
+      213: -1874902395522321400
+    second: SPR_FrostSpirit_05-tan-suong_18
+  - first:
+      213: -6181169940308693171
+    second: SPR_FrostSpirit_05-tan-suong_19
+  - first:
+      213: 6292514446070542858
+    second: SPR_FrostSpirit_05-tan-suong_20
+  - first:
+      213: 3991482166396715445
+    second: SPR_FrostSpirit_05-tan-suong_21
+  - first:
+      213: 2302465298085402547
+    second: SPR_FrostSpirit_05-tan-suong_22
+  - first:
+      213: 6452771368125999828
+    second: SPR_FrostSpirit_05-tan-suong_23
+  - first:
+      213: 3035367116953246600
+    second: SPR_FrostSpirit_05-tan-suong_24
+  - first:
+      213: -1027020025413984806
+    second: SPR_FrostSpirit_05-tan-suong_25
+  - first:
+      213: 7154540568996645555
+    second: SPR_FrostSpirit_05-tan-suong_26
+  - first:
+      213: -5135768775184586545
+    second: SPR_FrostSpirit_05-tan-suong_27
+  - first:
+      213: 8108435413392355972
+    second: SPR_FrostSpirit_05-tan-suong_28
+  - first:
+      213: 1361461262853968028
+    second: SPR_FrostSpirit_05-tan-suong_29
+  - first:
+      213: 469786830857389598
+    second: SPR_FrostSpirit_05-tan-suong_30
+  - first:
+      213: 8664168542369924455
+    second: FrostSpirit_Dead_0
+  - first:
+      213: -459695073261421729
+    second: FrostSpirit_Dead_1
+  - first:
+      213: -7623433051766846323
+    second: FrostSpirit_Dead_2
+  - first:
+      213: -1770589157510554283
+    second: FrostSpirit_Dead_3
+  - first:
+      213: -1076652732939032262
+    second: FrostSpirit_Dead_4
+  - first:
+      213: 5124760403854415962
+    second: FrostSpirit_Dead_5
+  - first:
+      213: -620958564850270619
+    second: FrostSpirit_Dead_6
+  - first:
+      213: 7372637980249172983
+    second: FrostSpirit_Dead_7
+  - first:
+      213: 2912320072319583087
+    second: FrostSpirit_Dead_8
+  - first:
+      213: 1584212510253288124
+    second: FrostSpirit_Dead_9
+  - first:
+      213: -6852448659076972372
+    second: FrostSpirit_Dead_10
+  - first:
+      213: -456088461096979709
+    second: FrostSpirit_Dead_11
+  - first:
+      213: 3895739372275521355
+    second: FrostSpirit_Dead_12
+  - first:
+      213: -1583072555130751242
+    second: FrostSpirit_Dead_13
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationMethod: 0
+  spriteTessellationDetail: -1
+  spriteGeometrySubdivision: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: FrostSpirit_Dead_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 105
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 765c212726f4d3870800000000000000
+      internalID: 8664168542369924455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrostSpirit_Dead_1
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 0
+        width: 105
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5b714534c5de99f0800000000000000
+      internalID: -459695073261421729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrostSpirit_Dead_2
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 0
+        width: 105
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8c0774b700243690800000000000000
+      internalID: -7623433051766846323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrostSpirit_Dead_3
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 0
+        width: 105
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55ddc6fca8a9d67e0800000000000000
+      internalID: -1770589157510554283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrostSpirit_Dead_4
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 0
+        width: 105
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3927b23b06fe01f0800000000000000
+      internalID: -1076652732939032262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrostSpirit_Dead_5
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 0
+        width: 105
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a58dab66f6ece1740800000000000000
+      internalID: 5124760403854415962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrostSpirit_Dead_6
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 0
+        width: 105
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56efcd9a979e167f0800000000000000
+      internalID: -620958564850270619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrostSpirit_Dead_7
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 0
+        width: 105
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fb2e4e5e2fd05660800000000000000
+      internalID: 7372637980249172983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrostSpirit_Dead_8
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 0
+        width: 105
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6349d6fca3aa6820800000000000000
+      internalID: 2912320072319583087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrostSpirit_Dead_9
+      rect:
+        serializedVersion: 2
+        x: 945
+        y: 0
+        width: 105
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cba806272e04cf510800000000000000
+      internalID: 1584212510253288124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrostSpirit_Dead_10
+      rect:
+        serializedVersion: 2
+        x: 1050
+        y: 0
+        width: 105
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca08d1a104637e0a0800000000000000
+      internalID: -6852448659076972372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrostSpirit_Dead_11
+      rect:
+        serializedVersion: 2
+        x: 1155
+        y: 0
+        width: 105
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 303f82a06f5aba9f0800000000000000
+      internalID: -456088461096979709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrostSpirit_Dead_12
+      rect:
+        serializedVersion: 2
+        x: 1260
+        y: 0
+        width: 105
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b475cfd8152701630800000000000000
+      internalID: 3895739372275521355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrostSpirit_Dead_13
+      rect:
+        serializedVersion: 2
+        x: 1365
+        y: 0
+        width: 105
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f6f2c906ebc70ae0800000000000000
+      internalID: -1583072555130751242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      FrostSpirit_Dead_0: 8664168542369924455
+      FrostSpirit_Dead_1: -459695073261421729
+      FrostSpirit_Dead_10: -6852448659076972372
+      FrostSpirit_Dead_11: -456088461096979709
+      FrostSpirit_Dead_12: 3895739372275521355
+      FrostSpirit_Dead_13: -1583072555130751242
+      FrostSpirit_Dead_2: -7623433051766846323
+      FrostSpirit_Dead_3: -1770589157510554283
+      FrostSpirit_Dead_4: -1076652732939032262
+      FrostSpirit_Dead_5: 5124760403854415962
+      FrostSpirit_Dead_6: -620958564850270619
+      FrostSpirit_Dead_7: 7372637980249172983
+      FrostSpirit_Dead_8: 2912320072319583087
+      FrostSpirit_Dead_9: 1584212510253288124
+      SPR_FrostSpirit_05-tan-suong_0: 6400166200614046179
+      SPR_FrostSpirit_05-tan-suong_1: -5839581714510591982
+      SPR_FrostSpirit_05-tan-suong_10: -4913643846973981549
+      SPR_FrostSpirit_05-tan-suong_11: 562856168881383398
+      SPR_FrostSpirit_05-tan-suong_12: -4653868525255567609
+      SPR_FrostSpirit_05-tan-suong_13: -5321906799858638079
+      SPR_FrostSpirit_05-tan-suong_14: -6799291291277635046
+      SPR_FrostSpirit_05-tan-suong_15: -6460049652413447333
+      SPR_FrostSpirit_05-tan-suong_16: -6194621300492471478
+      SPR_FrostSpirit_05-tan-suong_17: -5521612164837431851
+      SPR_FrostSpirit_05-tan-suong_18: -1874902395522321400
+      SPR_FrostSpirit_05-tan-suong_19: -6181169940308693171
+      SPR_FrostSpirit_05-tan-suong_2: -3484061978976086776
+      SPR_FrostSpirit_05-tan-suong_20: 6292514446070542858
+      SPR_FrostSpirit_05-tan-suong_21: 3991482166396715445
+      SPR_FrostSpirit_05-tan-suong_22: 2302465298085402547
+      SPR_FrostSpirit_05-tan-suong_23: 6452771368125999828
+      SPR_FrostSpirit_05-tan-suong_24: 3035367116953246600
+      SPR_FrostSpirit_05-tan-suong_25: -1027020025413984806
+      SPR_FrostSpirit_05-tan-suong_26: 7154540568996645555
+      SPR_FrostSpirit_05-tan-suong_27: -5135768775184586545
+      SPR_FrostSpirit_05-tan-suong_28: 8108435413392355972
+      SPR_FrostSpirit_05-tan-suong_29: 1361461262853968028
+      SPR_FrostSpirit_05-tan-suong_3: 1108020536749216547
+      SPR_FrostSpirit_05-tan-suong_30: 469786830857389598
+      SPR_FrostSpirit_05-tan-suong_4: 7604084034422133025
+      SPR_FrostSpirit_05-tan-suong_5: -7375585066652315409
+      SPR_FrostSpirit_05-tan-suong_6: -6531278167092508719
+      SPR_FrostSpirit_05-tan-suong_7: -3034349049337726371
+      SPR_FrostSpirit_05-tan-suong_8: -6889011770586654266
+      SPR_FrostSpirit_05-tan-suong_9: 5167474293556997341
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

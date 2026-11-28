@@ -1,0 +1,891 @@
+fileFormatVersion: 2
+guid: e0634a487b1a9d04b9e7146d0146e57a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7332967673500594087
+    second: SPR_FrostSpirit_01-lo-lung_0
+  - first:
+      213: 5254406859850030270
+    second: SPR_FrostSpirit_01-lo-lung_1
+  - first:
+      213: 3620594472519265985
+    second: SPR_FrostSpirit_01-lo-lung_2
+  - first:
+      213: 7547996817577675067
+    second: SPR_FrostSpirit_01-lo-lung_3
+  - first:
+      213: -6721008032298423646
+    second: SPR_FrostSpirit_01-lo-lung_4
+  - first:
+      213: -3761270922645108641
+    second: SPR_FrostSpirit_01-lo-lung_5
+  - first:
+      213: -1307089259171446400
+    second: SPR_FrostSpirit_01-lo-lung_6
+  - first:
+      213: -6459588468086310279
+    second: SPR_FrostSpirit_01-lo-lung_7
+  - first:
+      213: 1902576472920849592
+    second: SPR_FrostSpirit_01-lo-lung_8
+  - first:
+      213: -5926898414748000421
+    second: SPR_FrostSpirit_01-lo-lung_9
+  - first:
+      213: 3912088530118301832
+    second: SPR_FrostSpirit_01-lo-lung_10
+  - first:
+      213: 3871327027546997322
+    second: SPR_FrostSpirit_01-lo-lung_11
+  - first:
+      213: -6533354761834903613
+    second: SPR_FrostSpirit_01-lo-lung_12
+  - first:
+      213: -7010446794505039652
+    second: SPR_FrostSpirit_01-lo-lung_13
+  - first:
+      213: 2552485895679637841
+    second: SPR_FrostSpirit_01-lo-lung_14
+  - first:
+      213: 3733285609159726851
+    second: SPR_FrostSpirit_01-lo-lung_15
+  - first:
+      213: 3680087496488471300
+    second: SPR_FrostSpirit_01-lo-lung_16
+  - first:
+      213: 4370223961664987051
+    second: SPR_FrostSpirit_01-lo-lung_17
+  - first:
+      213: 4650396667017192773
+    second: SPR_FrostSpirit_01-lo-lung_18
+  - first:
+      213: 4792241540893528551
+    second: SPR_FrostSpirit_01-lo-lung_19
+  - first:
+      213: -2641294372284542226
+    second: SPR_FrostSpirit_01-lo-lung_20
+  - first:
+      213: 1549546872643715625
+    second: SPR_FrostSpirit_01-lo-lung_21
+  - first:
+      213: 7122750968840675007
+    second: SPR_FrostSpirit_01-lo-lung_22
+  - first:
+      213: 3323831991663241678
+    second: SPR_FrostSpirit_01-lo-lung_23
+  - first:
+      213: 564786901083583576
+    second: SPR_FrostSpirit_01-lo-lung_24
+  - first:
+      213: -2349802566809091874
+    second: SPR_FrostSpirit_01-lo-lung_25
+  - first:
+      213: -3063881997716392106
+    second: SPR_FrostSpirit_01-lo-lung_26
+  - first:
+      213: 3676871116128741550
+    second: SPR_FrostSpirit_01-lo-lung_27
+  - first:
+      213: -1893418748815593079
+    second: SPR_FrostSpirit_01-lo-lung_28
+  - first:
+      213: -3103537600671283416
+    second: SPR_FrostSpirit_01-lo-lung_29
+  - first:
+      213: 8699224557173570443
+    second: SPR_FrostSpirit_01-lo-lung_30
+  - first:
+      213: -8422410714218005963
+    second: SPR_FrostSpirit_01-lo-lung_31
+  - first:
+      213: 4830384631825553034
+    second: SPR_FrostSpirit_01-lo-lung_32
+  - first:
+      213: -5665248860949062131
+    second: SPR_FrostSpirit_01-lo-lung_33
+  - first:
+      213: 8891395563214437354
+    second: SPR_FrostSpirit_01-lo-lung_34
+  - first:
+      213: -1315945598954204164
+    second: SPR_FrostSpirit_01-lo-lung_35
+  - first:
+      213: 3535763716118843846
+    second: SPR_FrostSpirit_01-lo-lung_36
+  - first:
+      213: 8647880269408478454
+    second: FrostSpirit_Idle_0
+  - first:
+      213: -1493173988963345790
+    second: FrostSpirit_Idle_1
+  - first:
+      213: -7552359670424023263
+    second: FrostSpirit_Idle_2
+  - first:
+      213: -5305726450156097897
+    second: FrostSpirit_Idle_3
+  - first:
+      213: 726727297206407106
+    second: FrostSpirit_Idle_4
+  - first:
+      213: -5190487331110646873
+    second: FrostSpirit_Idle_5
+  - first:
+      213: 2566989532847676485
+    second: FrostSpirit_Idle_6
+  - first:
+      213: -8322021681946146904
+    second: FrostSpirit_Idle_7
+  - first:
+      213: -326558974396211389
+    second: FrostSpirit_Idle_8
+  - first:
+      213: -1485328384208274157
+    second: FrostSpirit_Idle_9
+  - first:
+      213: 269640072205363737
+    second: FrostSpirit_Idle_10
+  - first:
+      213: -3871874680848212691
+    second: FrostSpirit_Idle_11
+  - first:
+      213: 6393964597695684904
+    second: FrostSpirit_Idle_12
+  - first:
+      213: -6119143519914435960
+    second: FrostSpirit_Idle_13
+  - first:
+      213: -1757430168829154993
+    second: FrostSpirit_Idle_14
+  - first:
+      213: -5527484198548528641
+    second: FrostSpirit_Idle_15
+  - first:
+      213: 8216533785164646321
+    second: FrostSpirit_Idle_16
+  - first:
+      213: 3927125424107950890
+    second: FrostSpirit_Idle_17
+  - first:
+      213: -3650808114237064461
+    second: FrostSpirit_Idle_18
+  - first:
+      213: 7951788895784442539
+    second: FrostSpirit_Idle_19
+  - first:
+      213: 5220046385731728349
+    second: FrostSpirit_Idle_20
+  - first:
+      213: 3847738901483764692
+    second: FrostSpirit_Idle_21
+  - first:
+      213: -5595911577245517091
+    second: FrostSpirit_Idle_22
+  - first:
+      213: 4241011758785844000
+    second: FrostSpirit_Idle_23
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationMethod: 0
+  spriteTessellationDetail: -1
+  spriteGeometrySubdivision: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: FrostSpirit_Idle_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 63
+        width: 105
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f4a33e5941730870800000000000000
+      internalID: 8647880269408478454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrostSpirit_Idle_1
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 63
+        width: 105
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28a9cff0b2e274be0800000000000000
+      internalID: -1493173988963345790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrostSpirit_Idle_2
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 63
+        width: 105
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12fc364d4e0a03790800000000000000
+      internalID: -7552359670424023263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrostSpirit_Idle_3
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 63
+        width: 105
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79e2d0f87e54e56b0800000000000000
+      internalID: -5305726450156097897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrostSpirit_Idle_4
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 63
+        width: 105
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2cf419e50aad51a00800000000000000
+      internalID: 726727297206407106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrostSpirit_Idle_5
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 63
+        width: 105
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ab0cf1d54fa7f7b0800000000000000
+      internalID: -5190487331110646873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrostSpirit_Idle_6
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 63
+        width: 105
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54c188f2167cf9320800000000000000
+      internalID: 2566989532847676485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrostSpirit_Idle_7
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 63
+        width: 105
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a7408a4f5d328c80800000000000000
+      internalID: -8322021681946146904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrostSpirit_Idle_8
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 63
+        width: 105
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34fd5ecc754d77bf0800000000000000
+      internalID: -326558974396211389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrostSpirit_Idle_9
+      rect:
+        serializedVersion: 2
+        x: 945
+        y: 63
+        width: 105
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31df57444bd036be0800000000000000
+      internalID: -1485328384208274157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrostSpirit_Idle_10
+      rect:
+        serializedVersion: 2
+        x: 1050
+        y: 63
+        width: 105
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91ae2019734fdb300800000000000000
+      internalID: 269640072205363737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrostSpirit_Idle_11
+      rect:
+        serializedVersion: 2
+        x: 1155
+        y: 63
+        width: 105
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2d9639ed76544ac0800000000000000
+      internalID: -3871874680848212691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrostSpirit_Idle_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 105
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8212318ccecebb850800000000000000
+      internalID: 6393964597695684904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrostSpirit_Idle_13
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 0
+        width: 105
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88addd5a36f641ba0800000000000000
+      internalID: -6119143519914435960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrostSpirit_Idle_14
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 0
+        width: 105
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f49226d929a5c97e0800000000000000
+      internalID: -1757430168829154993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrostSpirit_Idle_15
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 0
+        width: 105
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff12ee3486e6a43b0800000000000000
+      internalID: -5527484198548528641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrostSpirit_Idle_16
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 0
+        width: 105
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b70cbdc1fdf60270800000000000000
+      internalID: 8216533785164646321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrostSpirit_Idle_17
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 0
+        width: 105
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a231c5434c3ff7630800000000000000
+      internalID: 3927125424107950890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrostSpirit_Idle_18
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 0
+        width: 105
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3fa39c7ec59b55dc0800000000000000
+      internalID: -3650808114237064461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrostSpirit_Idle_19
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 0
+        width: 105
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: baa902ecedd6a5e60800000000000000
+      internalID: 7951788895784442539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrostSpirit_Idle_20
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 0
+        width: 105
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd3f994e784517840800000000000000
+      internalID: 5220046385731728349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrostSpirit_Idle_21
+      rect:
+        serializedVersion: 2
+        x: 945
+        y: 0
+        width: 105
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4db346b052ae56530800000000000000
+      internalID: 3847738901483764692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrostSpirit_Idle_22
+      rect:
+        serializedVersion: 2
+        x: 1050
+        y: 0
+        width: 105
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ddaf8c3a1145752b0800000000000000
+      internalID: -5595911577245517091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrostSpirit_Idle_23
+      rect:
+        serializedVersion: 2
+        x: 1155
+        y: 0
+        width: 105
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0235faa89b91bda30800000000000000
+      internalID: 4241011758785844000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      FrostSpirit_Idle_0: 8647880269408478454
+      FrostSpirit_Idle_1: -1493173988963345790
+      FrostSpirit_Idle_10: 269640072205363737
+      FrostSpirit_Idle_11: -3871874680848212691
+      FrostSpirit_Idle_12: 6393964597695684904
+      FrostSpirit_Idle_13: -6119143519914435960
+      FrostSpirit_Idle_14: -1757430168829154993
+      FrostSpirit_Idle_15: -5527484198548528641
+      FrostSpirit_Idle_16: 8216533785164646321
+      FrostSpirit_Idle_17: 3927125424107950890
+      FrostSpirit_Idle_18: -3650808114237064461
+      FrostSpirit_Idle_19: 7951788895784442539
+      FrostSpirit_Idle_2: -7552359670424023263
+      FrostSpirit_Idle_20: 5220046385731728349
+      FrostSpirit_Idle_21: 3847738901483764692
+      FrostSpirit_Idle_22: -5595911577245517091
+      FrostSpirit_Idle_23: 4241011758785844000
+      FrostSpirit_Idle_3: -5305726450156097897
+      FrostSpirit_Idle_4: 726727297206407106
+      FrostSpirit_Idle_5: -5190487331110646873
+      FrostSpirit_Idle_6: 2566989532847676485
+      FrostSpirit_Idle_7: -8322021681946146904
+      FrostSpirit_Idle_8: -326558974396211389
+      FrostSpirit_Idle_9: -1485328384208274157
+      SPR_FrostSpirit_01-lo-lung_0: 7332967673500594087
+      SPR_FrostSpirit_01-lo-lung_1: 5254406859850030270
+      SPR_FrostSpirit_01-lo-lung_10: 3912088530118301832
+      SPR_FrostSpirit_01-lo-lung_11: 3871327027546997322
+      SPR_FrostSpirit_01-lo-lung_12: -6533354761834903613
+      SPR_FrostSpirit_01-lo-lung_13: -7010446794505039652
+      SPR_FrostSpirit_01-lo-lung_14: 2552485895679637841
+      SPR_FrostSpirit_01-lo-lung_15: 3733285609159726851
+      SPR_FrostSpirit_01-lo-lung_16: 3680087496488471300
+      SPR_FrostSpirit_01-lo-lung_17: 4370223961664987051
+      SPR_FrostSpirit_01-lo-lung_18: 4650396667017192773
+      SPR_FrostSpirit_01-lo-lung_19: 4792241540893528551
+      SPR_FrostSpirit_01-lo-lung_2: 3620594472519265985
+      SPR_FrostSpirit_01-lo-lung_20: -2641294372284542226
+      SPR_FrostSpirit_01-lo-lung_21: 1549546872643715625
+      SPR_FrostSpirit_01-lo-lung_22: 7122750968840675007
+      SPR_FrostSpirit_01-lo-lung_23: 3323831991663241678
+      SPR_FrostSpirit_01-lo-lung_24: 564786901083583576
+      SPR_FrostSpirit_01-lo-lung_25: -2349802566809091874
+      SPR_FrostSpirit_01-lo-lung_26: -3063881997716392106
+      SPR_FrostSpirit_01-lo-lung_27: 3676871116128741550
+      SPR_FrostSpirit_01-lo-lung_28: -1893418748815593079
+      SPR_FrostSpirit_01-lo-lung_29: -3103537600671283416
+      SPR_FrostSpirit_01-lo-lung_3: 7547996817577675067
+      SPR_FrostSpirit_01-lo-lung_30: 8699224557173570443
+      SPR_FrostSpirit_01-lo-lung_31: -8422410714218005963
+      SPR_FrostSpirit_01-lo-lung_32: 4830384631825553034
+      SPR_FrostSpirit_01-lo-lung_33: -5665248860949062131
+      SPR_FrostSpirit_01-lo-lung_34: 8891395563214437354
+      SPR_FrostSpirit_01-lo-lung_35: -1315945598954204164
+      SPR_FrostSpirit_01-lo-lung_36: 3535763716118843846
+      SPR_FrostSpirit_01-lo-lung_4: -6721008032298423646
+      SPR_FrostSpirit_01-lo-lung_5: -3761270922645108641
+      SPR_FrostSpirit_01-lo-lung_6: -1307089259171446400
+      SPR_FrostSpirit_01-lo-lung_7: -6459588468086310279
+      SPR_FrostSpirit_01-lo-lung_8: 1902576472920849592
+      SPR_FrostSpirit_01-lo-lung_9: -5926898414748000421
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

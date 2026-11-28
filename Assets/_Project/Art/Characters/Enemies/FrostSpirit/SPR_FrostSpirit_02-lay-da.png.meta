@@ -1,0 +1,359 @@
+fileFormatVersion: 2
+guid: f1e329b1681ae9d4693680045f346ffa
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4693985899134062627
+    second: SPR_FrostSpirit_02-lay-da_0
+  - first:
+      213: 2798139944260694634
+    second: SPR_FrostSpirit_02-lay-da_1
+  - first:
+      213: -1857357174944867716
+    second: SPR_FrostSpirit_02-lay-da_2
+  - first:
+      213: 5617155983805028501
+    second: SPR_FrostSpirit_02-lay-da_3
+  - first:
+      213: -20387377233942911
+    second: SPR_FrostSpirit_02-lay-da_4
+  - first:
+      213: -6444216183652011205
+    second: SPR_FrostSpirit_02-lay-da_5
+  - first:
+      213: 3485033550855604581
+    second: SPR_FrostSpirit_02-lay-da_6
+  - first:
+      213: -3251904852881034920
+    second: SPR_FrostSpirit_02-lay-da_7
+  - first:
+      213: 6262473820965036919
+    second: FrostSpirit_Telegraph_0
+  - first:
+      213: 1031612482033203164
+    second: FrostSpirit_Telegraph_1
+  - first:
+      213: 1616057961730816109
+    second: FrostSpirit_Telegraph_2
+  - first:
+      213: 3344634681927571988
+    second: FrostSpirit_Telegraph_3
+  - first:
+      213: 8685212318651994098
+    second: FrostSpirit_Telegraph_4
+  - first:
+      213: 8941179045705505008
+    second: FrostSpirit_Telegraph_5
+  - first:
+      213: 2514976287689673294
+    second: FrostSpirit_Telegraph_6
+  - first:
+      213: -4021949920101957661
+    second: FrostSpirit_Telegraph_7
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationMethod: 0
+  spriteTessellationDetail: -1
+  spriteGeometrySubdivision: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: FrostSpirit_Telegraph_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 105
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 773edc992c6c8e650800000000000000
+      internalID: 6262473820965036919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrostSpirit_Telegraph_1
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 0
+        width: 105
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd7b2713616015e00800000000000000
+      internalID: 1031612482033203164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrostSpirit_Telegraph_2
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 0
+        width: 105
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d68386967246d6610800000000000000
+      internalID: 1616057961730816109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrostSpirit_Telegraph_3
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 0
+        width: 105
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41a9eb7c5878a6e20800000000000000
+      internalID: 3344634681927571988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrostSpirit_Telegraph_4
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 0
+        width: 105
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ff491c6692188870800000000000000
+      internalID: 8685212318651994098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrostSpirit_Telegraph_5
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 0
+        width: 105
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f8517c38f2751c70800000000000000
+      internalID: 8941179045705505008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrostSpirit_Telegraph_6
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 0
+        width: 105
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4a0646db9df6e220800000000000000
+      internalID: 2514976287689673294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrostSpirit_Telegraph_7
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 0
+        width: 105
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ef79eb5bd92f28c0800000000000000
+      internalID: -4021949920101957661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      FrostSpirit_Telegraph_0: 6262473820965036919
+      FrostSpirit_Telegraph_1: 1031612482033203164
+      FrostSpirit_Telegraph_2: 1616057961730816109
+      FrostSpirit_Telegraph_3: 3344634681927571988
+      FrostSpirit_Telegraph_4: 8685212318651994098
+      FrostSpirit_Telegraph_5: 8941179045705505008
+      FrostSpirit_Telegraph_6: 2514976287689673294
+      FrostSpirit_Telegraph_7: -4021949920101957661
+      SPR_FrostSpirit_02-lay-da_0: 4693985899134062627
+      SPR_FrostSpirit_02-lay-da_1: 2798139944260694634
+      SPR_FrostSpirit_02-lay-da_2: -1857357174944867716
+      SPR_FrostSpirit_02-lay-da_3: 5617155983805028501
+      SPR_FrostSpirit_02-lay-da_4: -20387377233942911
+      SPR_FrostSpirit_02-lay-da_5: -6444216183652011205
+      SPR_FrostSpirit_02-lay-da_6: 3485033550855604581
+      SPR_FrostSpirit_02-lay-da_7: -3251904852881034920
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
