@@ -32,8 +32,8 @@ Mở bằng Unity Hub → **Add → Add project from disk**.
 
 | Mã | Vai trò |
 |---|---|
-| LEAD | Trưởng nhóm + lập trình gameplay |
+| LEAD | Trưởng nhóm + họa sĩ nhân vật |
+| GAME | Lập trình gameplay |
 | SYS | Lập trình hệ thống + AI |
 | LVL | Thiết kế màn chơi + cốt truyện |
-| ARTC | Họa sĩ nhân vật |
 | ARTE | Họa sĩ môi trường + âm thanh |
