@@ -93,7 +93,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Woodcutter.World.HazardDamage
   damage: 1
-  showDebugLog: 1
+  showDebugLog: 0
 --- !u!1 &2701228570351949439
 GameObject:
   m_ObjectHideFlags: 0
