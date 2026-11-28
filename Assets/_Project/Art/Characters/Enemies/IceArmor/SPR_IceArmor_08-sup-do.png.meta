@@ -1,0 +1,569 @@
+fileFormatVersion: 2
+guid: e0258cb3e376f1b49886a31e8568a5c3
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6271783650583380266
+    second: SPR_IceArmor_08-sup-do_0
+  - first:
+      213: -700048688735598667
+    second: SPR_IceArmor_08-sup-do_1
+  - first:
+      213: -8752143818334899286
+    second: SPR_IceArmor_08-sup-do_2
+  - first:
+      213: -7653235574499974233
+    second: SPR_IceArmor_08-sup-do_3
+  - first:
+      213: 7690641305802153667
+    second: SPR_IceArmor_08-sup-do_4
+  - first:
+      213: -8372592033321348068
+    second: SPR_IceArmor_08-sup-do_5
+  - first:
+      213: 4370290239475443864
+    second: SPR_IceArmor_08-sup-do_6
+  - first:
+      213: 6844590544952772778
+    second: SPR_IceArmor_08-sup-do_7
+  - first:
+      213: -4994404514683881682
+    second: SPR_IceArmor_08-sup-do_8
+  - first:
+      213: -6632149934180514945
+    second: SPR_IceArmor_08-sup-do_9
+  - first:
+      213: 8083077963929211126
+    second: SPR_IceArmor_08-sup-do_10
+  - first:
+      213: 4701912562552627047
+    second: SPR_IceArmor_08-sup-do_11
+  - first:
+      213: -4967968047023680352
+    second: SPR_IceArmor_08-sup-do_12
+  - first:
+      213: 5213335675717950433
+    second: SPR_IceArmor_08-sup-do_13
+  - first:
+      213: 3467854980257488535
+    second: SPR_IceArmor_08-sup-do_14
+  - first:
+      213: 2909822588559825480
+    second: SPR_IceArmor_08-sup-do_15
+  - first:
+      213: -1433150130699799522
+    second: SPR_IceArmor_08-sup-do_16
+  - first:
+      213: 6542393537881757717
+    second: SPR_IceArmor_08-sup-do_17
+  - first:
+      213: -3915086359513634738
+    second: SPR_IceArmor_08-sup-do_18
+  - first:
+      213: 6135469832895746316
+    second: SPR_IceArmor_08-sup-do_19
+  - first:
+      213: 7863280198982794532
+    second: SPR_IceArmor_08-sup-do_20
+  - first:
+      213: -8637334004212289947
+    second: SPR_IceArmor_08-sup-do_21
+  - first:
+      213: -4556097065211117241
+    second: SPR_IceArmor_08-sup-do_22
+  - first:
+      213: 1060203341705280664
+    second: SPR_IceArmor_08-sup-do_23
+  - first:
+      213: -6707564264768527566
+    second: SPR_IceArmor_08-sup-do_24
+  - first:
+      213: -2935395638678078658
+    second: SPR_IceArmor_08-sup-do_25
+  - first:
+      213: -2836896949469708067
+    second: SPR_IceArmor_08-sup-do_26
+  - first:
+      213: 2435516876792046425
+    second: SPR_IceArmor_08-sup-do_27
+  - first:
+      213: 2892228501334052185
+    second: IceArmor_Dead_0
+  - first:
+      213: 5850229162795290351
+    second: IceArmor_Dead_1
+  - first:
+      213: 3683549216410898798
+    second: IceArmor_Dead_2
+  - first:
+      213: -4763881306418660490
+    second: IceArmor_Dead_3
+  - first:
+      213: 4052953350240207487
+    second: IceArmor_Dead_4
+  - first:
+      213: -6485261634303964105
+    second: IceArmor_Dead_5
+  - first:
+      213: -3473738792717640304
+    second: IceArmor_Dead_6
+  - first:
+      213: -8881938945285274350
+    second: IceArmor_Dead_7
+  - first:
+      213: 7958054521367632306
+    second: IceArmor_Dead_8
+  - first:
+      213: 6694039777009551299
+    second: IceArmor_Dead_9
+  - first:
+      213: -4430719864464634226
+    second: IceArmor_Dead_10
+  - first:
+      213: -5185405530679479407
+    second: IceArmor_Dead_11
+  - first:
+      213: -7642882278902147809
+    second: IceArmor_Dead_12
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationMethod: 0
+  spriteTessellationDetail: -1
+  spriteGeometrySubdivision: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: IceArmor_Dead_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 125
+        height: 76
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95dc64f8f72432820800000000000000
+      internalID: 2892228501334052185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceArmor_Dead_1
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 0
+        width: 125
+        height: 76
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fee4b0f7d60303150800000000000000
+      internalID: 5850229162795290351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceArmor_Dead_2
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 0
+        width: 125
+        height: 76
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6117dcfe789e1330800000000000000
+      internalID: 3683549216410898798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceArmor_Dead_3
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 0
+        width: 125
+        height: 76
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67bbac2213b43edb0800000000000000
+      internalID: -4763881306418660490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceArmor_Dead_4
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 0
+        width: 125
+        height: 76
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f720c4c399bfe3830800000000000000
+      internalID: 4052953350240207487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceArmor_Dead_5
+      rect:
+        serializedVersion: 2
+        x: 625
+        y: 0
+        width: 125
+        height: 76
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73cc7db67e8bff5a0800000000000000
+      internalID: -6485261634303964105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceArmor_Dead_6
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 0
+        width: 125
+        height: 76
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09d129109fccacfc0800000000000000
+      internalID: -3473738792717640304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceArmor_Dead_7
+      rect:
+        serializedVersion: 2
+        x: 875
+        y: 0
+        width: 125
+        height: 76
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 215409976930db480800000000000000
+      internalID: -8881938945285274350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceArmor_Dead_8
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 0
+        width: 125
+        height: 76
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b91f417c60b07e60800000000000000
+      internalID: 7958054521367632306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceArmor_Dead_9
+      rect:
+        serializedVersion: 2
+        x: 1125
+        y: 0
+        width: 125
+        height: 76
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c74dfce5b106ec50800000000000000
+      internalID: 6694039777009551299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceArmor_Dead_10
+      rect:
+        serializedVersion: 2
+        x: 1250
+        y: 0
+        width: 125
+        height: 76
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8e815b12cbe282c0800000000000000
+      internalID: -4430719864464634226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceArmor_Dead_11
+      rect:
+        serializedVersion: 2
+        x: 1375
+        y: 0
+        width: 125
+        height: 76
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 193f08fa42db908b0800000000000000
+      internalID: -5185405530679479407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceArmor_Dead_12
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 0
+        width: 125
+        height: 76
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f15d8e1af070fe590800000000000000
+      internalID: -7642882278902147809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      IceArmor_Dead_0: 2892228501334052185
+      IceArmor_Dead_1: 5850229162795290351
+      IceArmor_Dead_10: -4430719864464634226
+      IceArmor_Dead_11: -5185405530679479407
+      IceArmor_Dead_12: -7642882278902147809
+      IceArmor_Dead_2: 3683549216410898798
+      IceArmor_Dead_3: -4763881306418660490
+      IceArmor_Dead_4: 4052953350240207487
+      IceArmor_Dead_5: -6485261634303964105
+      IceArmor_Dead_6: -3473738792717640304
+      IceArmor_Dead_7: -8881938945285274350
+      IceArmor_Dead_8: 7958054521367632306
+      IceArmor_Dead_9: 6694039777009551299
+      SPR_IceArmor_08-sup-do_0: -6271783650583380266
+      SPR_IceArmor_08-sup-do_1: -700048688735598667
+      SPR_IceArmor_08-sup-do_10: 8083077963929211126
+      SPR_IceArmor_08-sup-do_11: 4701912562552627047
+      SPR_IceArmor_08-sup-do_12: -4967968047023680352
+      SPR_IceArmor_08-sup-do_13: 5213335675717950433
+      SPR_IceArmor_08-sup-do_14: 3467854980257488535
+      SPR_IceArmor_08-sup-do_15: 2909822588559825480
+      SPR_IceArmor_08-sup-do_16: -1433150130699799522
+      SPR_IceArmor_08-sup-do_17: 6542393537881757717
+      SPR_IceArmor_08-sup-do_18: -3915086359513634738
+      SPR_IceArmor_08-sup-do_19: 6135469832895746316
+      SPR_IceArmor_08-sup-do_2: -8752143818334899286
+      SPR_IceArmor_08-sup-do_20: 7863280198982794532
+      SPR_IceArmor_08-sup-do_21: -8637334004212289947
+      SPR_IceArmor_08-sup-do_22: -4556097065211117241
+      SPR_IceArmor_08-sup-do_23: 1060203341705280664
+      SPR_IceArmor_08-sup-do_24: -6707564264768527566
+      SPR_IceArmor_08-sup-do_25: -2935395638678078658
+      SPR_IceArmor_08-sup-do_26: -2836896949469708067
+      SPR_IceArmor_08-sup-do_27: 2435516876792046425
+      SPR_IceArmor_08-sup-do_3: -7653235574499974233
+      SPR_IceArmor_08-sup-do_4: 7690641305802153667
+      SPR_IceArmor_08-sup-do_5: -8372592033321348068
+      SPR_IceArmor_08-sup-do_6: 4370290239475443864
+      SPR_IceArmor_08-sup-do_7: 6844590544952772778
+      SPR_IceArmor_08-sup-do_8: -4994404514683881682
+      SPR_IceArmor_08-sup-do_9: -6632149934180514945
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

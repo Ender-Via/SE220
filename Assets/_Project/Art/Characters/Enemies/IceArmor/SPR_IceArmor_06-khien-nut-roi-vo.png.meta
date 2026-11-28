@@ -1,0 +1,521 @@
+fileFormatVersion: 2
+guid: 9c2e14f02f4a67b47827109c9946a5f8
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7217592026529973567
+    second: SPR_IceArmor_06-khien-nut-roi-vo_0
+  - first:
+      213: -7029902076798839303
+    second: SPR_IceArmor_06-khien-nut-roi-vo_1
+  - first:
+      213: -2060854642775017809
+    second: SPR_IceArmor_06-khien-nut-roi-vo_2
+  - first:
+      213: -5144682676452042376
+    second: SPR_IceArmor_06-khien-nut-roi-vo_3
+  - first:
+      213: 4264884026441209064
+    second: SPR_IceArmor_06-khien-nut-roi-vo_4
+  - first:
+      213: -721537585472108920
+    second: SPR_IceArmor_06-khien-nut-roi-vo_5
+  - first:
+      213: 7767121255242664763
+    second: SPR_IceArmor_06-khien-nut-roi-vo_6
+  - first:
+      213: -5907284193736967936
+    second: SPR_IceArmor_06-khien-nut-roi-vo_7
+  - first:
+      213: -6629282157815449978
+    second: SPR_IceArmor_06-khien-nut-roi-vo_8
+  - first:
+      213: 7868488127843221873
+    second: SPR_IceArmor_06-khien-nut-roi-vo_9
+  - first:
+      213: 4536200643780120044
+    second: SPR_IceArmor_06-khien-nut-roi-vo_10
+  - first:
+      213: 7665658780413022155
+    second: SPR_IceArmor_06-khien-nut-roi-vo_11
+  - first:
+      213: -2003603562159339614
+    second: SPR_IceArmor_06-khien-nut-roi-vo_12
+  - first:
+      213: -1397082295128297823
+    second: SPR_IceArmor_06-khien-nut-roi-vo_13
+  - first:
+      213: -5550028816621596085
+    second: SPR_IceArmor_06-khien-nut-roi-vo_14
+  - first:
+      213: -3223344764619821903
+    second: SPR_IceArmor_06-khien-nut-roi-vo_15
+  - first:
+      213: 3208302292250962472
+    second: IceArmor_ShieldBreak_0
+  - first:
+      213: -2220985990655309339
+    second: IceArmor_ShieldBreak_1
+  - first:
+      213: 5249208053771280238
+    second: IceArmor_ShieldBreak_2
+  - first:
+      213: 7471181762569516414
+    second: IceArmor_ShieldBreak_3
+  - first:
+      213: 4726959432756779971
+    second: IceArmor_ShieldBreak_4
+  - first:
+      213: 6401906706777947794
+    second: IceArmor_ShieldBreak_5
+  - first:
+      213: 1795322954234207611
+    second: IceArmor_ShieldBreak_6
+  - first:
+      213: 5876828711338645514
+    second: IceArmor_ShieldBreak_7
+  - first:
+      213: 3963860725470300212
+    second: IceArmor_ShieldBreak_8
+  - first:
+      213: 2384606672315644198
+    second: IceArmor_ShieldBreak_9
+  - first:
+      213: -1722384484573616636
+    second: IceArmor_ShieldBreak_10
+  - first:
+      213: 5567891929432685585
+    second: IceArmor_ShieldBreak_11
+  - first:
+      213: 3755686996096654678
+    second: IceArmor_ShieldBreak_12
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationMethod: 0
+  spriteTessellationDetail: -1
+  spriteGeometrySubdivision: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: IceArmor_ShieldBreak_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 125
+        height: 76
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82aa0bdbfed268c20800000000000000
+      internalID: 3208302292250962472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceArmor_ShieldBreak_1
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 0
+        width: 125
+        height: 76
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e90fdf32097d21e0800000000000000
+      internalID: -2220985990655309339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceArmor_ShieldBreak_2
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 0
+        width: 125
+        height: 76
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6f1825d9eee8d840800000000000000
+      internalID: 5249208053771280238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceArmor_ShieldBreak_3
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 0
+        width: 125
+        height: 76
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e753552aa38fea760800000000000000
+      internalID: 7471181762569516414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceArmor_ShieldBreak_4
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 0
+        width: 125
+        height: 76
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3cb56214f88899140800000000000000
+      internalID: 4726959432756779971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceArmor_ShieldBreak_5
+      rect:
+        serializedVersion: 2
+        x: 625
+        y: 0
+        width: 125
+        height: 76
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29eb0b62b3428d850800000000000000
+      internalID: 6401906706777947794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceArmor_ShieldBreak_6
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 0
+        width: 125
+        height: 76
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7d1c3007b44ae810800000000000000
+      internalID: 1795322954234207611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceArmor_ShieldBreak_7
+      rect:
+        serializedVersion: 2
+        x: 875
+        y: 0
+        width: 125
+        height: 76
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0818218390be8150800000000000000
+      internalID: 5876828711338645514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceArmor_ShieldBreak_8
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 0
+        width: 125
+        height: 76
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43887c01456720730800000000000000
+      internalID: 3963860725470300212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceArmor_ShieldBreak_9
+      rect:
+        serializedVersion: 2
+        x: 1125
+        y: 0
+        width: 125
+        height: 76
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62976606223d71120800000000000000
+      internalID: 2384606672315644198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceArmor_ShieldBreak_10
+      rect:
+        serializedVersion: 2
+        x: 1250
+        y: 0
+        width: 125
+        height: 76
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4066856df6cd818e0800000000000000
+      internalID: -1722384484573616636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceArmor_ShieldBreak_11
+      rect:
+        serializedVersion: 2
+        x: 1375
+        y: 0
+        width: 125
+        height: 76
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11c7999b530254d40800000000000000
+      internalID: 5567891929432685585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceArmor_ShieldBreak_12
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 0
+        width: 125
+        height: 76
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65d15e9ac61ee1430800000000000000
+      internalID: 3755686996096654678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      IceArmor_ShieldBreak_0: 3208302292250962472
+      IceArmor_ShieldBreak_1: -2220985990655309339
+      IceArmor_ShieldBreak_10: -1722384484573616636
+      IceArmor_ShieldBreak_11: 5567891929432685585
+      IceArmor_ShieldBreak_12: 3755686996096654678
+      IceArmor_ShieldBreak_2: 5249208053771280238
+      IceArmor_ShieldBreak_3: 7471181762569516414
+      IceArmor_ShieldBreak_4: 4726959432756779971
+      IceArmor_ShieldBreak_5: 6401906706777947794
+      IceArmor_ShieldBreak_6: 1795322954234207611
+      IceArmor_ShieldBreak_7: 5876828711338645514
+      IceArmor_ShieldBreak_8: 3963860725470300212
+      IceArmor_ShieldBreak_9: 2384606672315644198
+      SPR_IceArmor_06-khien-nut-roi-vo_0: 7217592026529973567
+      SPR_IceArmor_06-khien-nut-roi-vo_1: -7029902076798839303
+      SPR_IceArmor_06-khien-nut-roi-vo_10: 4536200643780120044
+      SPR_IceArmor_06-khien-nut-roi-vo_11: 7665658780413022155
+      SPR_IceArmor_06-khien-nut-roi-vo_12: -2003603562159339614
+      SPR_IceArmor_06-khien-nut-roi-vo_13: -1397082295128297823
+      SPR_IceArmor_06-khien-nut-roi-vo_14: -5550028816621596085
+      SPR_IceArmor_06-khien-nut-roi-vo_15: -3223344764619821903
+      SPR_IceArmor_06-khien-nut-roi-vo_2: -2060854642775017809
+      SPR_IceArmor_06-khien-nut-roi-vo_3: -5144682676452042376
+      SPR_IceArmor_06-khien-nut-roi-vo_4: 4264884026441209064
+      SPR_IceArmor_06-khien-nut-roi-vo_5: -721537585472108920
+      SPR_IceArmor_06-khien-nut-roi-vo_6: 7767121255242664763
+      SPR_IceArmor_06-khien-nut-roi-vo_7: -5907284193736967936
+      SPR_IceArmor_06-khien-nut-roi-vo_8: -6629282157815449978
+      SPR_IceArmor_06-khien-nut-roi-vo_9: 7868488127843221873
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

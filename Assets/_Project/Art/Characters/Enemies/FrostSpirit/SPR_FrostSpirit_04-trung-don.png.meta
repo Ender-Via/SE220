@@ -1,0 +1,443 @@
+fileFormatVersion: 2
+guid: 761316c0ab86cf641aedb924db4f8e4e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3219833196349152308
+    second: SPR_FrostSpirit_04-trung-don_0
+  - first:
+      213: 7311722652757003098
+    second: SPR_FrostSpirit_04-trung-don_1
+  - first:
+      213: 6591113500864295497
+    second: SPR_FrostSpirit_04-trung-don_2
+  - first:
+      213: -1088905734678581231
+    second: SPR_FrostSpirit_04-trung-don_3
+  - first:
+      213: -8423766516125506570
+    second: SPR_FrostSpirit_04-trung-don_4
+  - first:
+      213: 5992067494960677262
+    second: SPR_FrostSpirit_04-trung-don_5
+  - first:
+      213: -1914298256330744700
+    second: SPR_FrostSpirit_04-trung-don_6
+  - first:
+      213: 6881172471388414181
+    second: SPR_FrostSpirit_04-trung-don_7
+  - first:
+      213: 8419498868960405523
+    second: SPR_FrostSpirit_04-trung-don_8
+  - first:
+      213: 4248127841906146001
+    second: SPR_FrostSpirit_04-trung-don_9
+  - first:
+      213: 8731312673260196462
+    second: SPR_FrostSpirit_04-trung-don_10
+  - first:
+      213: 4383675051946119311
+    second: SPR_FrostSpirit_04-trung-don_11
+  - first:
+      213: -7417759908035649689
+    second: SPR_FrostSpirit_04-trung-don_12
+  - first:
+      213: -5517589844701899
+    second: SPR_FrostSpirit_04-trung-don_13
+  - first:
+      213: 299701529963001784
+    second: SPR_FrostSpirit_04-trung-don_14
+  - first:
+      213: -1690496541725827422
+    second: SPR_FrostSpirit_04-trung-don_15
+  - first:
+      213: 3732317964087999526
+    second: FrostSpirit_Hit_0
+  - first:
+      213: 4095459603447518518
+    second: FrostSpirit_Hit_1
+  - first:
+      213: 8862319556504763951
+    second: FrostSpirit_Hit_2
+  - first:
+      213: 7961607331505328182
+    second: FrostSpirit_Hit_3
+  - first:
+      213: -5988865114362607551
+    second: FrostSpirit_Hit_4
+  - first:
+      213: -1939830876586252587
+    second: FrostSpirit_Hit_5
+  - first:
+      213: 4081257725521068750
+    second: FrostSpirit_Hit_6
+  - first:
+      213: -2924778340102234378
+    second: FrostSpirit_Hit_7
+  - first:
+      213: 9170767601240189338
+    second: FrostSpirit_Hit_8
+  - first:
+      213: -7378813631705919027
+    second: FrostSpirit_Hit_9
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationMethod: 0
+  spriteTessellationDetail: -1
+  spriteGeometrySubdivision: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: FrostSpirit_Hit_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 105
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62c3646e96bdbc330800000000000000
+      internalID: 3732317964087999526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrostSpirit_Hit_1
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 0
+        width: 105
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63593778fcef5d830800000000000000
+      internalID: 4095459603447518518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrostSpirit_Hit_2
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 0
+        width: 105
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2eb67b9ea84dfa70800000000000000
+      internalID: 8862319556504763951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrostSpirit_Hit_3
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 0
+        width: 105
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63055838faf4d7e60800000000000000
+      internalID: 7961607331505328182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrostSpirit_Hit_4
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 0
+        width: 105
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14800baa8e643eca0800000000000000
+      internalID: -5988865114362607551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrostSpirit_Hit_5
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 0
+        width: 105
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d6edbc68165415e0800000000000000
+      internalID: -1939830876586252587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrostSpirit_Hit_6
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 0
+        width: 105
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec28086274a83a830800000000000000
+      internalID: 4081257725521068750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrostSpirit_Hit_7
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 0
+        width: 105
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6fe137788991967d0800000000000000
+      internalID: -2924778340102234378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrostSpirit_Hit_8
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 0
+        width: 105
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9925956b8c154f70800000000000000
+      internalID: 9170767601240189338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrostSpirit_Hit_9
+      rect:
+        serializedVersion: 2
+        x: 945
+        y: 0
+        width: 105
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc1db5ab810399990800000000000000
+      internalID: -7378813631705919027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      FrostSpirit_Hit_0: 3732317964087999526
+      FrostSpirit_Hit_1: 4095459603447518518
+      FrostSpirit_Hit_2: 8862319556504763951
+      FrostSpirit_Hit_3: 7961607331505328182
+      FrostSpirit_Hit_4: -5988865114362607551
+      FrostSpirit_Hit_5: -1939830876586252587
+      FrostSpirit_Hit_6: 4081257725521068750
+      FrostSpirit_Hit_7: -2924778340102234378
+      FrostSpirit_Hit_8: 9170767601240189338
+      FrostSpirit_Hit_9: -7378813631705919027
+      SPR_FrostSpirit_04-trung-don_0: -3219833196349152308
+      SPR_FrostSpirit_04-trung-don_1: 7311722652757003098
+      SPR_FrostSpirit_04-trung-don_10: 8731312673260196462
+      SPR_FrostSpirit_04-trung-don_11: 4383675051946119311
+      SPR_FrostSpirit_04-trung-don_12: -7417759908035649689
+      SPR_FrostSpirit_04-trung-don_13: -5517589844701899
+      SPR_FrostSpirit_04-trung-don_14: 299701529963001784
+      SPR_FrostSpirit_04-trung-don_15: -1690496541725827422
+      SPR_FrostSpirit_04-trung-don_2: 6591113500864295497
+      SPR_FrostSpirit_04-trung-don_3: -1088905734678581231
+      SPR_FrostSpirit_04-trung-don_4: -8423766516125506570
+      SPR_FrostSpirit_04-trung-don_5: 5992067494960677262
+      SPR_FrostSpirit_04-trung-don_6: -1914298256330744700
+      SPR_FrostSpirit_04-trung-don_7: 6881172471388414181
+      SPR_FrostSpirit_04-trung-don_8: 8419498868960405523
+      SPR_FrostSpirit_04-trung-don_9: 4248127841906146001
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

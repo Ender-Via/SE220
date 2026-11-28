@@ -1,0 +1,467 @@
+fileFormatVersion: 2
+guid: f061f9b7bae6546489ffd258069647d3
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2302255822643277020
+    second: SPR_FrostSpirit_03-ban_0
+  - first:
+      213: -2546376290054453234
+    second: SPR_FrostSpirit_03-ban_1
+  - first:
+      213: 4552642435754905414
+    second: SPR_FrostSpirit_03-ban_2
+  - first:
+      213: 6546681826246215283
+    second: SPR_FrostSpirit_03-ban_3
+  - first:
+      213: -328463106308949830
+    second: SPR_FrostSpirit_03-ban_4
+  - first:
+      213: -5865948645712265284
+    second: SPR_FrostSpirit_03-ban_5
+  - first:
+      213: -6195625288462555731
+    second: SPR_FrostSpirit_03-ban_6
+  - first:
+      213: -6562649734539018597
+    second: SPR_FrostSpirit_03-ban_7
+  - first:
+      213: 2366416749258825544
+    second: SPR_FrostSpirit_03-ban_8
+  - first:
+      213: 7485303753318562420
+    second: SPR_FrostSpirit_03-ban_9
+  - first:
+      213: 3922078769977370244
+    second: SPR_FrostSpirit_03-ban_10
+  - first:
+      213: -1991541916239736977
+    second: SPR_FrostSpirit_03-ban_11
+  - first:
+      213: 7775612419195916559
+    second: SPR_FrostSpirit_03-ban_12
+  - first:
+      213: -1043093291865586534
+    second: SPR_FrostSpirit_03-ban_13
+  - first:
+      213: 8172450159555065855
+    second: SPR_FrostSpirit_03-ban_14
+  - first:
+      213: 7035402922514382962
+    second: SPR_FrostSpirit_03-ban_15
+  - first:
+      213: -7612504425774040254
+    second: SPR_FrostSpirit_03-ban_16
+  - first:
+      213: 6217399202094942176
+    second: SPR_FrostSpirit_03-ban_17
+  - first:
+      213: -3176685660488236903
+    second: SPR_FrostSpirit_03-ban_18
+  - first:
+      213: -2831683114447107007
+    second: SPR_FrostSpirit_03-ban_19
+  - first:
+      213: -950270673185304281
+    second: SPR_FrostSpirit_03-ban_20
+  - first:
+      213: -2108540406097179855
+    second: SPR_FrostSpirit_03-ban_21
+  - first:
+      213: -4627515167573673736
+    second: FrostSpirit_Shoot_0
+  - first:
+      213: 5941098783886417047
+    second: FrostSpirit_Shoot_1
+  - first:
+      213: -296722241119155340
+    second: FrostSpirit_Shoot_2
+  - first:
+      213: 6430230869923246687
+    second: FrostSpirit_Shoot_3
+  - first:
+      213: 7849758687235358791
+    second: FrostSpirit_Shoot_4
+  - first:
+      213: -687840100352750136
+    second: FrostSpirit_Shoot_5
+  - first:
+      213: 5651998898494735996
+    second: FrostSpirit_Shoot_6
+  - first:
+      213: -8837393145822537504
+    second: FrostSpirit_Shoot_7
+  - first:
+      213: 2125435875191667962
+    second: FrostSpirit_Shoot_8
+  - first:
+      213: -9107365315994993897
+    second: FrostSpirit_Shoot_9
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationMethod: 0
+  spriteTessellationDetail: -1
+  spriteGeometrySubdivision: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: FrostSpirit_Shoot_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 105
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f8f9040973c7cfb0800000000000000
+      internalID: -4627515167573673736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrostSpirit_Shoot_1
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 0
+        width: 105
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79c1e0dddd5037250800000000000000
+      internalID: 5941098783886417047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrostSpirit_Shoot_2
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 0
+        width: 105
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47b822d91b4d1ebf0800000000000000
+      internalID: -296722241119155340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrostSpirit_Shoot_3
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 0
+        width: 105
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f52b68948e4cc3950800000000000000
+      internalID: 6430230869923246687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrostSpirit_Shoot_4
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 0
+        width: 105
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 740433dafe1ffec60800000000000000
+      internalID: 7849758687235358791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrostSpirit_Shoot_5
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 0
+        width: 105
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8cd8434b21d4476f0800000000000000
+      internalID: -687840100352750136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrostSpirit_Shoot_6
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 0
+        width: 105
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c768da77d0fef6e40800000000000000
+      internalID: 5651998898494735996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrostSpirit_Shoot_7
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 0
+        width: 105
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e896c2a1c54b5580800000000000000
+      internalID: -8837393145822537504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrostSpirit_Shoot_8
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 0
+        width: 105
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afcbbaddaa01f7d10800000000000000
+      internalID: 2125435875191667962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrostSpirit_Shoot_9
+      rect:
+        serializedVersion: 2
+        x: 945
+        y: 0
+        width: 105
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71bb76c7f732c9180800000000000000
+      internalID: -9107365315994993897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      FrostSpirit_Shoot_0: -4627515167573673736
+      FrostSpirit_Shoot_1: 5941098783886417047
+      FrostSpirit_Shoot_2: -296722241119155340
+      FrostSpirit_Shoot_3: 6430230869923246687
+      FrostSpirit_Shoot_4: 7849758687235358791
+      FrostSpirit_Shoot_5: -687840100352750136
+      FrostSpirit_Shoot_6: 5651998898494735996
+      FrostSpirit_Shoot_7: -8837393145822537504
+      FrostSpirit_Shoot_8: 2125435875191667962
+      FrostSpirit_Shoot_9: -9107365315994993897
+      SPR_FrostSpirit_03-ban_0: 2302255822643277020
+      SPR_FrostSpirit_03-ban_1: -2546376290054453234
+      SPR_FrostSpirit_03-ban_10: 3922078769977370244
+      SPR_FrostSpirit_03-ban_11: -1991541916239736977
+      SPR_FrostSpirit_03-ban_12: 7775612419195916559
+      SPR_FrostSpirit_03-ban_13: -1043093291865586534
+      SPR_FrostSpirit_03-ban_14: 8172450159555065855
+      SPR_FrostSpirit_03-ban_15: 7035402922514382962
+      SPR_FrostSpirit_03-ban_16: -7612504425774040254
+      SPR_FrostSpirit_03-ban_17: 6217399202094942176
+      SPR_FrostSpirit_03-ban_18: -3176685660488236903
+      SPR_FrostSpirit_03-ban_19: -2831683114447107007
+      SPR_FrostSpirit_03-ban_2: 4552642435754905414
+      SPR_FrostSpirit_03-ban_20: -950270673185304281
+      SPR_FrostSpirit_03-ban_21: -2108540406097179855
+      SPR_FrostSpirit_03-ban_3: 6546681826246215283
+      SPR_FrostSpirit_03-ban_4: -328463106308949830
+      SPR_FrostSpirit_03-ban_5: -5865948645712265284
+      SPR_FrostSpirit_03-ban_6: -6195625288462555731
+      SPR_FrostSpirit_03-ban_7: -6562649734539018597
+      SPR_FrostSpirit_03-ban_8: 2366416749258825544
+      SPR_FrostSpirit_03-ban_9: 7485303753318562420
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
